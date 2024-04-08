@@ -1,0 +1,174 @@
+/*landing page style*/
+.navbar {
+    background-color: #392F8F;
+    /* ... */
+}
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+h1 {
+    color: #343a40;
+    text-align: center;
+}
+
+
+.hero {
+    background-color: #392F8F;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.features {
+    padding: 50px 0;
+    background-color: grey;
+}
+.features h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.feature-item {
+    text-align: center;
+}
+.feature-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* Features Section */
+.features1 {
+    padding: 50px 0;
+    background-color: #fff;
+}
+.features1 h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.feature-item1 img {
+width: 100%; /* Mengisi lebar parent */
+height: auto; /* Menyesuaikan tinggi secara otomatis */
+margin-bottom: 20px;
+float: left; /* Menggeser gambar ke kiri */
+margin-right: 20px; /* Menambahkan margin kanan pada teks */
+margin-left: 0%; /* Menggunakan nilai negatif untuk margin kiri */
+}
+
+/* Footer */
+footer {
+background-color: #343a40;
+color: #fff;
+text-align: center;
+padding: 20px 0;
+position: fixed;
+bottom: 0;
+width: 100%;
+transition: background-color 0.3s ease; /* Efek transisi untuk perubahan warna latar belakang */
+/* Tambahkan class hidden-footer agar tidak terlihat secara default */
+opacity: 0;
+pointer-events: none;
+}
+
+/* Efek hover pada footer */
+footer:hover {
+background-color: #292e33; /* Ubah warna latar belakang saat dihover */
+}
+
+/* Ikon media sosial */
+.social-icons {
+margin-top: 10px;
+}
+
+.social-icons a {
+color: #fff;
+margin: 0 10px;
+font-size: 20px;
+transition: color 0.3s ease; /* Efek transisi untuk perubahan warna ikon */
+}
+
+.social-icons a:hover {
+color: #007bff; /* Ubah warna ikon saat dihover */
+}
+
+/* CSS untuk menyembunyikan footer */
+.hidden-footer {
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.3s ease;
+}
+
+/* CSS untuk menampilkan footer saat discroll ke bawah */
+.show-footer {
+opacity: 1;
+pointer-events: auto;
+}
+.layanan-item {
+    background-color: #f8f9fa; /* Warna latar belakang */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 5px; /* Border radius */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animasi saat hover */
+    padding: 20px; /* Padding */
+    text-align: center; /* Pusatkan teks */
+    cursor: pointer; /* Ganti kursor saat hover */
+}
+.layanan-item img {
+    display: block; /* Atur gambar agar tampil sebagai blok */
+    margin: 0 auto; /* Posisikan gambar ke tengah */
+    margin-bottom: 10px; /* Beri jarak bawah dari gambar ke teks */
+}
+.layanan-item h3 {
+    margin-bottom: 10px; /* Beri jarak bawah dari judul ke teks */
+}
+.layanan-item:hover {
+    background-color: #e2e6ea; /* Ganti warna latar belakang saat hover */
+    transform: translateY(-5px); /* Angkat sedikit saat hover */
+}
+.berita-container {
+    display: flex; /* Gunakan flexbox untuk layout */
+    justify-content: space-between; /* Pisahkan elemen secara horizontal */
+    align-items: center; /* Pusatkan elemen secara vertikal */
+    margin-bottom: 20px; /* Jarak antar berita */
+    padding: 20px; /* Padding */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 5px; /* Border radius */
+    background-color: #f8f9fa; /* Warna latar belakang */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animasi saat hover */
+}
+.berita-container:hover {
+    background-color: #e2e6ea; /* Ganti warna latar belakang saat hover */
+}
+.berita-image {
+    flex: 0 0 100px; /* Atur lebar gambar */
+    margin-right: 20px; /* Jarak antara gambar dan teks */
+}
+.berita-image img {
+    width: 100%; /* Agar gambar mengisi kotak */
+    border-radius: 5px; /* Border radius */
+}
+.berita-content {
+    flex: 1; /* Agar konten dapat memenuhi sisa ruang */
+}
+.berita-content h3 {
+    margin-top: 0; /* Hilangkan margin atas pada judul */
+}
+.gradient-bg {
+    background: linear-gradient(to bottom, #392F8F, #052158);
+}
+.hidden {
+    display: none;
+}
+/*landing page style*/
