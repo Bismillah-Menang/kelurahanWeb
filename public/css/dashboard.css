@@ -1,0 +1,198 @@
+/* public/css/dashboard.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #052158;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo h2 {
+    margin: 0;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.menu li:hover {
+    background-color: blue;
+}
+
+
+.profile{
+    height: 20%;
+    width: 20%;
+    background-color: white;
+    margin-left: 90%;
+   display: flex;
+   align-items: center;
+   margin-right: 10px;
+}
+    .foto-vertikal {
+        display: flex;
+        align-items: center;
+        margin-left: 10%;
+        margin-bottom: 10px;
+    }
+
+    .foto-vertikal img {
+        height: 50px;
+        border-radius: 50%;
+        padding: 10px;
+    }
+    /* public/css/app.css */
+
+
+.topbar {
+    background-color: white; /* Warna latar belakang navbar */
+    color: white; /* Warna teks navbar */
+    display: flex; /* Gunakan flexbox untuk menyatukan elemen dalam navbar */
+    align-items: center;
+    padding: 10px;
+     /* Menyatukan elemen secara vertikal di tengah navbar *//* Atur padding agar elemen-elemen dalam navbar terpisah dari tepi navbar */
+}
+
+.profile img {
+    border-radius: 50%; /* Agar gambar profil menjadi lingkaran */
+    margin-right: 10px; /* Atur jarak antara gambar dan teks */
+}
+.profile span{
+    color: black;
+}
+/* public/css/dashboard.css */
+
+/* public/css/dashboard.css */
+
+.menulayanan{
+    background-color: black;
+    margin-top: 10%;
+}
+.container {
+    display: flex; /* Menerapkan display flex */
+    height: 20vh; /* Tinggi container diatur 100% dari tinggi viewport */
+}
+
+.left {
+    flex: 2; /* Menentukan div kiri lebih besar */
+    padding: 10px;
+    margin-top: 3%;
+    background-color: lightblue;
+    margin-left: 20%;
+    height: 100%;
+}
+
+.right {
+    flex: 1; /* Membagi ruang secara merata di div kanan */
+    display: flex; /* Mengaktifkan flexbox di div kanan */
+    flex-wrap: wrap; /* Memungkinkan flex items untuk wrap ke baris baru */
+}
+
+.right > div {
+    flex-basis: 40%; /* Membuat 4 div sejajar di div kanan */
+    padding: 30px;
+    margin-top: 11.5%;
+    height: 53.5%;
+    background-color: lightgreen;
+    box-sizing: border-box; 
+    flex-wrap: wrap;
+    margin-left: 10px; /* Memastikan lebar termasuk padding */
+}
+.gradient-bg {
+    background: linear-gradient(to bottom, #392F8F, #052158);
+}
+    .container1 {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px auto;
+        width: 80%;
+        margin-top: 3%;
+    }
+    .table {
+        border-collapse: collapse;
+        margin-right: 20px; /* Memberikan jarak antara kedua tabel */
+        flex: 1; /* Membuat tabel bisa menyesuaikan lebar */
+    }
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: left;
+    }
+    .table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .table td {
+        font-size: 16px;
+    }
+    .table img {
+        max-width: 100%;
+        height: auto;
+    }
+    .table-description {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+        .table-news {
+            border-collapse: collapse;
+            margin-left: 20px; /* Memberikan jarak antara kedua tabel */
+            max-width: 45%; /* Menentukan lebar maksimum tabel */
+        }
+        .table-news th, .table-news td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+        .table-news th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .table-news td {
+            font-size: 16px;
+        }
+        .table-news img {
+            max-width: 100%;
+            height: auto;
+        }
+        .news-description {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        #currentDateTime {
+            font-size: 15px;
+        }
