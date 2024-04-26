@@ -1,121 +1,385 @@
-/*landing page style*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .navbar {
     background-color: #392F8F;
     /* ... */
 }
-/* Body */
+
+/*-------------------------------------Untuk img----------------------------------------------------*/
+.navbar-brand img {
+    margin: auto -190px; /* Mengatur margin negatif */
+    max-width: calc(50% + 20px); /* Membatasi lebar maksimum gambar */
+    height: auto; /* Menyesuaikan tinggi gambar */
+    margin-left: 200px;
+    margin-top: 20px;
+}
+/*----------------------------------------NAVBAR-----------------------------------------------------*/
+/* CSS untuk mengatur tampilan navbar */
+
+.navbar-brand {
+    margin-right: 1rem; /* Margin kanan untuk logo di kiri navbar */
+}
+.navbar-nav {
+    margin-left: auto; /* Menggeser link ke kanan navbar */
+}
+.navbar-nav .nav-link {
+    color: #fff; /* Warna teks link */
+    margin-right: 1rem; /* Jarak antara link */
+}
+/* Toggler icon pada mobile view */
+.navbar-toggler {
+    border: none; /* Menghilangkan border */
+}
+/* Mengatur warna ikon toggler */
+.navbar-toggler-icon {
+    background-color: #fff; /* Warna ikon toggler */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff; /* Mengubah warna teks tautan navbar menjadi putih */
+}
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff; /* Warna biru saat dihover */
+}
+.nav-item {
+    margin-right: 2.5rem; /* Memberi jarak kanan antara setiap item navbar */
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------DROPDOWN------------------------------------------------------*/
+
+.dropdown-menu {
+    background-color: #052158; 
+    border: none; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
+}
+.dropdown-item {
+    color: #fff;
+    padding: 10px 20px; 
+}
+.dropdown-item:hover {
+    background-color: #7eaddc; 
+}
+.dropdown-item.active {
+    background-color: #007bff; 
+    color: #fff; 
+}
+.nav-item.dropdown:hover .dropdown-toggle {
+    color: #007bff; 
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------Section HERO GRADIENT-------------------------------------------------*/
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
 }
 .container {
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 20px;
 }
 h1 {
-    color: #343a40;
-    text-align: center;
+    position: absolute;
+        left: 270px;    
+        margin: 0;
+        top: 220px;
+        font-size: 3.5rem;
+        font-family: "poppins", sans-serif;
+        font-weight: 600;
+        color: #fff;
 }
-
-
 .hero {
     background-color: #392F8F;
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 500px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
     color: #fff;
 }
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
 }
-.features {
-    padding: 50px 0;
-    background-color: grey;
+p{
+    position: absolute;
+        left: 270px;
+        margin: 0;
+        top: 300px;
+        font-size: 1rem;
+        font-family: "poppins", sans-serif;
+        color: #fff;
 }
+/*---------------------------------Button*-----------------------------*/
+.button-1 {
+        display: inline-block;
+        padding: 10px 20px; /* Atur padding sesuai kebutuhan */
+        background-color: #007bff; /* Warna latar belakang */
+        color: #fff; /* Warna teks */
+        border: none; /* Hapus border */
+        border-radius: 50px; /* Membuat button menjadi lonjong */
+        font-size: 16px; /* Ukuran font */
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Efek transisi hover */
+        position: absolute;
+        left: 270px;
+        width: 15%;
+        margin: 0;
+        top: 420px;
+        font-family: "poppins", sans-serif;
+    }
+
+    .button-1:hover {
+        background-color: #ffffff; /* Warna latar belakang saat dihover */
+        color: black; /* Warna font hitam saat dihover */
+    }
+
+    .button-2 {
+        display: inline-block;
+        padding: 10px 20px; /* Atur padding sesuai kebutuhan */
+        background-color: #007bff; /* Warna latar belakang */
+        color: #fff; /* Warna teks */
+        border: none; /* Hapus border */
+        border-radius: 50px; /* Membuat button menjadi lonjong */
+        font-size: 16px; /* Ukuran font */
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Efek transisi hover */
+        position: absolute;
+        left: 510px;
+        width: 15%;
+        margin: 0;
+        top: 420px;
+        font-family: "poppins", sans-serif;
+    }
+
+    .button-2:hover {
+        background-color: #ffffff; /* Warna latar belakang saat dihover */
+        color: black; /* Warna font hitam saat dihover */
+    }
+
+    /*-----------------------------LOGO LANDING PAGE----------------------------*/
+
+
+/* CSS untuk gambar */
+img[name="gambar-people"] {
+    max-height: 100%; 
+    max-width: 100%; 
+    margin-left: 620px;
+}
+/*----------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------Tentang E-Badean--------------------------------*/
+.features1 h2{
+    font-family: "poppins", sans-serif;
+    color: #052158;
+    font-weight: 700;
+    font-size: 34px;
+}
+.feature-item1 p {
+    font-family: "poppins", sans-serif;
+    color: #052158;
+    text-align: left;
+    margin-top: -40%;
+    margin-left: -45%;
+    font-size: 15px;
+}
+/* CSS untuk konten gambar dalam kolom */
+.col-md-6 .feature-item1 {
+    display: flex; /* Menggunakan flexbox */
+    align-items: center; /* Posisikan item secara vertikal */
+}
+
+/* CSS untuk gambar dalam flex container */
+.col-md-6 .feature-item1 img {
+    width: 60%; /* Lebar gambar */
+    margin-bottom: 0; /* Hapus margin bawah */
+    margin-left: -20px;
+}
+
+/* CSS untuk mengatur urutan dan posisi gambar */
+.col-md-6 .feature-item1 img[name="img-web"] {
+    order: 2; /* Ubah urutan penempatan gambar web */
+}
+
+.col-md-6 .feature-item1 img[name="img-mobile"] {
+    order: 1; /* Ubah urutan penempatan gambar mobile */
+    margin-left: -20px;
+}
+
+/*------------------------------------------------------------------------------*/
+/*--------------------------------Aparatur-------------------------------------------*/
+.features {
+    padding: 80px 0;
+    background-color: #052158;
+}
+.feature-item {
+    margin-top: 20px; /* Jarak atas antara setiap elemen */
+    margin-bottom: 50px; /* Jarak bawah antara setiap elemen */
+}
+
 .features h2 {
     text-align: center;
     margin-bottom: 30px;
+    color: #ffffff;
+    font-family: "poppins", sans-serif;
+    margin-top: -30px;
+
+}
+.features-item h3 {
+    text-align: center;
+    color: #ffffff;
+    font-family: "poppins", sans-serif;
+    margin-top: -30px;
+    font-size: 10px;
+}
+.feature-item h3{
+    font-size: 1.3rem;
+}
+.feature-item img {
+    border-radius: 50%; /* Membuat gambar menjadi bundar */
+    width: 200px; /* Lebar gambar */
+    height: 200px; /* Tinggi gambar */
+    object-fit: cover; /* Gambar diatur untuk mencakup seluruh area dengan mempertahankan rasio aspek */
+    object-position: center; /* Posisi gambar di tengah */
+    margin-bottom: 20px;
+}
+.feature-item p.jabatan-1 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #fff; /* Warna teks jabatan */
+    margin-top: 80%;
+    margin-left: 390px;
+    margin-bottom: 20px;
+}
+.feature-item p.jabatan-2 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #ffffff; /* Warna teks jabatan */
+    margin-left: -160px;
+}
+.feature-item p.jabatan-3 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #ffffff; /* Warna teks jabatan */
+    margin-left: -170px;
+
+}
+.feature-item p.jabatan-4 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #ffffff; /* Warna teks jabatan */
+    margin-left: -223px;
+}
+.feature-item p.jabatan-5 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #ffffff; /* Warna teks jabatan */
+    margin-left: -200px;
+}
+/* CSS untuk konten di dalam feature item */
+.feature-item {
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 20px; /* Jarak bawah */
 }
 .feature-item {
     text-align: center;
+    font-family: "poppins", sans-serif;
+    color: #fefeff;
 }
-.feature-item img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
+.button-3 {
+    background-color: #4CAF50; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 15px 25px; /* Jarak padding atas dan bawah, kiri dan kanan */
+    border: none; /* Tanpa border */
+    border-radius: 50px; /* Sudut border */
+    cursor: pointer; /* Kursor berubah menjadi tangan saat diarahkan */
+    font-size: 16px; /* Ukuran teks */
+    transition: background-color 0.3s; /* Transisi ketika tombol berubah warna */
+    left: 470px;
+    width: 20%;
+    margin-left: 460px;
+    margin-top: 70px;
+    font-family: "poppins", sans-serif;
 }
 
-/* Features Section */
+.button-3:hover {
+    background-color: #ffffff; /* Warna latar belakang saat dihover */
+        color: black; /* Warna font hitam saat dihover */
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------Layanan Masnyarakat-----------------------------------------------*/
 .features1 {
     padding: 50px 0;
     background-color: #fff;
 }
+#layanan h4 {
+    font-size: 34px; /* Font size */
+    font-weight: bold; /* Font weight */
+    text-align: center; /* Text alignment */
+    margin-bottom: 20px; /* Bottom margin */
+    font-family: "poppins", sans-serif;
+    color: #052158;
+}
+
 .features1 h2 {
     text-align: center;
     margin-bottom: 30px;
 }
-.feature-item1 img {
-width: 100%; /* Mengisi lebar parent */
-height: auto; /* Menyesuaikan tinggi secara otomatis */
-margin-bottom: 20px;
-float: left; /* Menggeser gambar ke kiri */
-margin-right: 20px; /* Menambahkan margin kanan pada teks */
-margin-left: 0%; /* Menggunakan nilai negatif untuk margin kiri */
+#layanan.features {
+    background-color: #fff; /* Warna latar belakang */
+    padding: 50px 0; /* Jarak padding atas dan bawah */
 }
+.container {
+    max-width: 1200px; /* Lebar maksimum konten */
+    margin: 0 auto; /* Tengahkan konten */
+    padding: 0 15px; /* Jarak padding kiri dan kanan */
+}
+.row {
+    display: flex; /* Mengatur elemen baris menjadi flexbox */
+    flex-wrap: wrap; /* Mengizinkan baris untuk melintasi multiple lines jika diperlukan */
+    justify-content: center; /* Posisi elemen-elemen dalam baris ke tengah */
+}
+.col-md-3 {
+    flex: 0 0 25%; /* Setiap kolom menempati 25% dari lebar container */
+    max-width: 25%; /* Lebar maksimum setiap kolom */
+    padding: 0 15px; /* Jarak padding kiri dan kanan */
+    box-sizing: border-box; /* Ukuran kotak termasuk padding dan border */
+}
+.layanan-item {
+    text-align: center; /* Posisi teks ke tengah */
+    margin-bottom: 30px; /* Jarak antara setiap elemen layanan */
+    display: flex; /* Mengatur elemen layanan-item menjadi flexbox */
+    flex-direction: column; /* Membuat konten di dalam layanan-item menjadi tata letak vertikal */
+    text-align: center; /* Posisi teks ke tengah */
+    height: 90%; /* Agar setiap kotak memiliki tinggi yang sama */
+}
+.layanan-item img {
+    width: auto; /* Mengisi lebar parent */
+    height: auto; /* Menyesuaikan tinggi secara otomatis */
+    margin-bottom: 20px; /* Jarak antara gambar dan teks */
+}
+.layanan-item h3 {
+    font-size: 18px; /* Ukuran teks judul */
+    margin-bottom: 10px; /* Jarak antara judul dan paragraf */
+}
+.button-4 {
+    background-color: #FFF212; /* Warna latar belakang */
+    color: #392F8F; /* Warna teks */
+    padding: 15px 25px; /* Jarak padding atas dan bawah, kiri dan kanan */
+    border: none; /* Tanpa border */
+    border-radius: 50px; /* Sudut border */
+    cursor: pointer; /* Kursor berubah menjadi tangan saat diarahkan */
+    font-size: 16px; /* Ukuran teks */
+    transition: background-color 0.3s; /* Transisi ketika tombol berubah warna */
+    left: 450px;
+    width: 20%;
+    margin-left: 600px;
+    margin-top: 60px;
+    font-family: "poppins", sans-serif;
+}
+.button-4:hover {
+    background-color: #ffffff; /* Warna latar belakang saat dihover */
+    color: black; /* Warna font hitam saat dihover */
+}
+/*---------------------------------------------------------------------------------------------*/
+/*------------------------------------Berita & Pengumuman------------------------------------------*/
 
-/* Footer */
-footer {
-background-color: #343a40;
-color: #fff;
-text-align: center;
-padding: 20px 0;
-position: fixed;
-bottom: 0;
-width: 100%;
-transition: background-color 0.3s ease; /* Efek transisi untuk perubahan warna latar belakang */
-/* Tambahkan class hidden-footer agar tidak terlihat secara default */
-opacity: 0;
-pointer-events: none;
-}
-
-/* Efek hover pada footer */
-footer:hover {
-background-color: #292e33; /* Ubah warna latar belakang saat dihover */
-}
-
-/* Ikon media sosial */
-.social-icons {
-margin-top: 10px;
-}
-
-.social-icons a {
-color: #fff;
-margin: 0 10px;
-font-size: 20px;
-transition: color 0.3s ease; /* Efek transisi untuk perubahan warna ikon */
-}
-
-.social-icons a:hover {
-color: #007bff; /* Ubah warna ikon saat dihover */
-}
-
-/* CSS untuk menyembunyikan footer */
-.hidden-footer {
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.3s ease;
-}
-
-/* CSS untuk menampilkan footer saat discroll ke bawah */
-.show-footer {
-opacity: 1;
-pointer-events: auto;
-}
 .layanan-item {
     background-color: #f8f9fa; /* Warna latar belakang */
     border: 1px solid #ced4da; /* Border */
@@ -124,6 +388,14 @@ pointer-events: auto;
     padding: 20px; /* Padding */
     text-align: center; /* Pusatkan teks */
     cursor: pointer; /* Ganti kursor saat hover */
+}
+#berita h5 {
+    font-size: 34px; /* Font size */
+    font-weight: bold; /* Font weight */
+    text-align: center; /* Text alignment */
+    margin-bottom: 20px; /* Bottom margin */
+    font-family: "poppins", sans-serif;
+    color: #052158;
 }
 .layanan-item img {
     display: block; /* Atur gambar agar tampil sebagai blok */
@@ -172,3 +444,132 @@ pointer-events: auto;
     display: none;
 }
 /*landing page style*/
+/*---------------------------------------End-Page-----------------------------------------*/
+/* CSS untuk layout end-page */
+.end-page {
+    padding: 150px 0;
+    background-color: #052158;
+}
+
+.container-end {
+    margin: -20px auto 0; /* Menyesuaikan margin untuk menghilangkan gap atas */
+    max-width: 1200px;
+}
+
+.alamat {
+    display: flex;
+    align-items: center;
+}
+
+.alamat img {
+    max-width: 100px; /* Ukuran logo disesuaikan */
+    margin-right: 20px; /* Jarak antara logo dengan teks */
+}
+
+.kontak {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Mengatur kontak berdampingan */
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column; /* Menjadikan konten menjadi tata letak kolom */
+    align-items: center;
+    background-color: #052158; /* Warna latar belakang sama seperti background */
+    padding: 20px;
+    border: 2px solid #000; /* Border hitam */
+    border-radius: 10px;
+    box-shadow: none; /* Menghapus bayangan */
+    width: 100%; /* Menyesuaikan lebar dengan parent */
+    height: 100%; /* Menyesuaikan tinggi dengan parent */
+}
+
+.content-box img {
+    margin-bottom: 10px; /* Jarak antara gambar dan teks */
+}
+
+.content-box span,
+.content-box .additional-info {
+    color: #fff; /* Warna teks */
+    font-size: 16px; /* Ukuran teks */
+    margin: 0; /* Menghapus margin */
+    margin-bottom: 5px; /* Jarak antara tulisan dan teks */
+}
+
+.email, .telepon {
+    width: 45%; /* Lebar kontak box */
+}
+
+/* CSS untuk responsivitas */
+@media (max-width: 768px) {
+    .alamat img {
+        max-width: 80px; /* Ukuran logo disesuaikan untuk layar kecil */
+    }
+
+    .kontak {
+        flex-direction: column;
+    }
+
+    .email, .telepon {
+        width: 100%; /* Kontak box menjadi full-width pada layar kecil */
+        margin-bottom: 20px; /* Jarak antara kotak kontak */
+    }
+}
+
+.alamat-end {
+    margin-right: 20px; /* Jarak antara teks dengan logo */
+    font-size: 20px;
+    color: #fff;
+}
+
+.alamat-end1 {
+    display: block; /* Menjadikan h3 dan p menjadi blok */
+    margin: 5px 0; /* Memberikan jarak di atas dan bawah */
+    color: #fff;
+    font-size: 18px;
+}
+
+.alamat-end2 {
+    margin: 5px 0; /* Memberikan jarak di atas dan bawah */
+    color: #fff;
+    font-size: 16px;
+}
+
+
+
+/*------------------------------------- Footer------------------------------------------- */
+footer {
+background-color: #060607;
+color: #fff;
+text-align: center;
+padding: 20px 0;
+position: fixed;
+bottom: 0;
+width: 100%;
+transition: background-color 0.3s ease; /* Efek transisi untuk perubahan warna latar belakang */
+/* Tambahkan class hidden-footer agar tidak terlihat secara default */
+opacity: 0;
+pointer-events: none;
+}
+
+/* Efek hover pada footer */
+footer:hover {
+background-color: #292e33; /* Ubah warna latar belakang saat dihover */
+}
+
+
+/* CSS untuk menyembunyikan footer */
+.hidden-footer {
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.3s ease;
+margin-top: -100px;
+padding: 20px 0; /* Padding untuk footer */
+}
+
+/* CSS untuk menampilkan footer saat discroll ke bawah */
+.show-footer {
+opacity: 1;
+pointer-events: auto;
+}
