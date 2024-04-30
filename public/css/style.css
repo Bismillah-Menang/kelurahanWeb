@@ -376,6 +376,7 @@ img[name="gambar-people"] {
 .button-4:hover {
     background-color: #ffffff; /* Warna latar belakang saat dihover */
     color: black; /* Warna font hitam saat dihover */
+    font-family: "poppins", sans-serif;
 }
 /*---------------------------------------------------------------------------------------------*/
 /*------------------------------------Berita & Pengumuman------------------------------------------*/
@@ -474,16 +475,17 @@ img[name="gambar-people"] {
 
 .content-box {
     display: flex;
-    flex-direction: column; /* Menjadikan konten menjadi tata letak kolom */
+    flex-direction: column;
     align-items: center;
-    background-color: #052158; /* Warna latar belakang sama seperti background */
+    background-color: #052158;
     padding: 20px;
-    border: 2px solid #000; /* Border hitam */
+    border: 2px solid #000;
     border-radius: 10px;
-    box-shadow: none; /* Menghapus bayangan */
-    width: 100%; /* Menyesuaikan lebar dengan parent */
-    height: 100%; /* Menyesuaikan tinggi dengan parent */
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
 }
+
 
 .content-box img {
     margin-bottom: 10px; /* Jarak antara gambar dan teks */

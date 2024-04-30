@@ -29,14 +29,14 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto ml-auto"> <!-- Tambahkan kelas ml-auto di sini -->
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Profil
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">Visi dan Misi</a></li>
+          <li><a class="dropdown-item" href="{{ route('visimisi') }}">Visi dan Misi</a></li>
           <li><a class="dropdown-item" href="#">Aparatur</a></li>
           <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
           <li><a class="dropdown-item" href="#">Layanan Kami</a></li>
@@ -51,7 +51,6 @@
               <li class="nav-item">
     <a id="loginBtn" class="nav-link" href="{{ route('login') }}">Login</a>
 </li>
-
         </div>
       </div>
     </nav>
