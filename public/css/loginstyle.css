@@ -1,0 +1,124 @@
+/* Import font Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Styling untuk bagian 'right' */
+.right {
+    padding: 10%; /* Jarak padding atas dan bawah dari section */
+    margin-left: 15%; /* Margin kiri */
+    text-align: left;
+    margin-top: 150px;
+}
+/* Styling untuk elemen 'h2' */
+h2 {
+    font-size: 3rem;
+    font-family: "Poppins", sans-serif; /* Menggunakan font Poppins */
+    font-weight: 700;
+    color: #392F8F;
+    margin-bottom: 20px;
+}
+/* Styling untuk elemen 'input' di dalam class 'login-form' */
+.login-form input {
+    width: 100%; /* Lebar input 100% dari container */
+    padding: 15px; /* Padding di sekitar input */
+    margin-bottom: 20px; /* Jarak antar input */
+    border: 1px solid #ccc; /* Garis tepi input */
+    border-radius: 20px; /* Sudut lengkung pada input */
+    box-sizing: border-box; /* Box-sizing untuk mempertahankan lebar yang sesuai */
+    font-family: "Poppins", sans-serif; /* Menggunakan font Poppins */
+}
+/* Styling untuk elemen 'button' di dalam class 'login-form' */
+.login-form button {
+    width: 100%; /* Lebar input 100% dari container */
+    background-color: #1DD8A3;
+    padding: 15px; /* Padding di sekitar input */
+    margin-bottom: 20px; /* Jarak antar input */
+    border: 1px solid #1DD8A3; /* Garis tepi input */
+    border-radius: 20px; /* Sudut lengkung pada input */
+    box-sizing: border-box; /* Box-sizing untuk mempertahankan lebar yang sesuai */
+    font-family: "Poppins", sans-serif; /* Menggunakan font Poppins */
+}
+/* Hover effect pada elemen 'input' dan 'button' di dalam class 'login-form' */
+.login-form input:hover,
+.login-form button:hover {
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Shadow saat dihover */
+}
+/* Focus effect pada elemen 'input' di dalam class 'login-form' */
+.login-form input:focus {
+    outline: none; /* Hapus outline default pada focus */
+    border-color: #392F8F; /* Warna border saat focus */
+    box-shadow: 3px 3px 10px rgba(57, 47, 143, 0.3); /* Shadow saat focus */
+}
+/* Styling untuk tautan "Forgot password?" */
+.forgot-password {
+    margin-top: 25px; /* Jarak antara tautan "Forgot password?" dengan tombol di atasnya */
+}
+/* Styling untuk tautan "Forgot password?" pada hover */
+.forgot-password a:hover {
+    text-decoration: underline; /* Garis bawah pada tautan saat dihover */
+    color: #5546AA; /* Warna teks saat dihover */
+}
+/*---------------------------------------------------------------------------------------*/
+.left {
+    padding: 25.1% 0; /* Jarak padding atas dan bawah dari section */
+    background-color: #052158; /* Warna latar belakang pada layar berukuran kecil */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Styling untuk logo 1 dan logo 2 */
+.logo1,
+.logo2 {
+    max-width: 70%; /* Lebar maksimum untuk logo 1 dan logo 2 */
+    margin-bottom: 20px; /* Jarak antara logo 1/2 dengan paragraf */
+}
+
+/* Styling untuk paragraf di dalam 'left' */
+.left p {
+    color: white; /* Warna teks putih */
+    margin-bottom: 20px; /* Jarak antara paragraf dengan logo 3/4 */
+}
+
+/* Styling untuk logo 3 dan logo 4 */
+.logo3,
+.logo4 {
+    max-width: 40%; /* Lebar maksimum untuk logo 3 dan logo 4 */
+    margin-right: 10px; /* Jarak antara logo 3 dan logo 4 */
+}
+
+@media screen and (min-width: 768px) {
+/* Styling untuk bagian 'left' */
+.left {
+    padding: 25.1% 0; /* Jarak padding atas dan bawah dari section */
+    background-color: #052158; /* Warna latar belakang pada layar berukuran kecil */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 130%;
+    margin-left: -220px;
+}
+
+/* Styling untuk logo 1 dan logo 2 */
+.logo1,
+.logo2 {
+    max-width: 80%; /* Lebar maksimum untuk logo 1 dan logo 2 */
+    margin-bottom: 20px; /* Jarak antara logo 1/2 dengan paragraf */
+}
+
+/* Styling untuk paragraf di dalam 'left' */
+.left p {
+    color: white; /* Warna teks putih */
+    margin-bottom: 20px; /* Jarak antara paragraf dengan logo 3/4 */
+}
+
+/* Styling untuk logo 3 dan logo 4 */
+.logo3,
+.logo4 {
+    max-width: 40%; /* Lebar maksimum untuk logo 3 dan logo 4 */
+    margin-right: 10px; /* Jarak antara logo 3 dan logo 4 */
+}
+}

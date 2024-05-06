@@ -9,7 +9,7 @@
     margin: auto -190px; /* Mengatur margin negatif */
     max-width: calc(50% + 20px); /* Membatasi lebar maksimum gambar */
     height: auto; /* Menyesuaikan tinggi gambar */
-    margin-left: 200px;
+    margin-left: 210px;
     margin-top: 20px;
 }
 /*----------------------------------------NAVBAR-----------------------------------------------------*/
@@ -23,7 +23,7 @@
 }
 .navbar-nav .nav-link {
     color: #fff; /* Warna teks link */
-    margin-right: 1rem; /* Jarak antara link */
+    margin-right: 3rem; /* Jarak antara link */
 }
 /* Toggler icon pada mobile view */
 .navbar-toggler {
@@ -43,6 +43,16 @@
 .nav-item {
     margin-right: 2.5rem; /* Memberi jarak kanan antara setiap item navbar */
 }
+/* Mengatur jarak antara item navbar */
+.navbar-nav .nav-item {
+    margin-right: 1rem; /* Atur jarak kanan antara setiap item navbar */
+}
+
+/* Menghilangkan margin kanan pada item navbar terakhir */
+.navbar-nav .nav-item:last-child {
+    margin-right: 150px; /* Hapus margin kanan pada item terakhir */
+}
+
 
 /*-----------------------------------------------------------------------------------------------------*/
 
@@ -164,7 +174,7 @@ p{
 img[name="gambar-people"] {
     max-height: 100%; 
     max-width: 100%; 
-    margin-left: 620px;
+    margin-left: 670px;
 }
 /*----------------------------------------------------------------------------------------------------*/
 
@@ -575,3 +585,4 @@ padding: 20px 0; /* Padding untuk footer */
 opacity: 1;
 pointer-events: auto;
 }
+

@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DatapegawaiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\AparaturController;
 use Illuminate\Support\Facades\Route;
 
 // Rute untuk halaman utama
@@ -21,6 +22,9 @@ Route::get('/data-pegawai', [DataPegawaiController::class, 'index'])->name('data
 
 // Rute untuk halaman visi dan misi
 Route::get('/visi-misi', [VisiMisiController::class, 'showVisiMisi'])->name('visimisi');
+// routes/web.php
+// Rute untuk halaman aparatur
+Route::get('/aparatur', [AparaturController::class, 'showAparatur'])->name('aparatur');
 // routes/web.php
 
 // Definisikan rute untuk halaman home

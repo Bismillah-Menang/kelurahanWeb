@@ -5,69 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-        }
-        .login-container {
-            max-width: 400px;
-            margin: 100px auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-        .login-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .login-header h2 {
-            color: #333;
-        }
-        .login-form input[type="text"],
-        .login-form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-        }
-        .login-form input[type="text"]:focus,
-        .login-form input[type="password"]:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-        .login-form button[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .login-form button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        .login-form .forgot-password {
-            text-align: right;
-            margin-top: 10px;
-        }
-        .login-form .forgot-password a {
-            color: #007bff;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/loginstyle.css') }}">
+    <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-header">
-            <h2>Login</h2>
+    <section class="container" id="login-page">
+    <div class="container-login">
+        <div class="row">
+            <div class="col-md-6">
+           <div class="left">
+            <div class="img">
+           <img src="{{ asset('img/LogoBondowoso.png') }}" class="logo1" alt="">
+           <img src="{{ asset('img/Group 7.png') }}" class="logo2" alt="">
+           <p>“Hemat Waktu, Hidup Lebih Mudah: Aplikasi Kelurahan Badean<br>
+Solusi Terbaik untuk Surat-surat Anda!"</p>
+           <img src="{{ asset('img/Group 65.png') }}" class="logo3" alt="">
+           <img src="{{ asset('img/Group 32.png') }}" class="logo4" alt="">
+</div>
+           </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right">
+                <div class="login-header">
+            <h2>Log In</h2>
         </div>
         <form class="login-form" action="#" method="post">
             <input type="text" name="username" placeholder="Username" required>
@@ -77,7 +38,11 @@
                 <a href="#">Forgot password?</a>
             </div>
         </form>
+                </div>
+            </div>
+        </div>
     </div>
+    </section>
 </body>
 <script>
     // Ambil tombol "Login" berdasarkan id

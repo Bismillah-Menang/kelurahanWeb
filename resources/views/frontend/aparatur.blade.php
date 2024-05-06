@@ -6,7 +6,7 @@
     <title>Visi Misi</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/stylemisi_visi.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styleaparatur.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
@@ -54,36 +54,50 @@
       </div>
     </nav>
     <!---------------------------------------END Navbar-------------------------------------------------->
-    <!-------------------------------------- VISI MISI -------------------------------------------------->
-    <h1>Visi dan Misi</h1>
-    <section class="visimisi-page" id="visimisi">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="img">
-                    <img src="{{ asset('img/visimisi1.png') }}" alt="">
+<!--- Features -->
+  <!-- Features Section -->
+  <section id="aparatur" class="features">
+        <div class="container">
+            <div class="feature-item">
+                        <img src="{{ asset('img/profile1.png') }}" alt="Feature 1" name="feature-1">
+                        <h3>Mr.Cillian Murphy</h3>
+                        <p class="jabatan-1">Kepala Lurah Badean</p>
+                    </div>
+            <div class="row">
+                <div class="col">
+                    <div class="feature-item">
+                        <img src="{{ asset('img/profile2.png') }}" alt="Feature 2" name="feature-2">
+                        <h3>Mr.Chris Hemsworth</h3>
+                        <p class="jabatan-2">Seketaris</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="content">
-                    <div class="content-boxs">
-                        <div class="visi">
-                        <h2>Visi</h2>
-                        <img src="{{ asset('img/visi.png') }}" alt="Logo">
-                        <p>Kelurahan Semarapura Tengah yang Unggul dan Sejahtera melalui Pelayana Prima dan Pemberdayaan Masyarakat.</p>
-                        </div>
-                        <div class="misi">
-                            <h2>Misi</h2>
-                        <img src="{{ asset('img/visi.png') }}" alt="Logo">
-                        <p>Meningkatkan kualitas penyelenggaraan pemerintahan, pembangunan dan pelayanan publik di Kelurahan</p>
-                        </div>
-                    </div>  
+                <div class="col">
+                    <div class="feature-item">
+                        <img src="{{ asset('img/profile3.png') }}" alt="Feature 3" name="feature-3">
+                        <h3>Mrs.Siti Jubaedah</h3>
+                        <p class="jabatan-3">Bendahara</p>
+                    </div>
                 </div>
-            </div>
+                <div class="col">
+                    <div class="feature-item">
+                        <img src="{{ asset('img/profille4.png') }}" alt="Feature 4" name="feature-4">
+                        <h3>Ms.Lalisa Manoban</h3>
+                        <p class="jabatan-4">Staff Pelayanan Umum</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feature-item">  
+                        <img src="{{ asset('img/Profile5.png') }}" alt="Feature 5" name="feature-5">
+                        <h3>Mr. Timothee Chalemet</h3>
+                        <p class="jabatan-5">Kasi Pemerintahan</p>
+                    </div>
+                </div>
         </div>
-    </div>
     </section>
-    <section class="end-page" id="end">
+
+
+<!--------------------- End ---------------------->
+<section class="end-page" id="end">
     <div class="container-end">
         <div class="row">
             <!-- Kolom kiri untuk alamat dan logo -->
@@ -126,40 +140,11 @@
     </div>
 </footer>
 <script>
-    // Select tombol "Selengkapnya"
-    var showMoreBtn = document.getElementById('showMoreBtn');
-
-    // Select deskripsi yang akan ditampilkan
-    var description = document.getElementById('description');
-
-    // Tambahkan event listener untuk tombol "Selengkapnya"
-    showMoreBtn.addEventListener('click', function() {
-        // Toggle kelas 'hidden' pada deskripsi
-        description.classList.toggle('hidden');
-
-        // Ubah teks tombol sesuai dengan kondisi deskripsi ditampilkan atau tidak
-        if (description.classList.contains('hidden')) {
-            showMoreBtn.textContent = 'Selengkapnya';
-        } else {
-            showMoreBtn.textContent = 'Sembunyikan';
-        }
-    });
-</script>
-
-<script>
-        // Deteksi pergerakan scroll
         window.addEventListener('scroll', function() {
-            // Mendapatkan posisi vertikal saat ini
             var scrollPosition = window.scrollY;
-
-            // Mendapatkan tinggi dari viewport
             var windowHeight = window.innerHeight;
-
-            // Mendapatkan tinggi dari seluruh halaman
             var documentHeight = document.body.offsetHeight;
 
-            // Jika posisi scroll + tinggi viewport lebih besar dari atau sama dengan tinggi halaman
-            // maka footer ditampilkan
             if ((scrollPosition + windowHeight) >= documentHeight) {
                 document.querySelector('footer').classList.add('show-footer');
             } else {
@@ -168,5 +153,6 @@
         });
     </script>
 
+    
 </body>
 </html>

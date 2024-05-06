@@ -37,7 +37,7 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item" href="{{ route('visimisi') }}">Visi dan Misi</a></li>
-          <li><a class="dropdown-item" href="#">Aparatur</a></li>
+          <li><a class="dropdown-item" href="{{ route('aparatur') }}">Aparatur</a></li>
           <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
           <li><a class="dropdown-item" href="#">Layanan Kami</a></li>
         </ul>

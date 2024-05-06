@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: 'Poppins', sans-serif; /* Mengatur jenis font untuk seluruh body */
+}
+.navbar {
+    background-color: #392F8F;
+}
+
+/*-------------------------------------Untuk img----------------------------------------------------*/
+.navbar-brand img {
+    margin: auto -190px; /* Mengatur margin negatif */
+    max-width: calc(50% + 20px); /* Membatasi lebar maksimum gambar */
+    height: auto; /* Menyesuaikan tinggi gambar */
+    margin-left: 200px;
+    margin-top: 20px;
+}
+/*----------------------------------------NAVBAR-----------------------------------------------------*/
+/* CSS untuk mengatur tampilan navbar */
+
+.navbar-brand {
+    margin-right: 1rem; /* Margin kanan untuk logo di kiri navbar */
+}
+.navbar-nav {
+    margin-left: auto; /* Menggeser link ke kanan navbar */
+}
+.navbar-nav .nav-link {
+    color: #fff; /* Warna teks link */
+    margin-right: 1rem; /* Jarak antara link */
+}
+/* Toggler icon pada mobile view */
+.navbar-toggler {
+    border: none; /* Menghilangkan border */
+}
+/* Mengatur warna ikon toggler */
+.navbar-toggler-icon {
+    background-color: #fff; /* Warna ikon toggler */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff; /* Mengubah warna teks tautan navbar menjadi putih */
+}
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff; /* Warna biru saat dihover */
+}
+.nav-item {
+    margin-right: 2.5rem; /* Memberi jarak kanan antara setiap item navbar */
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------DROPDOWN------------------------------------------------------*/
+
+.dropdown-menu {
+    background-color: #052158; 
+    border: none; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
+}
+.dropdown-item {
+    color: #fff;
+    padding: 10px 20px; 
+}
+.dropdown-item:hover {
+    background-color: #7eaddc; 
+}
+.dropdown-item.active {
+    background-color: #007bff; 
+    color: #fff; 
+}
+.nav-item.dropdown:hover .dropdown-toggle {
+    color: #007bff; 
+}
+/*-----------------------------------------------------------------------------------*/
+/*----------------------------------VISI MISI--------------------------------*/
+h1{
+    color: #fff; /* Warna teks putih */
+    background-color: #392F8F; /* Warna latar belakang sesuai dengan navbar */
+    padding: 40px; /* Padding untuk memberi ruang di sekitar teks */
+    margin-bottom: 20px;
+    text-align: center; /* Posisi teks di tengah */
+    font-weight: 600;
+}
+.visimisi-page {
+    padding: 80px 0; /* Padding atas dan bawah sebesar 80px */
+    background-color: #f8f9fa; /* Warna latar belakang */
+}
+
+.container {
+    max-width: 1200px; /* Lebar maksimum container */
+    margin: 0 auto; /* Tengahkan container */
+}
+
+.img {
+    text-align: center; /* Pusatkan gambar */
+}
+.content {
+    margin-bottom: 30px; /* Jarak bawah dari konten ke elemen selanjutnya */
+}
+
+.content-boxs {
+    padding: 20px; /* Padding untuk ruang atas dan bawah konten */
+    background-color: #fff; /* Warna latar belakang konten */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek raised */
+}
+/*end navbar-------------------------------------*/
+/*----------------------------------------DROPDOWN------------------------------------------------------*/
+
+.dropdown-menu {
+    background-color: #052158; 
+    border: none; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
+}
+.dropdown-item {
+    color: #fff;
+    padding: 10px 20px; 
+}
+.dropdown-item:hover {
+    background-color: #7eaddc; 
+}
+.dropdown-item.active {
+    background-color: #007bff; 
+    color: #fff; 
+}
+.nav-item.dropdown:hover .dropdown-toggle {
+    color: #007bff; 
+}
+/*-----------------------------------------------------------------------------------*/
+
+/*--------------------------------Aparatur-------------------------------------------*/
+.features {
+    padding: 50px 0;
+}
+.feature-item {
+    margin-top: 20px; /* Jarak atas antara setiap elemen */
+    margin-bottom: 50px; /* Jarak bawah antara setiap elemen */
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #052158;
+    font-family: "poppins", sans-serif;
+    margin-top: -30px;
+
+}
+.features-item h3 {
+    text-align: center;
+    color: #052158;
+    font-family: "poppins", sans-serif;
+    margin-top: -30px;
+    font-size: 10px;
+}
+.feature-item h3{
+    font-size: 1.3rem;
+}
+.feature-item img {
+    border-radius: 50%; /* Membuat gambar menjadi bundar */
+    width: 200px; /* Lebar gambar */
+    height: 200px; /* Tinggi gambar */
+    object-fit: cover; /* Gambar diatur untuk mencakup seluruh area dengan mempertahankan rasio aspek */
+    object-position: center; /* Posisi gambar di tengah */
+    margin-bottom: 20px;
+}
+.feature-item p.jabatan-1 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #052158; /* Warna teks jabatan */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.feature-item p.jabatan-2 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #052158; /* Warna teks jabatan */
+}
+.feature-item p.jabatan-3 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #052158; /* Warna teks jabatan */
+
+}
+.feature-item p.jabatan-4 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #052158; /* Warna teks jabatan */
+}
+.feature-item p.jabatan-5 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #052158; /* Warna teks jabatan */
+}
+/* CSS untuk konten di dalam feature item */
+.feature-item {
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+.feature-item {
+    text-align: center;
+    font-family: "poppins", sans-serif;
+    color: #052158;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------End Page-------------------------------------------*/
+.end-page {
+    padding: 150px 0;
+    background-color: #052158;
+}
+
+.container-end {
+    margin: -20px auto 0; /* Menyesuaikan margin untuk menghilangkan gap atas */
+    max-width: 1200px;
+}
+
+.alamat {
+    display: flex;
+    align-items: center;
+}
+
+.alamat img {
+    max-width: 100px; /* Ukuran logo disesuaikan */
+    margin-right: 20px; /* Jarak antara logo dengan teks */
+}
+
+.kontak {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Mengatur kontak berdampingan */
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #052158;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+.content-box img {
+    margin-bottom: 10px; /* Jarak antara gambar dan teks */
+}
+
+.content-box span,
+.content-box .additional-info {
+    color: #fff; /* Warna teks */
+    font-size: 16px; /* Ukuran teks */
+    margin: 0; /* Menghapus margin */
+    margin-bottom: 5px; /* Jarak antara tulisan dan teks */
+}
+
+.email, .telepon {
+    width: 45%; /* Lebar kontak box */
+}
+
+/* CSS untuk responsivitas */
+@media (max-width: 768px) {
+    .alamat img {
+        max-width: 80px; /* Ukuran logo disesuaikan untuk layar kecil */
+    }
+
+    .kontak {
+        flex-direction: column;
+    }
+
+    .email, .telepon {
+        width: 100%; /* Kontak box menjadi full-width pada layar kecil */
+        margin-bottom: 20px; /* Jarak antara kotak kontak */
+    }
+}
+
+.alamat-end {
+    margin-right: 20px; /* Jarak antara teks dengan logo */
+    font-size: 20px;
+    color: #fff;
+}
+
+.alamat-end1 {
+    display: block; /* Menjadikan h3 dan p menjadi blok */
+    margin: 5px 0; /* Memberikan jarak di atas dan bawah */
+    color: #fff;
+    font-size: 18px;
+}
+
+.alamat-end2 {
+    margin: 5px 0; /* Memberikan jarak di atas dan bawah */
+    color: #fff;
+    font-size: 16px;
+}
+
+
+
+/*------------------------------------- Footer------------------------------------------- */
+footer {
+background-color: #060607;
+color: #fff;
+text-align: center;
+padding: 20px 0;
+position: fixed;
+bottom: 0;
+width: 100%;
+transition: background-color 0.4s ease; /* Efek transisi untuk perubahan warna latar belakang */
+/* Tambahkan class hidden-footer agar tidak terlihat secara default */
+opacity: 0;
+pointer-events: none;
+}
+
+/* Efek hover pada footer */
+footer:hover {
+background-color: #292e33; /* Ubah warna latar belakang saat dihover */
+}
+
+/* CSS untuk menyembunyikan footer */
+.hidden-footer {
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.3s ease;
+margin-top: -100px;
+padding: 20px 0; /* Padding untuk footer */
+}
+
+/* CSS untuk menampilkan footer saat discroll ke bawah */
+.show-footer {
+opacity: 1;
+pointer-events: auto;
+}
+
