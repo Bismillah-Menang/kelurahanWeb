@@ -54,35 +54,25 @@
       </div>
     </nav>
     <!---------------------------------------END Navbar-------------------------------------------------->
-    <!-------------------------------------- VISI MISI -------------------------------------------------->
-    <h1>Visi dan Misi</h1>
-    <section class="visimisi-page" id="visimisi">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="img">
-                    <img src="{{ asset('img/visimisi1.png') }}" alt="">
+
+    <section class="struktur" id=""struktur1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="gambar">
+                <img src="{{ asset('img/struktur 1.png') }}" alt="">
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="content">
-                    <div class="content-boxs">
-                        <div class="visi">
-                        <h2>Visi</h2>
-                        <img src="{{ asset('img/visi.png') }}" alt="Logo">
-                        <p>Kelurahan Semarapura Tengah yang Unggul dan Sejahtera melalui Pelayana Prima dan Pemberdayaan Masyarakat.</p>
-                        </div>
-                        <div class="misi">
-                            <h2>Misi</h2>
-                        <img src="{{ asset('img/visi.png') }}" alt="Logo">
-                        <p>Meningkatkan kualitas penyelenggaraan pemerintahan, pembangunan dan pelayanan publik di Kelurahan</p>
-                        </div>
-                    </div>  
+                </div>
+                <div class="col-md-6">
+                    <div class="name">
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </section>
+
+<!-------------------------------- -------------------------------------------->
     <section class="end-page" id="end">
     <div class="container-end">
         <div class="row">

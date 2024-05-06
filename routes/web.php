@@ -6,6 +6,7 @@ use App\Http\Controllers\DatapegawaiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\AparaturController;
+use App\Http\Controllers\StrukturOrganisasiController;
 use Illuminate\Support\Facades\Route;
 
 // Rute untuk halaman utama
@@ -25,6 +26,9 @@ Route::get('/visi-misi', [VisiMisiController::class, 'showVisiMisi'])->name('vis
 // routes/web.php
 // Rute untuk halaman aparatur
 Route::get('/aparatur', [AparaturController::class, 'showAparatur'])->name('aparatur');
+// routes/web.php
+// Rute untuk halaman aparatur
+Route::get('/strukturorganisasi', [StrukturOrganisasiController::class, 'showStrukturOrganisasi'])->name('strukturorganisasi');
 // routes/web.php
 
 // Definisikan rute untuk halaman home

@@ -17,3 +17,45 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class NamaController extends Controller
+{
+    // Method untuk menampilkan halaman
+    public function index()
+    {
+        return view('nama_view');
+    }
+
+    // Method untuk menyimpan data
+    public function store(Request $request)
+    {
+        // Logika untuk menyimpan data dari $request
+    }
+
+    // Method untuk menampilkan detail
+    public function show($id)
+    {
+        // Logika untuk menampilkan detail berdasarkan $id
+    }
+
+    // Method untuk meng-update data
+    public function update(Request $request, $id)
+    {
+        // Logika untuk meng-update data berdasarkan $id
+    }
+
+    // Method untuk menghapus data
+    public function destroy($id)
+    {
+        // Logika untuk menghapus data berdasarkan $id
+    }
+
+    // Method lain sesuai kebutuhan aplikasi
+}
