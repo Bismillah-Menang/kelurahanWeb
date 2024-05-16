@@ -48,6 +48,43 @@ body {
 
 /*-----------------------------------------------------------------------------------------------------*/
 
+/*--------------------------------------------Layanan---------------------------------------------*/
+/* Target the container for grid items */
+.features .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Adjust column count as needed */
+    gap: 30px; /* Adjust the gap between grid items */
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  /* Style each grid item */
+  .features .grid .bg-white {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+       
+      }
+  
+  /* Style the span element within each grid item */
+  .features .grid .bg-white .text-sm {
+    margin-top: 12px; /* Adjust spacing between image and text */
+    text-align: center;
+    color: #4b5563; /* Adjust text color */
+  }
+  
+  /* Ensure the image stays centered above the text */
+  .features .grid .bg-white img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Ensure the image stays within container */
+  }
+  
+
 /*----------------------------------------DROPDOWN------------------------------------------------------*/
 
 .dropdown-menu {
@@ -70,36 +107,9 @@ body {
     color: #007bff; 
 }
 /*-----------------------------------------------------------------------------------*/
-.gambar img{
-    /* CSS untuk gambar struktur */
-    display: block;
-    width: 100%; /* Lebar gambar 100% dari parent */
-    height: auto; /* Tinggi gambar disesuaikan agar proporsional */
-    border-radius: 5px; /* Sudut melengkung pada gambar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk gambar */
-    margin-top: 200px;
-    margin-left: -20px;
-}
-/* CSS untuk teks pada bagian "name" */
-.struktur2{
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-.name h5 {
-    font-size: 20px; /* Ukuran font untuk judul */
-    font-weight: bold; /* Ketebalan font untuk judul */
-    color: #333; /* Warna teks untuk judul */
-    margin-bottom: 10px; /* Jarak bawah antara judul dan paragraf */
-}
-
-.name p {
-    font-size: 16px; /* Ukuran font untuk paragraf */
-    line-height: 1.5; /* Ketinggian baris untuk memperjelas legibilitas */
-    color: #666; /* Warna teks untuk paragraf */
-}
 
 
-
+/*------------------------------------- Footer------------------------------------------- */
 /*-----------------------------------End Page-------------------------------------------*/
 .end-page {
     padding: 150px 0;
@@ -192,39 +202,37 @@ body {
     font-size: 16px;
 }
 
-
-
-/*------------------------------------- Footer------------------------------------------- */
-.footer {
+footer {
+    background-color: #060607;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
     position: fixed;
-    left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #060607; /* Warna latar belakang footer */
-    text-align: center;
-    padding: 10px 0;
-    color: #fff; /* Warna teks footer */
-    z-index: 1000; /* Pastikan footer muncul di atas konten lain */
-    border-top: 1px solid #060607; /* Garis atas footer */
-}
-
-/* Efek hover pada footer */
-footer:hover {
-background-color: #292e33; /* Ubah warna latar belakang saat dihover */
-}
-
-
-/* CSS untuk menyembunyikan footer */
-.hidden-footer {
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.3s ease;
-margin-top: -100px;
-padding: 20px 0; /* Padding untuk footer */
-}
-
-/* CSS untuk menampilkan footer saat discroll ke bawah */
-.show-footer {
-opacity: 1;
-pointer-events: auto;
-}
+    transition: background-color 0.3s ease; /* Efek transisi untuk perubahan warna latar belakang */
+    /* Tambahkan class hidden-footer agar tidak terlihat secara default */
+    opacity: 0;
+    pointer-events: none;
+    }
+    
+    /* Efek hover pada footer */
+    footer:hover {
+    background-color: #292e33; /* Ubah warna latar belakang saat dihover */
+    }
+    
+    
+    /* CSS untuk menyembunyikan footer */
+    .hidden-footer {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    margin-top: -100px;
+    padding: 20px 0; /* Padding untuk footer */
+    }
+    
+    /* CSS untuk menampilkan footer saat discroll ke bawah */
+    .show-footer {
+    opacity: 1;
+    pointer-events: auto;
+    }

@@ -38,7 +38,7 @@
           <li><a class="dropdown-item" href="{{ route('visimisi') }}">Visi dan Misi</a></li>
           <li><a class="dropdown-item" href="{{ route('aparatur') }}">Aparatur</a></li>
           <li><a class="dropdown-item" href="{{ route('strukturorganisasi') }}">Struktur Organisasi</a></li>
-          <li><a class="dropdown-item" href="#">Layanan Kami</a></li>
+          <li><a class="dropdown-item" href="{{ route('layanan') }}">Layanan Kami</a></li>
         </ul>
       </li>
             <li class="nav-item">

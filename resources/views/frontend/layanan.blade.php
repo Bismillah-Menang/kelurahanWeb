@@ -6,7 +6,7 @@
     <title>Visi Misi</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/stylemisi_visi.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layanan.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
@@ -54,35 +54,73 @@
       </div>
     </nav>
     <!---------------------------------------END Navbar-------------------------------------------------->
-    <!-------------------------------------- VISI MISI -------------------------------------------------->
-    <h1>Visi dan Misi</h1>
-    <section class="visimisi-page" id="visimisi">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="img">
-                    <img src="{{ asset('img/visimisi1.png') }}" alt="">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="content">
-                    <div class="content-boxs">
-                        <div class="visi">
-                        <h2>Visi</h2>
-                        <img src="{{ asset('img/visi.png') }}" alt="Logo">
-                        <p>Kelurahan Semarapura Tengah yang Unggul dan Sejahtera melalui Pelayana Prima dan Pemberdayaan Masyarakat.</p>
-                        </div>
-                        <div class="misi">
-                            <h2>Misi</h2>
-                        <img src="{{ asset('img/visi.png') }}" alt="Logo">
-                        <p>Meningkatkan kualitas penyelenggaraan pemerintahan, pembangunan dan pelayanan publik di Kelurahan</p>
-                        </div>
-                    </div>  
-                </div>
-            </div>
+    <!-- Layanan Section -->
+    <section id ="layanan" class="features" style="background-color: #fff;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-3 gap-6 md:grid-cols-4 lg:grid-cols-6">
+        
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector1.png') }}" alt="Icon 1" class="mb-2">
+            <span class="text-sm text-zinc-800">Surat Keterangan Tidak Mampu</span>
         </div>
-    </div>
-    </section>
+        
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector2.png') }}" alt="Icon 2" class="mb-2">
+            <span class="text-sm text-zinc-800">Surat Izin Usaha</span>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector3.png') }}" alt="Icon 3" class="mb-2">
+            <span class="text-sm text-zinc-800">Akta Kelahiran</span>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector4.png') }}" alt="Icon 4" class="mb-2">
+            <span class="text-sm text-zinc-800">Surat Berkelakuan Baik</span>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector5.png') }}" alt="Icon 5" class="mb-2">
+            <span class="text-sm text-zinc-800">Surat Harga Tanah</span>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector6.png') }}" alt="Icon 6" class="mb-2">
+            <span class="text-sm text-zinc-800">Akta Kematian</span>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector7.png') }}" alt="Icon 7" class="mb-2">
+            <span class="text-sm text-zinc-800">Akta Kematian</span>
+        </div>
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector8.png') }}" alt="Icon 8" class="mb-2">
+            <span class="text-sm text-zinc-800">Akta Kematian</span>
+        </div>
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector9.png') }}" alt="Icon 9" class="mb-2">
+            <span class="text-sm text-zinc-800">Akta Kematian</span>
+        </div>
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector10.png') }}" alt="Icon 10" class="mb-2">
+            <span class="text-sm text-zinc-800">Akta Kematian</span>
+        </div>
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector11.png') }}" alt="Icon 11" class="mb-2">
+            <span class="text-sm text-zinc-800">Akta Kematian</span>
+        </div>
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+            <img src="{{ asset('img/Vector12.png') }}" alt="Icon 12" class="mb-2">
+            <span class="text-sm text-zinc-800">Akta Kematian</span>
+        </div>
+</div>
+</div>
+</section>
+
+
+
+
+    <!---------------------------------------------------------------------------------------------- --->
     <section class="end-page" id="end">
     <div class="container-end">
         <div class="row">

@@ -39,7 +39,7 @@
           <li><a class="dropdown-item" href="{{ route('visimisi') }}">Visi dan Misi</a></li>
           <li><a class="dropdown-item" href="{{ route('aparatur') }}">Aparatur</a></li>
           <li><a class="dropdown-item" href="{{ route('strukturorganisasi') }}">Struktur Organisasi</a></li>
-          <li><a class="dropdown-item" href="#">Layanan Kami</a></li>
+          <li><a class="dropdown-item" href="{{ route('layanan') }}">Layanan Kami</a></li>
         </ul>
       </li>
             <li class="nav-item">
@@ -135,7 +135,7 @@ efisiensi dan efektivitas tanpa terbatas oleh waktu dan lokasi.</p>
                         <p class="jabatan-5">Kasi Pemerintahan</p>
                     </div>
                 </div>
-            </div> <button class="button-3">Selengkapnya</button>
+            </div> <button class="button-3" onclick="window.location='{{ route('aparatur') }}'">Selengkapnya</button>
         </div>
     </section>
 <!-- Layanan Section -->
@@ -195,7 +195,7 @@ efisiensi dan efektivitas tanpa terbatas oleh waktu dan lokasi.</p>
                 </div>
             </div>
         </div>
-    </div><button class="button-4">Selengkapnya</button>
+    </div><button class="button-4" onclick="window.location='{{ route('layanan') }}'">Selengkapnya</button>
 </section>
 
 <!-- Berita Terbaru Section -->

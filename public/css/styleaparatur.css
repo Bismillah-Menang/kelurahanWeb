@@ -296,17 +296,20 @@ h1{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #f8f9fa; /* Warna latar belakang footer */
+    background-color: #060607; /* Warna latar belakang footer */
     text-align: center;
-    padding: 10px 0;
-    color: #333; /* Warna teks footer */
-    z-index: 1000; /* Pastikan footer muncul di atas konten lain */
-    border-top: 1px solid #ddd; /* Garis atas footer */
+    padding: 20px 0;
+    color: #fff; 
+    border-top: 1px solid #060607; 
+    transition: background-color 0.3s ease; 
+pointer-events: none;
 }
+
 /* Efek hover pada footer */
 footer:hover {
-background-color: #292e33; /* Ubah warna latar belakang saat dihover */
+background-color: #292e33;
 }
+
 
 /* CSS untuk menyembunyikan footer */
 .hidden-footer {
