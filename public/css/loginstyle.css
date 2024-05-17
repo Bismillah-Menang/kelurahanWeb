@@ -122,3 +122,20 @@ h2 {
     margin-right: 10px; /* Jarak antara logo 3 dan logo 4 */
 }
 }
+/* CSS untuk tombol back */
+.back-btn {
+    position: absolute; /* Posisi absolut */
+    top: 10px; /* Jarak dari atas */
+    left: -200px;
+    background-color: #052158; /* Warna background */
+    color: #fff; /* Warna teks */
+    padding: 0.5rem 5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    z-index: 1000; /* Pastikan tombol berada di atas elemen lainnya */
+}
+
+.back-btn:hover {
+    background-color: #052158; /* Warna background saat hover */
+    color: #fff; /* Warna teks saat hover */
+}

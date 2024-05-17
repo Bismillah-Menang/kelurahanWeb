@@ -49,41 +49,58 @@ body {
 /*-----------------------------------------------------------------------------------------------------*/
 
 /*--------------------------------------------Layanan---------------------------------------------*/
-/* Target the container for grid items */
-.features .grid {
+/* CSS untuk section layanan */
+/* CSS untuk section layanan */
+#layanan {
+    background-color: #fff;
+    padding: 3rem 1rem;
+}
+
+#layanan .grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Adjust column count as needed */
-    gap: 30px; /* Adjust the gap between grid items */
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  
-  /* Style each grid item */
-  .features .grid .bg-white {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-       
-      }
-  
-  /* Style the span element within each grid item */
-  .features .grid .bg-white .text-sm {
-    margin-top: 12px; /* Adjust spacing between image and text */
+    grid-template-columns: repeat(1, 1fr); /* Default 1 kolom untuk layar kecil */
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    #layanan .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar kecil hingga sedang */
+    }
+}
+
+@media (min-width: 768px) {
+    #layanan .grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 kolom untuk layar sedang ke atas */
+    }
+}
+
+#layanan .grid-item {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    border: 2px solid #e5e7eb; /* Menambahkan border */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: #4b5563; /* Adjust text color */
-  }
-  
-  /* Ensure the image stays centered above the text */
-  .features .grid .bg-white img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%; /* Ensure the image stays within container */
-  }
-  
+    transition: border-color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+#layanan .grid-item:hover {
+    border-color: #3b82f6; /* Ubah warna border saat hover */
+}
+
+#layanan .grid-item img {
+    margin-bottom: 0.5rem;
+    width: 80px; /* Perbesar ukuran gambar */
+    height: 80px; /* Perbesar ukuran gambar */
+}
+
+#layanan .grid-item span {
+    font-size: 0.875rem; /* ukuran teks kecil */
+    color: #4b5563; /* warna teks */
+}
 
 /*----------------------------------------DROPDOWN------------------------------------------------------*/
 

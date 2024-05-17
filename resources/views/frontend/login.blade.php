@@ -15,6 +15,9 @@
         <div class="row">
             <div class="col-md-6">
            <div class="left">
+           <a href="javascript:history.back()" class="btn back-btn">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </a>
             <div class="img">
            <img src="{{ asset('img/LogoBondowoso.png') }}" class="logo1" alt="">
            <img src="{{ asset('img/Group 7.png') }}" class="logo2" alt="">
