@@ -93,8 +93,8 @@ body {
 
 #layanan .grid-item img {
     margin-bottom: 0.5rem;
-    width: 80px; /* Perbesar ukuran gambar */
-    height: 80px; /* Perbesar ukuran gambar */
+    width: 70px; /* Perbesar ukuran gambar */
+    height: 70px; /* Perbesar ukuran gambar */
 }
 
 #layanan .grid-item span {
