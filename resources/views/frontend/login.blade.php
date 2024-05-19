@@ -33,10 +33,22 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
                 <div class="login-header">
             <h2>Log In</h2>
         </div>
-        <form class="login-form" action="#" method="post">
-            <input type="text" name="username" placeholder="Username" required>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors as $item)
+                        <li>{{ $item }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form class="login-form" action="{{route ('masuk')}}" method="post">
+            @csrf
+            <div class="mb-3">
+                <input type="email" name="email" value="{{old('email')}}" placeholder="Username" required>
+            </div>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" id="loginBtn" class="nav-link" href="{{ route('login') }}">Login</button>
+            <button type="submit" id="loginBtn" class="nav-link" href="">Login</button>
             <div class="forgot-password">
                 <a href="#">Forgot password?</a>
             </div>
@@ -46,19 +58,28 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
         </div>
     </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        @if (Session::has('berhasil'))
+            <script>
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "{{ Session::get('berhasil') }}",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            </script>
+        @elseif (Session::has('failed'))
+            <script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "{{ Session::get('failed') }}",
+                });
+            </script>
+        @endif
+
+
 </body>
-<script>
-    // Ambil tombol "Login" berdasarkan id
-    var loginBtn = document.getElementById('loginBtn');
-
-    // Tambahkan event listener untuk menangani klik pada tombol "Login"
-    loginBtn.addEventListener('click', function(event) {
-        // Mencegah perilaku default dari tautan
-        event.preventDefault();
-
-        // Ganti URL halaman dengan URL yang diinginkan
-        window.location.href = "dashboard"; // Ganti "url_halaman_baru" dengan URL yang sesuai
-    });
-</script>
-
 </html>

@@ -9,12 +9,18 @@ use App\Http\Controllers\AparaturController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // Rute untuk halaman utama
 Route::get('/', [HomeController::class, 'index']);
 
 // Rute untuk halaman login
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::middleware(['guest'])->group(function(){
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('form');
+    Route::post('/login',[AuthController::class,'login'])->name('masuk');    
+});
+//Rute Logout 
+Route::get('/logout',[DashboardController::class,'logout'])->name('keluar');
 
 // Rute untuk halaman dashboard
 Route::get('/dashboard', [DashboardController::class, 'dashboardindex'])->name('dashboard');

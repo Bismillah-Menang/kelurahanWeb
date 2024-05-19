@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function dashboardindex()
+    function dashboardindex()
     {
     return view ('frontend.dashboard');
+    }
+    function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }
