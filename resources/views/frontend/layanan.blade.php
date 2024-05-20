@@ -48,7 +48,7 @@
               <a class="nav-link" href="#berita">Hubungi Kami</a>
             </li>
               <li class="nav-item">
-    <a id="loginBtn" class="nav-link" href="{{ route('login') }}">Login</a>
+    <a id="loginBtn" class="nav-link" href="{{ route('masuk') }}">Login</a>
 </li>
         </div>
       </div>

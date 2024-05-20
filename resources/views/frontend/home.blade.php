@@ -65,7 +65,7 @@
 luasnya kepada masyarakan Badean akan <br>
 mempermudah dalam proses pengajuan surat yang dilakukan <br>
 oleh masyarakat</p>
-<button class="button-1">Mulai Pengajuan</button>
+<button class="button-1">Download Aplikasi</button>
 <button class="button-2">Hubungi Admin</button>
 <img src="{{ asset('img/people 1.png') }}"  name="gambar-people">
             </div> 

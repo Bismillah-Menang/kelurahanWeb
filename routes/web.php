@@ -19,12 +19,14 @@ Route::middleware(['guest'])->group(function(){
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('form');
     Route::post('/login',[AuthController::class,'login'])->name('masuk');    
 });
-//Rute Logout 
-Route::get('/logout',[DashboardController::class,'logout'])->name('keluar');
 
-// Rute untuk halaman dashboard
-Route::get('/dashboard', [DashboardController::class, 'dashboardindex'])->name('dashboard');
-
+//Rute untuk Login
+Route::middleware(['auth'])->group(function(){
+    //Rute Logout 
+    Route::get('/logout',[DashboardController::class,'logout'])->name('keluar');
+    // Rute untuk halaman dashboard
+    Route::get('/dashboard', [DashboardController::class, 'dashboardindex'])->name('dashboard');
+});
 // Rute untuk halaman data pegawai
 Route::get('/data-pegawai', [DataPegawaiController::class, 'index'])->name('data-pegawai');
 
