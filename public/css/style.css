@@ -77,7 +77,6 @@
 .nav-item.dropdown:hover .dropdown-toggle {
     color: #007bff; 
 }
-
 /*------------------------------------------------------------------------------------------------------*/
 /*-----------------------------------Section HERO GRADIENT-------------------------------------------------*/
 body {
@@ -585,4 +584,8 @@ padding: 20px 0; /* Padding untuk footer */
 opacity: 1;
 pointer-events: auto;
 }
+/*----------------------------responsive--------------------------------*/
+/* CSS untuk membuat navbar responsif */
+
+
 

@@ -1,0 +1,100 @@
+@media (min-width: 670px) and (max-width: 1024px) {
+    /* Navbar */
+    .navbar-brand img {
+        margin-left: 10px; /* Mengurangi margin kiri gambar logo */
+    }
+    .navbar-brand img[name="logo"] {
+        margin-right: 10px; /* Mengatur jarak antara logo pertama dan kedua */
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 1rem; /* Mengurangi jarak kanan antara item navbar */
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 1.8rem; /* Menyesuaikan ukuran font judul hero */
+        margin-left: -20px;
+        margin-top: 30px;
+    }
+
+    .hero p {
+        font-size: 0.85rem; /* Menyesuaikan ukuran font paragraf hero */
+        margin-top: 15px; /* Mengurangi margin atas paragraf hero */
+        margin-left: -70px;
+    }
+
+    .button-1,
+    .button-2 {
+        width: 14rem; /* Menyesuaikan lebar tombol */
+        margin-left: -13%; /* Menyesuaikan jarak kiri antara tombol */
+        margin-bottom: 8px; /* Mengurangi margin bawah tombol */
+    }
+
+    img[name="gambar-people"] {
+        margin-left: 0; /* Menghilangkan margin kiri */
+        margin-right: 0; /* Menghilangkan margin kanan */
+        display: block;
+        margin: 0 auto; /* Memusatkan gambar horizontal */
+        width: 150px;
+        height: 150px;
+    }
+
+    /*section about */
+    #about {
+        padding: 60px 0;
+    }
+
+    #about h2 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .features1 .container {
+        max-width: 50%;
+        padding: 0 15px;
+    }
+
+    .features1 .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .feature-item1 {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-left: -100px;
+        margin-right: 180px;
+    }
+
+    .feature-item1 img {
+        max-width: 50%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .feature-item1 p {
+        font-size: 8px;
+        line-height: 1.5;
+        margin-top: -480px;
+        margin-left: -90px;
+    }
+
+    /* Gambar yang berbeda untuk web dan mobile */
+
+
+/* Tampilan untuk layar yang lebih kecil dari 670px */
+@media (max-width: 669px) {
+    img[name="img-web"] {
+        display: none;
+    }
+
+    img[name="img-mobile"] {
+        display: block;
+    }
+
+    /*aparatur section*/
+}}
