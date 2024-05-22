@@ -139,3 +139,62 @@ h2 {
     background-color: #052158; /* Warna background saat hover */
     color: #fff; /* Warna teks saat hover */
 }
+/*Responsive*/
+@media (max-width: 768px) {
+    .back-btn {
+        padding: 0.5rem 1.5rem;
+        left: 15px;
+        top: 5px;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-btn {
+        padding: 0.5rem 1rem;
+        left: 15px;
+        top: 5px;
+        font-size: 0.75rem;
+    }
+}
+@media (max-width: 1024px) {
+    .right {
+        margin-left: 15%;
+        padding: 8%;
+        margin-top: 100px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .right {
+        margin-left: -5%;
+        padding: 5%;
+        margin-top: 80px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .right {
+        margin-left: 0;
+        padding: 5%;
+        margin-top: 50px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .login-form input,
+    .login-form button {
+        padding: 10px;
+    }
+}

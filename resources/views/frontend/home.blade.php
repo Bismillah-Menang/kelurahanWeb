@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
 
 </head>
@@ -65,7 +66,7 @@
 luasnya kepada masyarakan Badean akan <br>
 mempermudah dalam proses pengajuan surat yang dilakukan <br>
 oleh masyarakat</p>
-<button class="button-1">Mulai Pengajuan</button>
+<button class="button-1">Download Aplikasi</button>
 <button class="button-2">Hubungi Admin</button>
 <img src="{{ asset('img/people 1.png') }}"  name="gambar-people">
             </div> 
