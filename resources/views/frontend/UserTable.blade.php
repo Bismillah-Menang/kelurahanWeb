@@ -23,7 +23,7 @@
         <!-- Main row -->
         <div class="row">
             <div class="col-12">
-                <a href="{{route('create')}}" class="btn btn-primary mb-3">Tambah Data</a>
+                <a href="{{route('user.create')}}" class="btn btn-primary mb-3">Tambah Data</a>
               <div class="card">
                 <div class="card-header">
                   <div class="card-tools">
