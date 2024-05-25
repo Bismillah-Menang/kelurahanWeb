@@ -30,20 +30,29 @@
               <!-- /.card-header -->
 
               <!-- form start -->
-              <form action="{{route('user.make')}}" method="POST">
+              <form action="{{ route('user.make') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama</label>
-                    <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap">
+                    <label for="exampleInputNama1">Nama</label>
+                    <input type="text" name="name" class="form-control" id="exampleInputNama1" placeholder="Nama Lengkap" value="{{ old('name') }}">
+                    @error('name')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                   </div>
                   <div class="form-group">
-                      <label for="exampleInputEmail2">Email address</label>
-                      <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
-                    </div>
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="{{ old('email') }}">
+                      @error('email')
+                        <small class="text-danger">{{ $message }}</small>
+                      @enderror
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    @error('password')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                   </div>
                 </div>
                 <!-- /.card-body -->

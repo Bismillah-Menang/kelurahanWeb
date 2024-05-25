@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -29,12 +30,23 @@ class AdminController extends Controller
     }
     function make(Request $request)
     {
-        $validator = Validator::make($request->all(),
-            [
-                'email' => 'required|email',
-                'name' => 'required',
-                'password' => 'required'
-            ]);
-            if($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+
+        $data['name']       = $request->name;
+        $data['email']      = $request->email;
+        $data['password']   = Hash::make($request->password);
+        
+        User::create($data);
+        return redirect()->route('user');
+
+        
     }
 }
