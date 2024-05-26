@@ -39,11 +39,13 @@ class AdminController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator);
         }
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 'user' // Assigning the role as 'user'
+        ];
 
-        $data['name']       = $request->name;
-        $data['email']      = $request->email;
-        $data['password']   = Hash::make($request->password);
-        
         User::create($data);
         return redirect()->route('user');
 
