@@ -27,9 +27,14 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/logout',[AdminController::class,'logout'])->name('keluar');
     // Rute untuk halaman dashboard
     Route::get('/dashboard', [AdminController::class, 'dashboardindex'])->name('dashboard');
+    //Rute Membuat Akun User
     Route::get('/user', [AdminController::class, 'userindex'])->name('user');
     Route::get('/create', [AdminController::class, 'create'])->name('user.create');
     Route::post('/make', [AdminController::class, 'make'])->name('user.make');
+    //Rute Untuk Membuat Petugas
+    Route::get('/petugas', [AdminController::class, 'indexPetugas'])->name('petugas');
+    Route::get('/createpetugas',[AdminController::class, 'makePetugas'])->name('create.petugas');
+    Route::post('/addpetugas', [AdminController::class, 'createpetugas'])->name('add.petugas');
 });
 // Rute untuk halaman data pegawai
 Route::get('/data-pegawai', [DataPegawaiController::class, 'index'])->name('data-pegawai');
