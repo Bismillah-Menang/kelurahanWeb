@@ -30,6 +30,9 @@ Route::middleware(['auth'])->group(function(){
     //Rute Membuat Akun User
     Route::get('/user', [AdminController::class, 'userindex'])->name('user');
     Route::get('/create', [AdminController::class, 'create'])->name('user.create');
+    Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('user.edit');
+    Route::put('/update/{id}', [AdminController::class, 'update'])->name('user.update');
+    Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('user.delete');
     Route::post('/make', [AdminController::class, 'make'])->name('user.make');
     //Rute Untuk Membuat Petugas
     Route::get('/petugas', [AdminController::class, 'indexPetugas'])->name('petugas');

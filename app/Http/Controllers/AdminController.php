@@ -37,23 +37,57 @@ class AdminController extends Controller
     function make(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required'
+            'name'          => 'required',
+            'email'         => 'required|email',
+            'password'      => 'required'
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator);
         }
         $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'role' => 'user' // Assigning the role as 'user'
+            'name'          => $request->name,
+            'email'         => $request->email,
+            'password'      => Hash::make($request->password),
+            'role'          => 'user' // Assigning the role as 'user'
         ];
 
         User::create($data);
         return redirect()->route('user');        
+    }
+    //method edit data user
+    function edit(Request $request,$id)
+    {
+        $data = User::find($id);
+        return view('frontend.edituser',compact('data'));
+    }
+
+    function update(Request $request,$id)
+    {
+        $validator = Validator::make($request->all(), [
+            'name'          => 'required',
+            'email'         => 'required|email',
+            'password'      => 'nullable'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+        $data['email']          = $request -> email;
+        $data['name']           = $request -> name;
+        $data['password']       = Hash::make($request -> password);
+
+        User::whereId($id)->update($data);
+        return redirect()->route('user'); 
+    }
+
+    function delete(Request $request,$id)
+    {
+        $data = User::find($id);
+        if($data){
+            $data -> delete();
+        }
+        return redirect()->route('user');
     }
 
     //Make User Petugas
