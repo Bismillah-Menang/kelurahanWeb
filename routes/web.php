@@ -37,6 +37,7 @@ Route::middleware(['auth'])->group(function(){
     //Rute Untuk Membuat Petugas
     Route::get('/petugas', [AdminController::class, 'indexPetugas'])->name('petugas');
     Route::get('/createpetugas',[AdminController::class, 'makePetugas'])->name('create.petugas');
+    Route::get('/updatepetugas/{id}',[AdminController::class, 'updatePetugas'])->name('update.petugas');
     Route::post('/addpetugas', [AdminController::class, 'createpetugas'])->name('add.petugas');
 });
 // Rute untuk halaman data pegawai

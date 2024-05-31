@@ -26,6 +26,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('lte/plugins/summernote/summernote-bs4.min.css')}}">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -243,6 +244,14 @@
                     </a>
                   </li>
                 </ul>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('keluar')}}" class="nav-link">
+                  <i class="fi fi-sr-sign-out-alt"></i>
+                  <p>
+                    Logout
+                  </p>
+                </a>
               </li>
         </ul>
       </nav>
