@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DatapegawaiController;
@@ -29,9 +30,21 @@ Route::middleware(['guest'])->group(function(){
 //Rute untuk Login
 Route::middleware(['auth'])->group(function(){
     //Rute Logout 
-    Route::get('/logout',[DashboardController::class,'logout'])->name('keluar');
+    Route::get('/logout',[AdminController::class,'logout'])->name('keluar');
     // Rute untuk halaman dashboard
-    Route::get('/dashboard', [DashboardController::class, 'dashboardindex'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'dashboardindex'])->name('dashboard');
+    //Rute Membuat Akun User
+    Route::get('/user', [AdminController::class, 'userindex'])->name('user');
+    Route::get('/create', [AdminController::class, 'create'])->name('user.create');
+    Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('user.edit');
+    Route::put('/update/{id}', [AdminController::class, 'update'])->name('user.update');
+    Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('user.delete');
+    Route::post('/make', [AdminController::class, 'make'])->name('user.make');
+    //Rute Untuk Membuat Petugas
+    Route::get('/petugas', [AdminController::class, 'indexPetugas'])->name('petugas');
+    Route::get('/createpetugas',[AdminController::class, 'makePetugas'])->name('create.petugas');
+    Route::get('/updatepetugas/{id}',[AdminController::class, 'updatePetugas'])->name('update.petugas');
+    Route::post('/addpetugas', [AdminController::class, 'createpetugas'])->name('add.petugas');
 });
 // Rute untuk halaman data pegawai
 Route::get('/data-pegawai', [DataPegawaiController::class, 'index'])->name('data-pegawai');
