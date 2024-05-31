@@ -6,7 +6,7 @@
     padding: 10%; /* Jarak padding atas dan bawah dari section */
     margin-left: 15%; /* Margin kiri */
     text-align: left;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 /* Styling untuk elemen 'h2' */
 h2 {
@@ -17,7 +17,7 @@ h2 {
     margin-bottom: 20px;
 }
 /* Styling untuk elemen 'input' di dalam class 'login-form' */
-.login-form input {
+ input {
     width: 100%; /* Lebar input 100% dari container */
     padding: 15px; /* Padding di sekitar input */
     margin-bottom: 20px; /* Jarak antar input */
@@ -27,7 +27,7 @@ h2 {
     font-family: "Poppins", sans-serif; /* Menggunakan font Poppins */
 }
 /* Styling untuk elemen 'button' di dalam class 'login-form' */
-.login-form button {
+button {
     width: 100%; /* Lebar input 100% dari container */
     background-color: #1DD8A3;
     padding: 15px; /* Padding di sekitar input */
@@ -38,12 +38,12 @@ h2 {
     font-family: "Poppins", sans-serif; /* Menggunakan font Poppins */
 }
 /* Hover effect pada elemen 'input' dan 'button' di dalam class 'login-form' */
-.login-form input:hover,
-.login-form button:hover {
+ input:hover,
+ button:hover {
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Shadow saat dihover */
 }
 /* Focus effect pada elemen 'input' di dalam class 'login-form' */
-.login-form input:focus {
+ input:focus {
     outline: none; /* Hapus outline default pada focus */
     border-color: #392F8F; /* Warna border saat focus */
     box-shadow: 3px 3px 10px rgba(57, 47, 143, 0.3); /* Shadow saat focus */
@@ -198,20 +198,4 @@ h2 {
     .login-form button {
         padding: 10px;
     }
-}
-.register-link {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.register-link span {
-    font-size: 16px;
-    color: #000;
-}
-.register-link a {
-    font-size: 16px;
-    color: #007bff;
-    text-decoration: none;
-}
-.register-link a:hover {
-    text-decoration: underline;
 }

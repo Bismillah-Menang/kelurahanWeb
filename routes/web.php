@@ -10,6 +10,8 @@ use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+//bagian pages
+use App\Http\Controllers\SktmController;
 
 // Rute untuk halaman utama
 Route::get('/', [HomeController::class, 'index']);
@@ -18,6 +20,10 @@ Route::get('/', [HomeController::class, 'index']);
 Route::middleware(['guest'])->group(function(){
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('form');
     Route::post('/login',[AuthController::class,'login'])->name('masuk');    
+
+  // Register routes
+  Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+  Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 });
 
 //Rute untuk Login
@@ -42,6 +48,9 @@ Route::get('/strukturorganisasi', [StrukturOrganisasiController::class, 'showStr
 // Rute untuk halaman layanan
 Route::get('/layanan', [LayananController::class, 'showLayanan'])->name('layanan');
 // routes/web.php
+
+//Bagaian Pages 
+    Route::get('/sktm', [SktmController::class, 'showsktm'])->name('sktm');
 
 // Definisikan rute untuk halaman home
 Route::get('/home', function () {

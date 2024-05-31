@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/loginstyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/registerstyle.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
@@ -31,7 +31,7 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
             <div class="col-md-6">
                 <div class="right">
                 <div class="login-header">
-            <h2>Log In</h2>
+            <h2>Register</h2>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -42,20 +42,17 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
                 </ul>
             </div>
         @endif
-        <div class="register-link mt-3">
-            <span>Belum Punya Akun? Silahkan </span><a href="{{ route('register') }}">Daftar</a>
-        </div>
-        <form class="login-form" action="{{route ('masuk')}}" method="post">
+        <form action="{{route('register')}}" method="post">
             @csrf
-            <div class="mb-3">
-                <input type="email" name="email" value="{{old('email')}}" placeholder="Username" required>
-            </div>
+            <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required>
+            <input type="email" name="email" placeholder="E-mail" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" id="loginBtn" class="nav-link" href="">Login</button>
-            <div class="forgot-password">
-                <a href="#">Forgot password?</a>
-            </div>
+            <input type="password" name="password_confirmation" placeholder="Password" required>
+            <button type="submit">Daftar</button>
         </form>
+        <div class="login-link">
+            <span>Sudah Punya Akun? Silakan </span><a href="{{route('masuk')}}">Login</a>
+        </div>
                 </div>
             </div>
         </div>

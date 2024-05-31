@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visi Misi</title>
+    <title>SKTM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/layanan.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pagesstyle/sktmstyle.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
@@ -54,78 +54,39 @@
       </div>
     </nav>
     <!---------------------------------------END Navbar-------------------------------------------------->
-    <!-- Layanan Section -->
-    <section id="layanan" class="features">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid">
-            
-            <div class="grid-item">
-            <a href="{{ route('sktm') }}">
-                <img src="{{ asset('img/Vector1.png') }}" alt="Icon 1" class="mb-2">
-                <span class="text-sm text-zinc-800"><br>Surat Keterangan Tidak Mampu</span>
-            </a>
+    <!---------------SKTM-------------------->
+    <h1>Surat Keterangan Tidak Mampu</h1>
+    <section class="sktm-page" id="sktm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 left">
+            <div class="left">
+          <img src="{{ asset('img/Vector1.png') }}" name="logo"></div>
+          <div class="col-md-12 right">
+            <div class="right">
+            <p><b>Surat Keterangan Tidak Mampu (SKTM)</b> adalah surat keterangan<br>
+               resmi yang menyatakan ketidakmampuan finansial seseorang. <br>
+               SKTM diterbitkan oleh kepala desa atau lurah setempat dan <br>
+                memiliki berbagai manfaat, seperti untuk mengajukan bantuan <br>
+                sosial, keringanan biaya pendidikan, atau bantuan kesehatan.</p>
+                <h4>Persyaratan:</h4>
+        <ul>
+          <li>Pengajuan dari RT/RW warga yang mengajukan SKTM</li>
+          <li>Fotocopy Kartu Tanda Penduduk (KTP)</li>
+          <li>Fotocopy Kartu Keluarga (KK)</li>
+        </ul>
             </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector2.png') }}" alt="Icon 2" class="mb-2">
-                <span class="text-sm text-zinc-800">Surat Izin Usaha</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector3.png') }}" alt="Icon 3" class="mb-2">
-                <span class="text-sm text-zinc-800">Akta Kelahiran</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector4.png') }}" alt="Icon 4" class="mb-2">
-                <span class="text-sm text-zinc-800">Surat Berkelakuan Baik</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector5.png') }}" alt="Icon 5" class="mb-2">
-                <span class="text-sm text-zinc-800">Surat Harga Tanah</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector6.png') }}" alt="Icon 6" class="mb-2">
-                <span class="text-sm text-zinc-800">Akta Kematian</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector7.png') }}" alt="Icon 7" class="mb-2">
-                <span class="text-sm text-zinc-800">Surat Cerai</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector8.png') }}" alt="Icon 8" class="mb-2">
-                <span class="text-sm text-zinc-800">Surat Perpindahan Domisili</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector9.png') }}" alt="Icon 9" class="mb-2">
-                <span class="text-sm text-zinc-800">Surat Domisili</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector10.png') }}" alt="Icon 10" class="mb-2">
-                <span class="text-sm text-zinc-800">Surat Belum Menikah</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector11.png') }}" alt="Icon 11" class="mb-2">
-                <span class="text-sm text-zinc-800">Surat Satu Nama</span>
-            </div>
-            
-            <div class="grid-item">
-                <img src="{{ asset('img/Vector12.png') }}" alt="Icon 12" class="mb-2">
-                <span class="text-sm text-zinc-800">SKCK</span>
-            </div>
-
+            <!-- Buttons -->
+        <div class="button-container">
+          <button class="left-button">Download Aplikasi</button>
+          <button class="right-button">Tanya Admin</button>
         </div>
-    </div>
-</section>
-
-    <!---------------------------------------------------------------------------------------------- --->
+          </div>     
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----------end------------>
     <section class="end-page" id="end">
     <div class="container-end">
         <div class="row">

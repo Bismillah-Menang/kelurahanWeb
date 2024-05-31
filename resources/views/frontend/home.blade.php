@@ -147,8 +147,9 @@ efisiensi dan efektivitas tanpa terbatas oleh waktu dan lokasi.</p>
         <div class="row">
             <div class="col-md-3">
                 <div class="layanan-item">
+                    <a href="{{ route('sktm') }}" style="text-decoration: none;">
                     <img src="{{ asset('img/Vector1.png') }}" alt="Layanan 1">
-                    <h3>Surat Keterangan Tidak Mampu</h3>
+                    <h3>Surat Keterangan Tidak Mampu</h3></a>
                 </div>
             </div>
             <div class="col-md-3">
