@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -19,6 +20,14 @@ class AdminController extends Controller
     {
         return view('admin.layout.dashboard',[
             'tittle' => 'Dashboard'
+        ]);
+    }
+    function showakunuser()
+    {
+        $data = User::where('role','user')->get();
+        return view ('admin.layout.akunuser',[
+            'tittle' => ' Data Akun User',
+            'data' => $data
         ]);
     }
 
@@ -47,10 +56,10 @@ class AdminController extends Controller
             'email'         => 'required|email',
             'password'      => 'required'
         ]);
-
+        // dd($request->all());
         if ($validator->fails()) {
-            return redirect()->back()->withInput()->withErrors($validator);
-        }
+            return redirect()->route('showUser')->with(Session::flash('failed',true));
+        }else{
         $data = [
             'name'          => $request->name,
             'email'         => $request->email,
@@ -59,7 +68,8 @@ class AdminController extends Controller
         ];
 
         User::create($data);
-        return redirect()->route('user');        
+        return redirect()->route('showUser')->with(Session::flash('berhasil tambah',true));    
+        } 
     }
     //method edit data user
     function edit(Request $request,$id)
@@ -77,14 +87,14 @@ class AdminController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withInput()->withErrors($validator);
+            return redirect()->route('showUser')->with(Session::flash('failed update',true));
         }
         $data['email']          = $request -> email;
         $data['name']           = $request -> name;
         $data['password']       = Hash::make($request -> password);
 
         User::whereId($id)->update($data);
-        return redirect()->route('user'); 
+        return redirect()->route('showUser')->with(Session::flash('berhasil Update',true)); 
     }
 
     function delete(Request $request,$id)
@@ -93,7 +103,7 @@ class AdminController extends Controller
         if($data){
             $data -> delete();
         }
-        return redirect()->route('user');
+        return redirect()->route('showUser')->with(Session::flash('berhasil hapus',true)); 
     }
 
     //Make User Petugas

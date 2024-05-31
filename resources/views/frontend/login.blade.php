@@ -63,25 +63,22 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
     </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        @if (Session::has('berhasil'))
-            
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "{{ Session::get('berhasil') }}",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            
-        @elseif (Session::has('failed'))
+    <script>    
+        @if (Session::has('belum login'))
             
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "{{ Session::get('failed') }}",
+                    text: "Anda Belum Login BROOO",
                 });
-                @endif
+        @elseif(Session::has('gagal login'))
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "GAGAL",
+            });
+         @endif
             </script>
 
 

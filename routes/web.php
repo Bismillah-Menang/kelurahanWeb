@@ -9,6 +9,7 @@ use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\AparaturController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\petugasRtController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 //bagian pages
@@ -18,39 +19,47 @@ use App\Http\Controllers\SktmController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'admin'],function(){
-    Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard']);
-
+    Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->name('admin_dashboard');
+    Route::get('/admin/akunuser',[AdminController::class,'showakunuser'])->name('showUser');
+    Route::post('/admin/user/make', [AdminController::class, 'make'])->name('user.make');
+    Route::put('/admin/akunuser/update/{id}', [AdminController::class, 'update'])->name('user.update');
+    Route::delete('/admin/akunuser/delete/{id}', [AdminController::class, 'delete'])->name('user.delete');
 });
+
+Route::group(['middleware' => 'petugas_rt'],function(){
+    Route::get('/petugasRt/dashboard', [petugasRtController::class, 'showpetugasRtDashboard'])->name('petugasRt_dashboard');
+    Route::get('/petugasRt/permintaansktm', [petugasRtController::class, 'showSktmrt'])->name('sktmrt');
+});
+Route::get('/logout',[AdminController::class,'logout'])->name('keluar');
 
 // Rute untuk halaman login
 Route::middleware(['guest'])->group(function(){
-    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('form');
-    Route::post('/login',[AuthController::class,'login'])->name('masuk');    
-
-  // Register routes
-  Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
-  Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 });
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('form');
+Route::post('/login',[AuthController::class,'login'])->name('masuk');    
+
+// Register routes
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 
 //Rute untuk Login
-Route::middleware(['auth'])->group(function(){
-    //Rute Logout 
-    Route::get('/logout',[AdminController::class,'logout'])->name('keluar');
-    // Rute untuk halaman dashboard
-    Route::get('/dashboard', [AdminController::class, 'dashboardindex'])->name('dashboard');
-    //Rute Membuat Akun User
-    Route::get('/user', [AdminController::class, 'userindex'])->name('user');
-    Route::get('/create', [AdminController::class, 'create'])->name('user.create');
-    Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('user.edit');
-    Route::put('/update/{id}', [AdminController::class, 'update'])->name('user.update');
-    Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('user.delete');
-    Route::post('/make', [AdminController::class, 'make'])->name('user.make');
-    //Rute Untuk Membuat Petugas
-    Route::get('/petugas', [AdminController::class, 'indexPetugas'])->name('petugas');
-    Route::get('/createpetugas',[AdminController::class, 'makePetugas'])->name('create.petugas');
-    Route::get('/updatepetugas/{id}',[AdminController::class, 'updatePetugas'])->name('update.petugas');
-    Route::post('/addpetugas', [AdminController::class, 'createpetugas'])->name('add.petugas');
-});
+// Route::middleware(['auth'])->group(function(){
+//     //Rute Logout 
+//     // Rute untuk halaman dashboard
+//     Route::get('/dashboard', [AdminController::class, 'dashboardindex'])->name('dashboard');
+//     //Rute Membuat Akun User
+//     Route::get('/user', [AdminController::class, 'userindex'])->name('user');
+//     Route::get('/create', [AdminController::class, 'create'])->name('user.create');
+//     Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('user.edit');
+//     Route::put('/update/{id}', [AdminController::class, 'update'])->name('user.update');
+//     Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('user.delete');
+//     Route::post('/make', [AdminController::class, 'make'])->name('user.make');
+//     //Rute Untuk Membuat Petugas
+//     Route::get('/petugas', [AdminController::class, 'indexPetugas'])->name('petugas');
+//     Route::get('/createpetugas',[AdminController::class, 'makePetugas'])->name('create.petugas');
+//     Route::get('/updatepetugas/{id}',[AdminController::class, 'updatePetugas'])->name('update.petugas');
+//     Route::post('/addpetugas', [AdminController::class, 'createpetugas'])->name('add.petugas');
+// });
 // Rute untuk halaman data pegawai
 Route::get('/data-pegawai', [DataPegawaiController::class, 'index'])->name('data-pegawai');
 

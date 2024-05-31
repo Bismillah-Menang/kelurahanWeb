@@ -31,16 +31,16 @@ class AuthController extends Controller
 
         if (Auth::attempt($infologin)) {
             if (Auth::User()->role ==  'admin') {
-                return redirect()->route('dashboard')->with(Session::flash('berhasil',true));
+                return redirect()->route('admin_dashboard')->with(Session::flash('berhasil',true));
             }elseif (Auth::User()->role ==  'petugas_rt') {
-                return redirect()->route('home');
+                return redirect()->route('petugasRt_dashboard')->with(Session::flash('berhasil',true));
             }elseif (Auth::User()->role ==  'petugas_rw') {
                     return redirect()->route('home');
             }elseif (Auth::User()->role ==  'user') {
-                return redirect()->route('form');
+                return redirect()->route('form')->with(Session::flash('gagal login',true));
             }
         } else {
-            return redirect()->route('masuk')->with('failed','Email Atau Password Salah');
+            return redirect()->route('form')->with(Session::flash('gagal login',true));
         }
         
     }

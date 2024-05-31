@@ -47,7 +47,6 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
             <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required>
             <input type="email" name="email" placeholder="E-mail" required>
             <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="password_confirmation" placeholder="Password" required>
             <button type="submit">Daftar</button>
         </form>
         <div class="login-link">

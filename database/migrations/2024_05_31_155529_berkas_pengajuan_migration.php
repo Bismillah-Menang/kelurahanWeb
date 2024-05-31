@@ -22,6 +22,10 @@ return new class extends Migration
             $table->time('waktu_pengajuan');
             $table->String('status')->nullable();
             $table->String('keterangan')->nullable();
+            $table->enum('jenis_layanan',['sktm','skck']);
+            $table->integer('id_pemohon');
+            $table->integer('id_rt');
+            $table->integer('id_rw');
             $table->timestamps();
         });
     }

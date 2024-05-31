@@ -72,15 +72,15 @@
       </li>
 
       <!-- Layouts -->
-      <li class="menu-item">
+      <li class="menu-item @active('sktmrt')">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Permintaan Layanan</div>
         </a>
 
         <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
+          <li class="menu-item @active('sktmrt')">
+            <a href="{{route('sktmrt')}}" class="menu-link">
               <div data-i18n="Without menu">SKTM</div>
             </a>
           </li>
@@ -93,49 +93,5 @@
       </li>
 
       <!-- Front Pages -->
-  
-      <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Data Master</span>
-      </li>
-      <!-- Apps -->
-      <li class="menu-item">
-        <a
-          href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
-          target="_blank"
-          class="menu-link">
-          <i class="menu-icon tf-icons bx bx-news"></i>
-          <div data-i18n="Email">Berita</div>
-          {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
-        </a>
-      </li>
-      <!-- Pages -->
-      <li class="menu-item @active('showUser')">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bxs-user-account"></i>
-          <div data-i18n="Account Settings">Data Akun</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item @active('showUser')">
-            <a href="{{route ('showUser')}}" class="menu-link">
-              <div data-i18n="Account">Akun User</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="pages-account-settings-notifications.html" class="menu-link">
-              <div data-i18n="Notifications">Akun Petugas RT</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="pages-account-settings-connections.html" class="menu-link">
-              <div data-i18n="Connections">Akun Petugas RW</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="pages-account-settings-connections.html" class="menu-link">
-              <div data-i18n="Connections">Akun Kelurahan</div>
-            </a>
-          </li>
-        </ul>
-      </li>
     </ul>
   </aside>

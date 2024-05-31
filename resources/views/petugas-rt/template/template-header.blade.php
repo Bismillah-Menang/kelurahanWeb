@@ -54,7 +54,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="../sneat/assets/js/config.js"></script>
-    <link rel="stylesheet" href="{{ asset('css/dashboard_admin.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/dashboard_rt.css')}}">
   </head>
 
   <body>
@@ -62,14 +62,14 @@
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <!-- Menu -->
-        @include('admin.component.slidebar')
+        @include('petugas-rt.component.slidebar')
    
         <!-- / Menu -->
 
         <!-- Layout container -->
         <div class="layout-page">
           <!-- Navbar -->
-            @include('admin.component.navbar')
+            @include('petugas-rt.component.navbar')
           <!-- / Navbar -->
 
           <!-- Content wrapper -->
