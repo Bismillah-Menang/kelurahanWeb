@@ -15,6 +15,12 @@ class AdminController extends Controller
     {
         return view('frontend.dashboard');
     }
+    function showAdminDashboard()
+    {
+        return view('admin.layout.dashboard',[
+            'tittle' => 'Dashboard'
+        ]);
+    }
 
     function logout()
     {

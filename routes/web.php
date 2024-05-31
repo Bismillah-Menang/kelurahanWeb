@@ -15,7 +15,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\SktmController;
 
 // Rute untuk halaman utama
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'admin'],function(){
+    Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard']);
+
+});
 
 // Rute untuk halaman login
 Route::middleware(['guest'])->group(function(){
@@ -65,8 +70,4 @@ Route::get('/layanan', [LayananController::class, 'showLayanan'])->name('layanan
 //Bagaian Pages 
     Route::get('/sktm', [SktmController::class, 'showsktm'])->name('sktm');
 
-// Definisikan rute untuk halaman home
-Route::get('/home', function () {
-    return view('frontend.home');
-})->name('home');  // Memberikan nama "home" pada rute ini
 

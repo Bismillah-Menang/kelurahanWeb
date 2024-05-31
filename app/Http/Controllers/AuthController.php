@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -29,7 +30,15 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($infologin)) {
-            return redirect()->route('dashboard')->with('berhasil','Berhasil Masuk');
+            if (Auth::User()->role ==  'admin') {
+                return redirect()->route('dashboard')->with(Session::flash('berhasil',true));
+            }elseif (Auth::User()->role ==  'petugas_rt') {
+                return redirect()->route('home');
+            }elseif (Auth::User()->role ==  'petugas_rw') {
+                    return redirect()->route('home');
+            }elseif (Auth::User()->role ==  'user') {
+                return redirect()->route('form');
+            }
         } else {
             return redirect()->route('masuk')->with('failed','Email Atau Password Salah');
         }

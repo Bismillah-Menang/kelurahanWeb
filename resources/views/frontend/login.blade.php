@@ -52,19 +52,20 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
             </div>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit" id="loginBtn" class="nav-link" href="">Login</button>
+        </form>
             <div class="forgot-password">
                 <a href="#">Forgot password?</a>
             </div>
-        </form>
+        
                 </div>
             </div>
         </div>
     </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script>
         @if (Session::has('berhasil'))
-            <script>
+            
                 Swal.fire({
                     position: "center",
                     icon: "success",
@@ -72,16 +73,16 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
                     showConfirmButton: false,
                     timer: 1500
                 });
-            </script>
+            
         @elseif (Session::has('failed'))
-            <script>
+            
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
                     text: "{{ Session::get('failed') }}",
                 });
+                @endif
             </script>
-        @endif
 
 
 </body>
