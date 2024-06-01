@@ -42,9 +42,6 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
                 </ul>
             </div>
         @endif
-        <div class="register-link mt-3">
-            <span>Belum Punya Akun? Silahkan </span><a href="{{ route('register') }}">Daftar</a>
-        </div>
         <form class="login-form" action="{{route ('masuk')}}" method="post">
             @csrf
             <div class="mb-3">
@@ -53,6 +50,9 @@ Solusi Terbaik untuk Surat-surat Anda!"</p>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit" id="loginBtn" class="nav-link" href="">Login</button>
         </form>
+        <div class="register-link mt-3">
+            <span>Belum Punya Akun? Silahkan </span><a href="{{ route('register') }}">Daftar</a>
+        </div>
             <div class="forgot-password">
                 <a href="#">Forgot password?</a>
             </div>

@@ -1,4 +1,4 @@
-@extends('petugas-rt.template.template-header')
+@extends('petugas-rw.template.template-header')
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card sktmrt">
@@ -43,17 +43,17 @@
                               <h5 class="modal-title" id="modalToggleLabel">Ubah Status</h5>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form action="{{route('updatestatus', ['id' => $item -> id])}}" method="POST">
+                            <form action="{{route('updatestatuses', ['id' => $item -> id])}}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="modal-body">
                                 <label for="select-status-{{$item->id}}" class="form-label">Verifikasi</label>
                                 <select id="select-status-{{$item->id}}" name="pilihstatus" class="form-select">
                                     <option value="Verifikasi Diterima">Verifikasi Diterima</option>
-                                    <option value="Verifikasi Ditolak">Verifikasi Ditolak</option>
+                                    {{-- <option value="Verifikasi Ditolak">Verifikasi Ditolak</option> --}}
                                 </select>
-                                <label for="inputketerangan-{{$item->id}}" class="form-label mt-2" id="keterangan-{{$item->id}}">Keterangan</label>
-                                <input type="text" class="form-control" name="inputketerangan" id="inputketerangan-{{$item->id}}" placeholder="Keterangan Ditolak" aria-describedby="defaultFormControlHelp" />
+                                {{-- <label for="inputketerangan-{{$item->id}}" class="form-label mt-2" id="keterangan-{{$item->id}}">Keterangan</label>
+                                <input type="text" class="form-control" name="inputketerangan" id="inputketerangan-{{$item->id}}" placeholder="Keterangan Ditolak" aria-describedby="defaultFormControlHelp" /> --}}
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Ubah Status</button>

@@ -35,7 +35,7 @@ class AuthController extends Controller
             }elseif (Auth::User()->role ==  'petugas_rt') {
                 return redirect()->route('petugasRt_dashboard')->with(Session::flash('berhasil',true));
             }elseif (Auth::User()->role ==  'petugas_rw') {
-                    return redirect()->route('home');
+                    return redirect()->route('petugasRw_dashboard')->with(Session::flash('berhasil',true));;
             }elseif (Auth::User()->role ==  'user') {
                 return redirect()->route('form')->with(Session::flash('gagal login',true));
             }

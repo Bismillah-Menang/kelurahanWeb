@@ -10,6 +10,7 @@ use App\Http\Controllers\AparaturController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\petugasRtController;
+use App\Http\Controllers\petugasRwController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 //bagian pages
@@ -29,6 +30,13 @@ Route::group(['middleware' => 'admin'],function(){
 Route::group(['middleware' => 'petugas_rt'],function(){
     Route::get('/petugasRt/dashboard', [petugasRtController::class, 'showpetugasRtDashboard'])->name('petugasRt_dashboard');
     Route::get('/petugasRt/permintaansktm', [petugasRtController::class, 'showSktmrt'])->name('sktmrt');
+    Route::put('/petugasRt/update/permintaansktm/{id}', [petugasRtController::class, 'ubahstatus'])->name('updatestatus');
+});
+Route::group(['middleware' => 'petugas_rw'],function(){
+    Route::get('/petugasRw/dashboard', [petugasRwController::class, 'showpetugasRwDashboard'])->name('petugasRw_dashboard');
+    Route::get('/petugasRw/permintaansktm', [petugasRwController::class, 'showSktmRw'])->name('sktmRw');
+    Route::put('/petugasRw/update/permintaansktm/{id}', [petugasRwController::class, 'ubahstatus'])->name('updatestatuses');
+
 });
 Route::get('/logout',[AdminController::class,'logout'])->name('keluar');
 

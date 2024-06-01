@@ -62,8 +62,8 @@
 
     <ul class="menu-inner py-1">
       <!-- Dashboards -->
-      <li class="menu-item @active('petugasRt_dashboard') open">
-        <a href="{{route ('petugasRt_dashboard')}}" class="menu-link">
+      <li class="menu-item @active('petugasRw_dashboard') open">
+        <a href="{{route ('petugasRw_dashboard')}}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Dashboards">Dashboards</div>
           {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
@@ -72,15 +72,15 @@
       </li>
 
       <!-- Layouts -->
-      <li class="menu-item @active('sktmrt')">
+      <li class="menu-item @active('sktmRw')">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Permintaan Layanan</div>
         </a>
 
         <ul class="menu-sub">
-          <li class="menu-item @active('sktmrt')">
-            <a href="{{route('sktmrt')}}" class="menu-link">
+          <li class="menu-item @active('sktmRw')">
+            <a href="{{route('sktmRw')}}" class="menu-link">
               <div data-i18n="Without menu">SKTM</div>
             </a>
           </li>

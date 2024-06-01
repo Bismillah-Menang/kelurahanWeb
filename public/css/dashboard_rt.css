@@ -19,3 +19,10 @@
 .sktmrt{
     padding: 15px 25px;
 }
+.status{
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 2px 7px;
+}
