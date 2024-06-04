@@ -30,25 +30,21 @@ class AdminController extends Controller
             'data' => $data
         ]);
     }
+    function showakunpetugas()
+    {
+        $data = User::where('role','petugas_rt')->get();
+        return view ('admin.layout.akunpetugas',[
+            'tittle' => ' Data Akun Petugas RT',
+            'data' => $data
+        ]);
+    }
 
     function logout()
     {
         Auth::logout(); 
         return redirect('/');
     }
-
-    // Make User account
-    function userindex()
-    {
-        $data = User::where('role','user')->get();
-        return view ('frontend.UserTable',compact('data'));
-    }
-
-    function create()
-    {
-        return view('frontend.CreateUser');
-    }
-
+    
     function make(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -105,38 +101,61 @@ class AdminController extends Controller
         }
         return redirect()->route('showUser')->with(Session::flash('berhasil hapus',true)); 
     }
-
+    
+    
+    function createPetugas(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name'          => 'required',
+            'email'         => 'required|email',
+            'password'      => 'required'
+        ]);
+        // dd($request->all());
+        if ($validator->fails()) {
+            return redirect()->route('showPetugas')->with(Session::flash('failed',true));
+        }else{
+            $data = [
+                'name'          => $request->name,
+                'email'         => $request->email,
+                'password'      => Hash::make($request->password),
+                'role'          => 'petugas_rt' // Assigning the role as 'user'
+            ];
+            
+            User::create($data);
+            return redirect()->route('showPetugas')->with(Session::flash('berhasil tambah',true));    
+        } 
+    }
     //Make User Petugas
     function indexpetugas()
     {
         $data = User::where('role','petugas')->get();
         return view ('frontend.indexPetugas',compact('data'));
     }
-
-    function makePetugas()
+    function deletePetugas(Request $request,$id)
     {
-        return view('frontend.CreatePetugas');
+        $data = User::find($id);
+        if($data){
+            $data -> delete();
+        }
+        return redirect()->route('showUser')->with(Session::flash('berhasil hapus',true)); 
     }
 
-    function createpetugas(Request $request)
+    function updatePetugas(Request $request,$id)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required'
+            'name'          => 'required',
+            'email'         => 'required|email',
+            'password'      => 'nullable'
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withInput()->withErrors($validator);
+            return redirect()->route('showPetugas')->with(Session::flash('failed update',true));
         }
-        $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'role' => 'petugas' // Assigning the role as 'user'
-        ];
+        $data['email']          = $request -> email;
+        $data['name']           = $request -> name;
+        $data['password']       = Hash::make($request -> password);
 
-        User::create($data);
-        return redirect()->route('petugas');        
+        User::whereId($id)->update($data);
+        return redirect()->route('showPetugas')->with(Session::flash('berhasil Update',true)); 
     }
 }

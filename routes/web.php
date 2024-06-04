@@ -22,9 +22,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => 'admin'],function(){
     Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->name('admin_dashboard');
     Route::get('/admin/akunuser',[AdminController::class,'showakunuser'])->name('showUser');
+    Route::get('/admin/akunpetugas',[AdminController::class,'showakunpetugas'])->name('showPetugas');
+    //CRUD Account User
     Route::post('/admin/user/make', [AdminController::class, 'make'])->name('user.make');
     Route::put('/admin/akunuser/update/{id}', [AdminController::class, 'update'])->name('user.update');
     Route::delete('/admin/akunuser/delete/{id}', [AdminController::class, 'delete'])->name('user.delete');
+    //CRUD Account Petugas
+    Route::post('/admin/petugas/make', [AdminController::class, 'createPetugas'])->name('petugas.create');
+    Route::put('/admin/akunpetugas/update/{id}', [AdminController::class, 'updatePetugas'])->name('petugas.update');
+    Route::delete('/admin/akunpetugas/delete/{id}', [AdminController::class, 'deletePetugas'])->name('petugas.delete');
 });
 
 Route::group(['middleware' => 'petugas_rt'],function(){
