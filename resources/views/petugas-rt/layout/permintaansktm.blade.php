@@ -12,7 +12,7 @@
                   <th>Keperluan</th>
                   <th>Foto KK</th>
                   <th>Foto KTP</th>
-                  <th>Foto Lunas PBB</th>
+                  <th>Foto Bukti Pengantar</th>
                   <th>Tanggal</th>
                   <th>Waktu</th>
                   <th>Status</th>
@@ -26,7 +26,7 @@
                         <td>{{$item -> keperluan}}</td>
                         <td>{{$item -> foto_kk}}</td>
                         <td>{{$item -> foto_ktp}}</td>
-                        <td>{{$item -> foto_buktilunaspbb}}</td>
+                        <td>{{$item -> bukti_pengantar}}</td>
                         <td>{{$item -> tanggal_pengajuan}}</td>
                         <td>{{$item -> waktu_pengajuan}}</td>
                         <td><p data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="status dropdown-toggle">{{$item -> status}}</p>

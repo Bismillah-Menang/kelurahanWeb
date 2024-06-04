@@ -109,7 +109,7 @@
         </a>
       </li>
       <!-- Pages -->
-      <li class="menu-item @active('showUser')">
+      <li class="menu-item @active('showUser') @active('showPetugas')">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bxs-user-account"></i>
           <div data-i18n="Account Settings">Data Akun</div>
@@ -123,16 +123,6 @@
           <li class="menu-item @active('showPetugas')">
             <a href="{{route ('showPetugas')}}" class="menu-link">
               <div data-i18n="Notifications">Akun Petugas RT</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="pages-account-settings-connections.html" class="menu-link">
-              <div data-i18n="Connections">Akun Petugas RW</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="pages-account-settings-connections.html" class="menu-link">
-              <div data-i18n="Connections">Akun Kelurahan</div>
             </a>
           </li>
         </ul>

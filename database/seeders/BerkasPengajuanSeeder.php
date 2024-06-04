@@ -20,20 +20,19 @@ class BerkasPengajuanSeeder extends Seeder
         $keperluanOptions = ['sktm', 'skck'];
         foreach (range(1, 7) as $index) {
             PengajuanModel::create([
-                'keperluan' => 'buat' . $faker->randomElement($keperluanOptions),
+                'keperluan' => 'buat',
                 'jenis_layanan' => $faker->randomElement($keperluanOptions),
                 'foto_kk' => 'ada',
                 'foto_ktp' => 'ada',
+                'bukti_pengantar' => 'ada',
                 'foto_buktilunaspbb' => 'ada',
                 'pdf_surat' => null,
                 'tanggal_pengajuan' => $currentDate,
                 'waktu_pengajuan' => $currentTime,
-                'status' => 'menunggu RT',
+                'status' => 'menunggu Verifikasi RT',
                 'keterangan' => null,
                 'id_pemohon' => $faker->numberBetween(1, 10),
                 'id_rt' => 2,
-                'id_rw' => 3,
-
             ]);
         }
     }

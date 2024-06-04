@@ -22,7 +22,7 @@ class PengajuanModel extends Model
         'keterangan',
         'id_pemohon',
         'id_rt',
-        'id_rw',
+        'bukti_pengantar',
     ];
 
     function pemohon()
@@ -33,9 +33,9 @@ class PengajuanModel extends Model
     {
         return $this->belongsTo(User::class, 'id_rt');
     }
-    function rw()
-    {
-        return $this->belongsTo(User::class, 'id_rw');
-    }
+    // function rw()
+    // {
+    //     return $this->belongsTo(User::class, 'id_rw');
+    // }
 }
 

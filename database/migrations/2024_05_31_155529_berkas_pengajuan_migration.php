@@ -25,7 +25,7 @@ return new class extends Migration
             $table->enum('jenis_layanan',['sktm','skck']);
             $table->integer('id_pemohon');
             $table->integer('id_rt');
-            $table->integer('id_rw');
+            $table->String('bukti_pengantar');
             $table->timestamps();
         });
     }

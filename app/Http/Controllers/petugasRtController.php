@@ -18,7 +18,7 @@ class petugasRtController extends Controller
     }
     function showSktmrt(){
         $data = PengajuanModel::where('jenis_layanan','sktm')
-        ->where('status','menunggu RT')
+        ->where('status','menunggu Verifikasi RT')
         ->with('pemohon')->get();
         return view('petugas-rt.layout.permintaansktm',[
             'tittle' => 'Permintaan Pengajuan SKTM',
@@ -37,7 +37,7 @@ class petugasRtController extends Controller
             return redirect()->route('sktmrt')->with(Session::flash('failed update',true));
         } else{
             if ($request -> pilihstatus == 'Verifikasi Diterima') {
-                $data['status']          = 'menunggu RW';
+                $data['status']          = 'menunggu  Verifikasi Admin';
         $data['keterangan']           = $request -> inputketerastatus;
             }else{
                 $data['status']          = $request -> pilihstatus;

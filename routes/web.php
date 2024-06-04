@@ -38,12 +38,7 @@ Route::group(['middleware' => 'petugas_rt'],function(){
     Route::get('/petugasRt/permintaansktm', [petugasRtController::class, 'showSktmrt'])->name('sktmrt');
     Route::put('/petugasRt/update/permintaansktm/{id}', [petugasRtController::class, 'ubahstatus'])->name('updatestatus');
 });
-Route::group(['middleware' => 'petugas_rw'],function(){
-    Route::get('/petugasRw/dashboard', [petugasRwController::class, 'showpetugasRwDashboard'])->name('petugasRw_dashboard');
-    Route::get('/petugasRw/permintaansktm', [petugasRwController::class, 'showSktmRw'])->name('sktmRw');
-    Route::put('/petugasRw/update/permintaansktm/{id}', [petugasRwController::class, 'ubahstatus'])->name('updatestatuses');
 
-});
 Route::get('/logout',[AdminController::class,'logout'])->name('keluar');
 
 // Rute untuk halaman login
