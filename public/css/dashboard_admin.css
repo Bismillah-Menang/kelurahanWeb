@@ -23,3 +23,23 @@
     display: flex;
     gap: 5px;
 }
+.status{
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 2px 7px;
+}
+@page {
+    margin-top: 1.5cm;
+    margin-left: 2.54cm;
+    margin-right: 2.54cm;
+    margin-bottom: 2.54cm;
+}
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 1.5cm;
+    margin-left: 2.54cm;
+    margin-right: 2.54cm;
+    margin-bottom: 2.54cm;
+}

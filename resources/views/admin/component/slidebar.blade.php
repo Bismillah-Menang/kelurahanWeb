@@ -72,15 +72,15 @@
       </li>
 
       <!-- Layouts -->
-      <li class="menu-item">
+      <li class="menu-item @active('showsktmadmin')">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Permintaan Layanan</div>
         </a>
 
         <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
+          <li class="menu-item @active('showsktmadmin')" >
+            <a href="{{route('showsktmadmin')}}" class="menu-link">
               <div data-i18n="Without menu">SKTM</div>
             </a>
           </li>

@@ -23,6 +23,10 @@ Route::group(['middleware' => 'admin'],function(){
     Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->name('admin_dashboard');
     Route::get('/admin/akunuser',[AdminController::class,'showakunuser'])->name('showUser');
     Route::get('/admin/akunpetugas',[AdminController::class,'showakunpetugas'])->name('showPetugas');
+    Route::get('/admin/sktm',[AdminController::class,'showsktmadmin'])->name('showsktmadmin');
+    Route::put('/admin/update/permintaansktm/{id}', [AdminController::class, 'ubahstatusadmin'])->name('updatestatusadmin');
+    Route::get('/admin/templatesktm',[AdminController::class,'showtemplatesktm'])->name('templatesktm');
+
     //CRUD Account User
     Route::post('/admin/user/make', [AdminController::class, 'make'])->name('user.make');
     Route::put('/admin/akunuser/update/{id}', [AdminController::class, 'update'])->name('user.update');

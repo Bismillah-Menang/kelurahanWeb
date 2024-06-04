@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PengajuanModel;
 use App\Models\User;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+
 
 class AdminController extends Controller
 {
@@ -157,5 +160,45 @@ class AdminController extends Controller
 
         User::whereId($id)->update($data);
         return redirect()->route('showPetugas')->with(Session::flash('berhasil Update',true)); 
+    }
+
+    function showsktmadmin(){
+        $data = PengajuanModel::where('jenis_layanan','sktm')
+        ->where('status','menunggu Verifikasi Admin')
+        ->with('pemohon')->get();
+        return view('admin.layout.pengajuansktmadmin',[
+            'tittle' => 'Permintaan Pengajuan SKTM',
+            'data' => $data
+        ]);
+    }
+
+    function ubahstatusadmin(Request $request,$id){
+        
+        $validator = Validator::make($request->all(), [
+            'pilihstatus'          => 'required',
+            'inputketerangan'         => 'nullable',
+           
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('showsktmadmin')->with(Session::flash('failed update',true));
+        } else{
+            if ($request -> pilihstatus == 'Verifikasi Diterima') {
+                $data['status']          = 'menunggu  Verifikasi Admin';
+            }
+        
+       
+
+        PengajuanModel::whereId($id)->update($data);
+        return redirect()->route('showsktmadmin')->with(Session::flash('berhasil update',true));
+        }
+
+    }
+    function showtemplatesktm()
+    {
+        $pdf = PDF::loadview('templatesktm')
+                ->setPaper('Legal', 'portrait');
+                
+        return $pdf->stream('sktm.pdf');
     }
 }
