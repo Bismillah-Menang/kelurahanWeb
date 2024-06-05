@@ -12,11 +12,22 @@
         .header, .footer {
             text-align: center;
         }
+        .header-table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .header-table td {
+            vertical-align: top;
+            text-align: center;
+        }
         .header img {
             width: 80px;
             height: auto;
         }
-        .header h2, .header h3, .header p {
+        .header-text {
+            text-align: center;
+        }
+        .header-text h2, .header-text h3, .header-text p {
             margin: 0;
         }
         .content {
@@ -63,11 +74,19 @@
 </head>
 <body>
     <div class="header">
-        <img src="logo.png" alt="Logo">
-        <h2>PEMERINTAH KABUPATEN BONDOWOSO</h2>
-        <h3>KECAMATAN BONDOWOSO</h3>
-        <h3>KELURAHAN BADEAN</h3>
-        <p>Jl. KH. Jalal Anwar No. 02 Bondowoso</p>
+        <table class="header-table">
+            <tr>
+                <td>
+                    <img src="img/Bondowoso-min.png" alt="Logo">
+                </td>
+                <td class="header-text">
+                    <h2>PEMERINTAH KABUPATEN BONDOWOSO</h2>
+                    <h3>KECAMATAN BONDOWOSO</h3>
+                    <h3>KELURAHAN BADEAN</h3>
+                    <p>Jl. KH. Jalal Anwar No. 02 Bondowoso</p>
+                </td>
+            </tr>
+        </table>
         <hr>
     </div>
     <div class="content">
@@ -120,7 +139,7 @@
         <p class="section-title">PERSYARATAN PENGAJUAN KIP</p>
         <p>Demikian Surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
         <div class="footer">
-            <p>Bondowoso, 18 Desember 2023</p>
+            <div class="date">Bondowoso, 18 Desember 2023</div>
             <p>a.n LURAH BADEAN</p>
             <p>Sekretaris,</p>
             <div class="signature">

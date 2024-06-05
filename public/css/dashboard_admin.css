@@ -43,3 +43,12 @@ body {
     margin-right: 2.54cm;
     margin-bottom: 2.54cm;
 }
+.footer {
+    position: relative;
+}
+
+.date {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
