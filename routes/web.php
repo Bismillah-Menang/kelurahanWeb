@@ -15,9 +15,18 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 //bagian pages
 use App\Http\Controllers\SktmController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserPemohonController;
 
 // Rute untuk halaman utama
 Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/', function(){
+//     return view('welcome');
+// })->name('home');
+
+Route::get('/user/dashboard',[UserController::class, 'showdashboard'])->name('user_dashboard');
+Route::get('/user/pemohon',[UserController::class, 'showpemohon'])->name('user_pemohon');
+Route::post('/user/pemohon/tambah',[UserPemohonController::class, 'showtambah'])->name('user_tambahpemohon');
 
 Route::group(['middleware' => 'admin'],function(){
     Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->name('admin_dashboard');

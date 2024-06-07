@@ -2,74 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif; /* Mengatur jenis font untuk seluruh body */
 }
-.navbar {
-    background-color: #392F8F;
-}
 
-/*-------------------------------------Untuk img----------------------------------------------------*/
-.navbar-brand img {
-    margin: auto -190px; /* Mengatur margin negatif */
-    max-width: calc(50% + 20px); /* Membatasi lebar maksimum gambar */
-    height: auto; /* Menyesuaikan tinggi gambar */
-    margin-left: 200px;
-    margin-top: 20px;
-}
-/*----------------------------------------NAVBAR-----------------------------------------------------*/
-/* CSS untuk mengatur tampilan navbar */
-
-.navbar-brand {
-    margin-right: 1rem; /* Margin kanan untuk logo di kiri navbar */
-}
-.navbar-nav {
-    margin-left: auto; /* Menggeser link ke kanan navbar */
-}
-.navbar-nav .nav-link {
-    color: #fff; /* Warna teks link */
-    margin-right: 1rem; /* Jarak antara link */
-}
-/* Toggler icon pada mobile view */
-.navbar-toggler {
-    border: none; /* Menghilangkan border */
-}
-/* Mengatur warna ikon toggler */
-.navbar-toggler-icon {
-    background-color: #fff; /* Warna ikon toggler */
-}
-
-.navbar-nav .nav-item .nav-link {
-    color: #fff; /* Mengubah warna teks tautan navbar menjadi putih */
-}
-.navbar-nav .nav-item .nav-link:hover {
-    color: #007bff; /* Warna biru saat dihover */
-}
-.nav-item {
-    margin-right: 2.5rem; /* Memberi jarak kanan antara setiap item navbar */
-}
-
-/*-----------------------------------------------------------------------------------------------------*/
-
-/*----------------------------------------DROPDOWN------------------------------------------------------*/
-
-.dropdown-menu {
-    background-color: #052158; 
-    border: none; 
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
-}
-.dropdown-item {
-    color: #fff;
-    padding: 10px 20px; 
-}
-.dropdown-item:hover {
-    background-color: #7eaddc; 
-}
-.dropdown-item.active {
-    background-color: #007bff; 
-    color: #fff; 
-}
-.nav-item.dropdown:hover .dropdown-toggle {
-    color: #007bff; 
-}
-/*-----------------------------------------------------------------------------------*/
 /*----------------------------------VISI MISI--------------------------------*/
 h1{
     color: #fff; /* Warna teks putih */
