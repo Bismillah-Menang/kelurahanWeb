@@ -34,7 +34,7 @@ Route::group(['middleware' => 'admin'],function(){
     Route::get('/admin/akunpetugas',[AdminController::class,'showakunpetugas'])->name('showPetugas');
     Route::get('/admin/sktm',[AdminController::class,'showsktmadmin'])->name('showsktmadmin');
     Route::put('/admin/update/permintaansktm/{id}', [AdminController::class, 'ubahstatusadmin'])->name('updatestatusadmin');
-    Route::get('/admin/templatesktm',[AdminController::class,'showtemplatesktm'])->name('templatesktm');
+    Route::get('/admin/templatesktm/{id}',[AdminController::class,'showtemplatesktm'])->name('templatesktm');
 
     //CRUD Account User
     Route::post('/admin/user/make', [AdminController::class, 'make'])->name('user.make');

@@ -1,3 +1,5 @@
+<!-- resources/views/templatesktm.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,45 +98,22 @@
         <table>
             <tr>
                 <td>Nama</td>
-                <td>: EDDY SULYSTIOWATI SUHARTO</td>
+                <td>: {{ $data->nama_pemohon }}</td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
-                <td>: Perempuan</td>
+                <td>: {{ $data->jenis_kelamin }}</td>
             </tr>
             <tr>
                 <td>Pekerjaan</td>
-                <td>: Guru (Honorer)</td>
+                <td>: {{ $data->pekerjaan }}</td>
             </tr>
             <tr>
                 <td>Alamat</td>
-                <td>: Jl. Dr. Sutomo Gg. II No. 55 RT. 18 RW. 02 Kelurahan Badean Kecamatan Bondowoso</td>
+                <td>: {{ $data->alamat }}</td>
             </tr>
         </table>
-        <p>Orang Tua / Wali dari :</p>
-        <table>
-            <tr>
-                <td>Nama</td>
-                <td>: ALVINA PUTRI AURELIA</td>
-            </tr>
-            <tr>
-                <td>Tempat Tgl. Lahir</td>
-                <td>: Bondowoso, 26 Maret 2005</td>
-            </tr>
-            <tr>
-                <td>Jenis Kelamin</td>
-                <td>: Perempuan</td>
-            </tr>
-            <tr>
-                <td>Universitas</td>
-                <td>: Unej Jember</td>
-            </tr>
-            <tr>
-                <td>Alamat</td>
-                <td>: Jl. Dr. Sutomo Gg. II No. 55 RT. 18 RW. 02 Kelurahan Badean Kecamatan Bondowoso</td>
-            </tr>
-        </table>
-        <p>Adalah benar penduduk Kelurahan Badean Kecamatan Bondowoso Kabupaten Bondowoso. Menurut pengamatan kami warga tersebut keadaan ekonominya tergolong warga yang kurang tidak mampu.</p>
+        <p>Adalah benar penduduk Kelurahan Badean Kecamatan Bondowoso Kabupaten Bondowoso. Menurut pengamatan kami warga tersebut keadaan ekonominya tergolong warga yang kurang mampu.</p>
         <p>Surat keterangan ini dipergunakan untuk :</p>
         <p class="section-title">PERSYARATAN PENGAJUAN KIP</p>
         <p>Demikian Surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
