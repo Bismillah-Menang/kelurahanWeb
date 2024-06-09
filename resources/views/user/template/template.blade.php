@@ -13,7 +13,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard - User</title>
 
     <meta name="description" content="" />
 
@@ -79,7 +79,7 @@
          
             <!-- / Content -->
 
-            <!-- Footer -->
+            {{-- <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
                 <div class="mb-2 mb-md-0">
@@ -109,7 +109,7 @@
                   >
                 </div>
               </div>
-            </footer>
+            </footer> --}}
             <!-- / Footer -->
 
             <div class="content-backdrop fade"></div>

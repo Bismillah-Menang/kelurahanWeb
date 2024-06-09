@@ -19,73 +19,76 @@ oleh masyarakat</p>
 
     <section id="about" class="features1">
         <div class="container">
-            <h2>Tentang E - Badean</h2>
+            <h2>Tentang E-Badean</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="feature-item1">
-                        <img src="{{ asset('img/Group 32.png') }}" alt="Deskripsi Gambar" name="img-web">
+                    <div class="features-item1">
                         <img src="{{ asset('img/Group 31.png') }}" alt="Deskripsi Gambar" name="img-mobile">
+                        <img src="{{ asset('img/Group 32.png') }}" alt="Deskripsi Gambar" name="img-web">       
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="feature-item1">
-                        <p>E-Badean adalah sebuah platform yang tersedia dalam bentuk situs web <br>
-dan aplikasi mobile. Didesain untuk digunakan oleh masyarakat umum, <br>
-ketua RT, dan RW. Selain itu, terdapat situs web khusus yang diperuntukkan<br> 
-bagi admin kelurahan, yang bertujuan untuk mengelola data master dari <br>
-masyarakat. Tujuan utamanya adalah memungkinkan masyarakat untuk<br>
-mengajukan surat secara online, memberikan kemudahan dalam hal <br>
-efisiensi dan efektivitas tanpa terbatas oleh waktu dan lokasi.</p>
+                    <div class="features-item1">
+                        <p>E-Badean adalah sebuah platform yang tersedia dalam bentuk situs web 
+                         dan aplikasi mobile. Didesain untuk digunakan oleh masyarakat umum, 
+                         ketua RT, dan RW. Selain itu, terdapat situs web khusus yang diperuntukkan
+                        bagi admin kelurahan, yang bertujuan untuk mengelola data master dari 
+                        masyarakat. Tujuan utamanya adalah memungkinkan masyarakat untuk 
+                        mengajukan surat secara online, memberikan kemudahan dalam hal 
+                        efisiensi dan efektivitas tanpa terbatas oleh waktu dan lokasi.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Features Section -->
     <section id="aparatur" class="features">
         <div class="container">
             <h2>Aparatur Kelurahan Badean</h2>
-            <div class="feature-item">
-                        <img src="{{ asset('img/profile1.png') }}" alt="Feature 1" name="feature-1">
-                        <h3>Mr.Cillian Murphy</h3>
-                        <p class="jabatan-1">Kepala Lurah Badean</p>
-                    </div>
+            <div class="features-item">
+                <img src="{{ asset('img/profile1.png') }}" alt="Feature 1" name="feature-1">
+                <h3>Mr.Cillian Murphy</h3>
+                <p class="jabatan-1">Kepala Lurah Badean</p>
+            </div>
             <div class="row">
                 <div class="col">
-                    <div class="feature-item">
+                    <div class="features-item">
                         <img src="{{ asset('img/profile2.png') }}" alt="Feature 2" name="feature-2">
                         <h3>Mr.Chris Hemsworth</h3>
                         <p class="jabatan-2">Seketaris</p>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="feature-item">
+                    <div class="features-item">
                         <img src="{{ asset('img/profile3.png') }}" alt="Feature 3" name="feature-3">
                         <h3>Mrs.Siti Jubaedah</h3>
                         <p class="jabatan-3">Bendahara</p>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="feature-item">
+                    <div class="features-item">
                         <img src="{{ asset('img/profille4.png') }}" alt="Feature 4" name="feature-4">
                         <h3>Ms.Lalisa Manoban</h3>
                         <p class="jabatan-4">Staff Pelayanan Umum</p>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="feature-item">  
+                    <div class="features-item">  
                         <img src="{{ asset('img/Profile5.png') }}" alt="Feature 5" name="feature-5">
                         <h3>Mr. Timothee Chalemet</h3>
                         <p class="jabatan-5">Kasi Pemerintahan</p>
                     </div>
                 </div>
-            </div> <button class="button-3" onclick="window.location='{{ route('aparatur') }}'">Selengkapnya</button>
+            </div>
+            <button class="button-3" onclick="window.location='{{ route('aparatur') }}'">Selengkapnya</button>
         </div>
     </section>
+    
 <!-- Layanan Section -->
 
-<section id ="layanan" class="features" style="background-color: #fff;">
+<section id ="layanan" class="features2" style="background-color: #fff;">
     <div class="container">
         <h4>Layanan Kami</h4>
         <div class="row">

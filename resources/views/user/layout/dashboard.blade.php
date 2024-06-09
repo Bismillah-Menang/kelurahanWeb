@@ -522,4 +522,24 @@
       <!--/ Transactions -->
     </div>
   </div>   
+  <script>
+    @if (Session::has('berhasil'))
+        
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Anda Berhasil Login",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        
+    @elseif (Session::has('failed'))
+        
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "{{ Session::get('failed') }}",
+            });
+            @endif
+        </script>
 @endsection
