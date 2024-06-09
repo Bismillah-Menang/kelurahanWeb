@@ -59,12 +59,14 @@
                           </div>
                         </div>
                       </div>
+                      
                 @endforeach
               </tbody>
             </table>
         </div>
     </div>
 </div>
+
 <script>
     let table = new DataTable('#pengajuan');
 </script>

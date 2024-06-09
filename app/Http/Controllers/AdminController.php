@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PemohonModel;
 use App\Models\PengajuanModel;
 use App\Models\User;
 use PDF;
@@ -194,11 +195,17 @@ class AdminController extends Controller
         }
 
     }
-    function showtemplatesktm()
+    function showtemplatesktm($id)
     {
-        $pdf = PDF::loadview('templatesktm')
+   
+        // Ambil data berdasarkan ID
+        $data = PemohonModel::findOrFail($id);
+
+        // Kirim data ke view dan buat PDF
+        $pdf = PDF::loadView('templatesktm', compact('data'))
                 ->setPaper('Legal', 'portrait');
-                
+
         return $pdf->stream('sktm.pdf');
+    
     }
 }
