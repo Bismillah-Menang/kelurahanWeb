@@ -126,73 +126,74 @@ h1{
 /*-----------------------------------------------------------------------------------*/
 
 /*--------------------------------Aparatur-------------------------------------------*/
-.features {
+
+.feature {
+    text-align: center;
     padding: 50px 0;
 }
-.feature-item {
-    margin-top: 20px; /* Jarak atas antara setiap elemen */
-    margin-bottom: 50px; /* Jarak bawah antara setiap elemen */
+.feature h2 {
+    color: #fff; 
+    background-color: #392F8F; 
+    padding: 40px;
+    margin-top: -50px; 
+    margin-bottom: 50px;
+    text-align: center; 
+    font-weight: 600;
 }
 
-.features h2 {
-    text-align: center;
+/* Style for feature title */
+.tittle {
     margin-bottom: 30px;
-    color: #052158;
-    font-family: "poppins", sans-serif;
-    margin-top: -30px;
+}
 
+/* Style for container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.features-item h3 {
-    text-align: center;
-    color: #052158;
-    font-family: "poppins", sans-serif;
-    margin-top: -30px;
-    font-size: 10px;
-}
-.feature-item h3{
-    font-size: 1.3rem;
-}
-.feature-item img {
-    border-radius: 50%; /* Membuat gambar menjadi bundar */
-    width: 200px; /* Lebar gambar */
-    height: 200px; /* Tinggi gambar */
-    object-fit: cover; /* Gambar diatur untuk mencakup seluruh area dengan mempertahankan rasio aspek */
-    object-position: center; /* Posisi gambar di tengah */
-    margin-bottom: 20px;
-}
-.feature-item p.jabatan-1 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #052158; /* Warna teks jabatan */
+
+/* Style for row */
+.row {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
+}
+
+/* Style for column */
+.col {
+    margin: 0 10px;
+}
+
+/* Style for more items */
+.more-item {
+    text-align: center;
     margin-bottom: 20px;
 }
-.feature-item p.jabatan-2 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #052158; /* Warna teks jabatan */
-}
-.feature-item p.jabatan-3 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #052158; /* Warna teks jabatan */
 
+/* Style for profile images */
+.more-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
-.feature-item p.jabatan-4 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #052158; /* Warna teks jabatan */
+
+/* Style for names */
+.more-item h5 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
 }
-.feature-item p.jabatan-5 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #052158; /* Warna teks jabatan */
+
+/* Style for job titles */
+.more-item h6 {
+    font-size: 1em;
+    color: #888;
 }
-/* CSS untuk konten di dalam feature item */
-.feature-item {
-    text-align: center; /* Pusatkan teks */
-    margin-bottom: 20px; /* Jarak bawah */
-}
-.feature-item {
-    text-align: center;
-    font-family: "poppins", sans-serif;
-    color: #052158;
-}
+
+
+
 
 /*------------------------------------------------------------------------------------------------------*/
 

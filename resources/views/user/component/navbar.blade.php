@@ -81,7 +81,7 @@ id="layout-navbar">
           <div class="dropdown-divider"></div>
         </li>
         <li>
-          <a class="dropdown-item" href="javascript:void(0);">
+          <a class="dropdown-item" href="{{ route('keluar') }}">
             <i class="bx bx-power-off me-2"></i>
             <span class="align-middle">Log Out</span>
           </a>

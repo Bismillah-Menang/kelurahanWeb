@@ -71,32 +71,60 @@ body {
     color: #007bff; 
 }
 /*-----------------------------------------------------------------------------------*/
-.gambar img{
-    /* CSS untuk gambar struktur */
-    display: block;
-    width: 100%; /* Lebar gambar 100% dari parent */
-    height: auto; /* Tinggi gambar disesuaikan agar proporsional */
-    border-radius: 5px; /* Sudut melengkung pada gambar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk gambar */
-    margin-top: 200px;
-    margin-left: -20px;
-}
-/* CSS untuk teks pada bagian "name" */
-.struktur2{
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-.name h5 {
-    font-size: 20px; /* Ukuran font untuk judul */
-    font-weight: bold; /* Ketebalan font untuk judul */
-    color: #333; /* Warna teks untuk judul */
-    margin-bottom: 10px; /* Jarak bawah antara judul dan paragraf */
+/* Style for struktur section */
+.struktur {
+    padding: 50px 0;
+    background-color: #f8f9fa; /* Ganti dengan warna latar belakang yang Anda inginkan */
+    
 }
 
-.name p {
-    font-size: 16px; /* Ukuran font untuk paragraf */
-    line-height: 1.5; /* Ketinggian baris untuk memperjelas legibilitas */
-    color: #666; /* Warna teks untuk paragraf */
+.struktur h2 {
+    color: #fff; 
+    background-color: #392F8F; 
+    padding: 40px;
+    margin-top: -50px; 
+    margin-bottom: 50px;
+    text-align: center; 
+    font-weight: 600;
+}
+
+.struktur .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 500px;
+}
+
+.struktur .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.struktur .gambar {
+    flex: 0 0 30%;
+    padding-right: 20px;
+    width: 200vh;
+}
+
+.struktur .gambar img {
+    width: 100%;
+    height: auto;
+}
+
+.struktur .struktur2 {
+    width: 70%;
+}
+
+.struktur .name {
+    margin-bottom: 20px;
+}
+
+.struktur h3 {
+    font-size: 1.25em;
+    margin-bottom: 3px;
+}
+
+.struktur span {
+    margin: 0;
 }
 
 

@@ -181,118 +181,116 @@ img[name="gambar-people"] {
 /*----------------------------------------------------------------------------------------------------*/
 
 /*-------------------------------------Tentang E-Badean--------------------------------*/
+.features1 {
+    padding: 50px 0;
+    background-color: #f8f9fa; /* Ganti dengan warna latar belakang yang Anda inginkan */
+}
+
+.features1 .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .features1 h2{
     font-family: "poppins", sans-serif;
     color: #052158;
     font-weight: 700;
     font-size: 34px;
 }
-.feature-item1 p {
+
+.features1 .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.features1 .col-md-6 {
+    flex: 0 0 50%; /* Mengatur lebar kolom menjadi 48% agar dapat menyesuaikan dengan dua gambar */
+}
+
+.features1 .features-item1 {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 600px;
+}
+
+.features1 .features-item1 img {
+    max-width: 500px; /* Sesuaikan dengan lebar maksimum gambar */
+    height: auto;
+}
+
+.features1 p {
+    font-size: 16px;
+    line-height: 1.6;
     font-family: "poppins", sans-serif;
     color: #052158;
     text-align: left;
-    margin-top: -40%;
-    margin-left: -45%;
-    font-size: 15px;
-}
-/* CSS untuk konten gambar dalam kolom */
-.col-md-6 .feature-item1 {
-    display: flex; /* Menggunakan flexbox */
-    align-items: center; /* Posisikan item secara vertikal */
-}
-
-/* CSS untuk gambar dalam flex container */
-.col-md-6 .feature-item1 img {
-    width: 60%; /* Lebar gambar */
-    margin-bottom: 0; /* Hapus margin bawah */
-    margin-left: -20px;
-}
-
-/* CSS untuk mengatur urutan dan posisi gambar */
-.col-md-6 .feature-item1 img[name="img-web"] {
-    order: 2; /* Ubah urutan penempatan gambar web */
-}
-
-.col-md-6 .feature-item1 img[name="img-mobile"] {
-    order: 1; /* Ubah urutan penempatan gambar mobile */
-    margin-left: -20px;
+    margin-top: -430px;
+    margin-left: -170px;
 }
 
 /*------------------------------------------------------------------------------*/
 /*--------------------------------Aparatur-------------------------------------------*/
 .features {
-    padding: 80px 0;
+    text-align: center;
+    padding: 50px 0;
     background-color: #052158;
 }
-.feature-item {
-    margin-top: 20px; /* Jarak atas antara setiap elemen */
-    margin-bottom: 50px; /* Jarak bawah antara setiap elemen */
-}
-
 .features h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #ffffff;
-    font-family: "poppins", sans-serif;
-    margin-top: -30px;
-
+    color: #fff; 
+    background-color: #052158; 
+    padding: 40px;
+    margin-top: -50px; 
+    margin-bottom: 50px;
+    text-align: center; 
+    font-weight: 600;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for row */
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Style for column */
+.col {
+    margin: 0 10px;
+}
+
+/* Style for more items */
+.features-item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style for profile images */
+.features-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Style for names */
 .features-item h3 {
-    text-align: center;
-    color: #ffffff;
+    font-size: 16.5px;
+    margin-bottom: 5px;
+    color: white;
     font-family: "poppins", sans-serif;
-    margin-top: -30px;
-    font-size: 10px;
 }
-.feature-item h3{
-    font-size: 1.3rem;
+.features-item p{
+    margin-top: -40px;
 }
-.feature-item img {
-    border-radius: 50%; /* Membuat gambar menjadi bundar */
-    width: 200px; /* Lebar gambar */
-    height: 200px; /* Tinggi gambar */
-    object-fit: cover; /* Gambar diatur untuk mencakup seluruh area dengan mempertahankan rasio aspek */
-    object-position: center; /* Posisi gambar di tengah */
-    margin-bottom: 20px;
-}
-.feature-item p.jabatan-1 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #fff; /* Warna teks jabatan */
-    margin-top: 80%;
-    margin-left: 390px;
-    margin-bottom: 20px;
-}
-.feature-item p.jabatan-2 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #ffffff; /* Warna teks jabatan */
-    margin-left: -160px;
-}
-.feature-item p.jabatan-3 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #ffffff; /* Warna teks jabatan */
-    margin-left: -170px;
 
-}
-.feature-item p.jabatan-4 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #ffffff; /* Warna teks jabatan */
-    margin-left: -223px;
-}
-.feature-item p.jabatan-5 {
-    font-size: 18px; /* Ukuran teks jabatan */
-    color: #ffffff; /* Warna teks jabatan */
-    margin-left: -200px;
-}
-/* CSS untuk konten di dalam feature item */
-.feature-item {
-    text-align: center; /* Pusatkan teks */
-    margin-bottom: 20px; /* Jarak bawah */
-}
-.feature-item {
-    text-align: center;
-    font-family: "poppins", sans-serif;
-    color: #fefeff;
-}
 .button-3 {
     background-color: #4CAF50; /* Warna latar belakang */
     color: white; /* Warna teks */
@@ -302,9 +300,8 @@ img[name="gambar-people"] {
     cursor: pointer; /* Kursor berubah menjadi tangan saat diarahkan */
     font-size: 16px; /* Ukuran teks */
     transition: background-color 0.3s; /* Transisi ketika tombol berubah warna */
-    left: 470px;
-    width: 20%;
-    margin-left: 460px;
+    width: 25%;
+    margin-left: -10px;
     margin-top: 70px;
     font-family: "poppins", sans-serif;
 }
@@ -313,86 +310,108 @@ img[name="gambar-people"] {
     background-color: #ffffff; /* Warna latar belakang saat dihover */
         color: black; /* Warna font hitam saat dihover */
 }
+.features-item p.jabatan-1 {
+    font-size: 16px; /* Ukuran teks jabatan */
+    color: #fff; /* Warna teks jabatan */
+    margin-top: 80%;
+    margin-left: 400px;
+    margin-bottom: 20px;
+}
+.features-item p.jabatan-2 {
+    font-size: 16px; /* Ukuran teks jabatan */
+    color: #ffffff; /* Warna teks jabatan */
+    margin-left: -200px;
+}
+.features-item p.jabatan-3 {
+    font-size: 16px; /* Ukuran teks jabatan */
+    color: #ffffff; /* Warna teks jabatan */
+    margin-left: -200px;
+
+}
+.features-item p.jabatan-4 {
+    font-size: 16px; /* Ukuran teks jabatan */
+    color: #ffffff; /* Warna teks jabatan */
+    margin-left: -250px;
+}
+.features-item p.jabatan-5 {
+    font-size: 18px; /* Ukuran teks jabatan */
+    color: #ffffff; /* Warna teks jabatan */
+    margin-left: -240px;
+}
+
+
+
+
 
 /*------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------Layanan Masnyarakat-----------------------------------------------*/
-.features1 {
+.features2 {
     padding: 50px 0;
     background-color: #fff;
 }
+
 #layanan h4 {
-    font-size: 34px; /* Font size */
-    font-weight: bold; /* Font weight */
-    text-align: center; /* Text alignment */
-    margin-bottom: 20px; /* Bottom margin */
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
     font-family: "poppins", sans-serif;
     color: #052158;
 }
 
-.features1 h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-#layanan.features {
-    background-color: #fff; /* Warna latar belakang */
-    padding: 50px 0; /* Jarak padding atas dan bawah */
-}
 .container {
-    max-width: 1200px; /* Lebar maksimum konten */
-    margin: 0 auto; /* Tengahkan konten */
-    padding: 0 15px; /* Jarak padding kiri dan kanan */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
+
 .row {
-    display: flex; /* Mengatur elemen baris menjadi flexbox */
-    flex-wrap: wrap; /* Mengizinkan baris untuk melintasi multiple lines jika diperlukan */
-    justify-content: center; /* Posisi elemen-elemen dalam baris ke tengah */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
 .col-md-3 {
     flex: 0 0 25%; /* Setiap kolom menempati 25% dari lebar container */
     max-width: 25%; /* Lebar maksimum setiap kolom */
     padding: 0 15px; /* Jarak padding kiri dan kanan */
     box-sizing: border-box; /* Ukuran kotak termasuk padding dan border */
+    height: 200px; /* Menetapkan tinggi tetap untuk setiap kotak */
 }
-.layanan-item {
-    text-align: center; /* Posisi teks ke tengah */
-    margin-bottom: 30px; /* Jarak antara setiap elemen layanan */
-    display: flex; /* Mengatur elemen layanan-item menjadi flexbox */
-    flex-direction: column; /* Membuat konten di dalam layanan-item menjadi tata letak vertikal */
-    text-align: center; /* Posisi teks ke tengah */
-    height: 90%; /* Agar setiap kotak memiliki tinggi yang sama */
-}
-.layanan-item img {
-    width: auto; /* Mengisi lebar parent */
-    height: auto; /* Menyesuaikan tinggi secara otomatis */
-    margin-bottom: 20px; /* Jarak antara gambar dan teks */
-}
-.layanan-item h3 {
-    font-size: 18px; /* Ukuran teks judul */
-    margin-bottom: 10px; /* Jarak antara judul dan paragraf */
-}
-.button-4 {
-    background-color: #FFF212; /* Warna latar belakang */
-    color: #392F8F; /* Warna teks */
-    padding: 15px 25px; /* Jarak padding atas dan bawah, kiri dan kanan */
-    border: none; /* Tanpa border */
-    border-radius: 50px; /* Sudut border */
-    cursor: pointer; /* Kursor berubah menjadi tangan saat diarahkan */
-    font-size: 16px; /* Ukuran teks */
-    transition: background-color 0.3s; /* Transisi ketika tombol berubah warna */
-    left: 450px;
-    width: 20%;
-    margin-left: 600px;
-    margin-top: 60px;
-    font-family: "poppins", sans-serif;
-}
-.button-4:hover {
-    background-color: #cac002; /* Warna latar belakang saat dihover */
-    color: black; /* Warna font hitam saat dihover */
-    font-family: "poppins", sans-serif;
-}
-/*---------------------------------------------------------------------------------------------*/
-/*------------------------------------Berita & Pengumuman------------------------------------------*/
 
+.layanan-item img {
+    width: 100px; /* Sesuaikan dengan ukuran gambar yang diinginkan */
+    height: 100px; /* Sesuaikan dengan ukuran gambar yang diinginkan */
+    margin: 0 auto; /* Posisikan gambar ke tengah kotak */
+}
+
+.layanan-item h3 {
+    font-size: 18px;
+    margin-top: 10px; /* Ubah margin-top agar teks tidak terlalu dekat dengan gambar */
+    margin-bottom: 10px;
+    text-align: center; /* Posisikan teks ke tengah kotak */
+}
+
+.button-4 {
+    background-color: #FFF212;
+    color: #392F8F;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-family: "poppins", sans-serif;
+    margin: 0 auto; /* Posisikan tombol ke tengah */
+    display: block; /* Biar tombolnya berada pada posisi yang tepat */
+    width: 300px;
+    margin-top: 20px;
+}
+
+.button-4:hover {
+    background-color: #cac002;
+    color: black;
+}
 .layanan-item {
     background-color: #f8f9fa; /* Warna latar belakang */
     border: 1px solid #ced4da; /* Border */
@@ -401,7 +420,15 @@ img[name="gambar-people"] {
     padding: 20px; /* Padding */
     text-align: center; /* Pusatkan teks */
     cursor: pointer; /* Ganti kursor saat hover */
+    height: 100%; /* Menjamin setiap kotak memiliki tinggi yang sama */
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Menata konten di dalam kotak secara vertikal */
+
 }
+/*---------------------------------------------------------------------------------------------*/
+/*------------------------------------Berita & Pengumuman------------------------------------------*/
+
+
 #berita h5 {
     font-size: 34px; /* Font size */
     font-weight: bold; /* Font weight */

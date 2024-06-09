@@ -4,36 +4,110 @@ body {
 }
 
 /*----------------------------------VISI MISI--------------------------------*/
-h1{
-    color: #fff; /* Warna teks putih */
-    background-color: #392F8F; /* Warna latar belakang sesuai dengan navbar */
-    padding: 40px; /* Padding untuk memberi ruang di sekitar teks */
+h1 {
+    color: #fff; 
+    background-color: #392F8F; 
+    padding: 40px; 
     margin-bottom: 20px;
-    text-align: center; /* Posisi teks di tengah */
-    font-weight: 600;
+    text-align: center; 
+    font-weight: 800;
 }
+
 .visimisi-page {
-    padding: 80px 0; /* Padding atas dan bawah sebesar 80px */
-    background-color: #f8f9fa; /* Warna latar belakang */
+    padding: 80px 0; 
+    background-color: #f8f9fa;
 }
 
 .container {
-    max-width: 1200px; /* Lebar maksimum container */
-    margin: 0 auto; /* Tengahkan container */
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 .img {
-    text-align: center; /* Pusatkan gambar */
+    text-align: center;
 }
+
 .content {
-    margin-bottom: 30px; /* Jarak bawah dari konten ke elemen selanjutnya */
+    margin-bottom: 30px; 
 }
 
 .content-boxs {
-    padding: 20px; /* Padding untuk ruang atas dan bawah konten */
-    background-color: #fff; /* Warna latar belakang konten */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek raised */
+    padding: 20px; 
+    background-color: #fff; 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); 
 }
+
+.visi, .misi {
+    padding: 20px; 
+    margin: 20px 0; 
+    background-color: #f9f9f9; 
+    text-align: left; 
+}
+
+.visi h2, .misi h2 {
+    color: #392F8F; 
+    font-size: 24px; 
+    margin-bottom: 10px; 
+    text-align: left; 
+}
+
+.visi img, .misi img {
+    width: 35px; 
+    height: auto; 
+    margin-bottom: 10px; 
+    vertical-align: middle; 
+}
+
+/*  */
+.visi h4{
+    font-size: 20px;
+    color: #052158;
+    line-height: 1.5;
+}
+.misi h4{
+    font-size: 20px;
+    color: #052158;
+    line-height: 1.5;
+}
+
+
+.visi .content-boxs, .misi .content-boxs {
+    border-radius: 10px; 
+    padding: 20px; 
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; 
+    position: relative;
+}
+
+.visi .content-boxs::before, .misi .content-boxs::before {
+    content: "\201C"; 
+    font-size: 40px;
+    color: #392F8F;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.visi .content-boxs::after, .misi .content-boxs::after {
+    content: "\201D";
+    font-size: 40px;
+    color: #392F8F;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Additional fixes */
+.visi p::before, .misi p::before, .visi p::after, .misi p::after {
+    display: none; /* Remove duplicate quotes */
+}
+
+.visi p, .misi p {
+    text-align: justify; 
+    margin-top: 20px; 
+}
+
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------End Page-------------------------------------------*/
 .end-page {
