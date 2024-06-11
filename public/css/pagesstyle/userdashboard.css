@@ -20,3 +20,10 @@
     padding: 25px 15px 25px 15px;
 
 }
+.hidden {
+    display: none;
+}
+
+.highlight {
+    background-color: yellow;
+}

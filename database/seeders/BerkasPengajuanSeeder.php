@@ -18,9 +18,10 @@ class BerkasPengajuanSeeder extends Seeder
         $currentDate = Carbon::now()->toDateString();
         $currentTime = Carbon::now()->toTimeString();
         $keperluanOptions = ['sktm', 'skck'];
+
         foreach (range(1, 7) as $index) {
             PengajuanModel::create([
-                'keperluan' => 'buat',
+                'keperluan' => $faker->randomElement($keperluanOptions),
                 'jenis_layanan' => $faker->randomElement($keperluanOptions),
                 'foto_kk' => 'ada',
                 'foto_ktp' => 'ada',

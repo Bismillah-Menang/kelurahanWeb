@@ -26,6 +26,7 @@ return new class extends Migration
             $table->integer('id_pemohon');
             $table->integer('id_rt');
             $table->String('bukti_pengantar');
+            $table->integer('id_detailpelayanan')->nullable();
             $table->timestamps();
         });
     }

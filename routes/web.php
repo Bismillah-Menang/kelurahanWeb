@@ -25,10 +25,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // })->name('home');
 Route::group(['middleware' => 'user'],function(){
     Route::get('/user/dashboard',[UserController::class, 'showdashboard'])->name('user_dashboard');
+    Route::get('/user/pengajuansktm',[UserController::class, 'pengajuansktm'])->name('user_pengajuansktm');
     Route::get('/user/pemohon',[UserController::class, 'showpemohon'])->name('user_pemohon');
     Route::post('/user/pemohon/tambah',[UserPemohonController::class, 'showtambah'])->name('user_tambahpemohon');
     Route::put('/user/pemohon/edit/{id}', [UserPemohonController::class, 'update'])->name('user_editpemohon');
     Route::delete('/user/pemohon/hapus/{id}', [UserPemohonController::class, 'destroy'])->name('user_pemohon.hapus');
+    Route::put('/user/claimpemohon/{id}', [UserPemohonController::class, 'claimpemohon']);
 });
 
 

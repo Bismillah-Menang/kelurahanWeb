@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\PemohonModel;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserPemohonController extends Controller
 {
@@ -31,6 +33,7 @@ class UserPemohonController extends Controller
             'tanggal_lahir' => $request->input('tanggal_lahir'),
             'agama' => $request->input('agama'),
             'pekerjaan' => $request->input('pekerjaan'),
+            'id_user' => (User::find(Auth::user()->id))->id,
         ]);
         return redirect()->route('user_pemohon');
     }
@@ -70,5 +73,18 @@ class UserPemohonController extends Controller
 
     return redirect()->route('user_pemohon')->with('success', 'Data pemohon berhasil dihapus.');
 }
+
+    public function claimpemohon(Request $request, $id){
+        $user = User::find(Auth::user()->id);
+        $pemohon = PemohonModel::findOrFail($id);
+
+        $pemohon->id_user = $user->id;
+
+        $pemohon->save();
+
+        return redirect()->route('user_pemohon')->with('success', 'Data pemohon berhasil diklaim.');
+
+
+    }
 }
 

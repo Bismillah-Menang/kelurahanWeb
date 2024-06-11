@@ -27,6 +27,7 @@ class PemohonSeeder extends Seeder
                 'tanggal_lahir' => $faker->date('Y-m-d'),
                 'agama' => $faker->randomElement($religions),
                 'pekerjaan' => $faker->jobTitle,
+                'rt' => 'rt02', // Set RT to 'rt02' for all entries
             ]);
         }
     }

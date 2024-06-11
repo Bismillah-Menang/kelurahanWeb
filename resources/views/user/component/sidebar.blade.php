@@ -50,7 +50,7 @@
             </g>
           </svg>
         </span>
-        <span class="app-brand-text demo menu-text fw-bold ms-2">Sneat</span>
+        <span class="app-brand-text demo menu-text fw-bold ms-2">E-Badean</span>
       </a>
 
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -72,11 +72,30 @@
       </li>
 
       <!-- Layouts -->
-      <li class="menu-item @active('user_pemohon')">
+      <li class="menu-item @active('user_pemohon') ">
         <a href="{{ route('user_pemohon') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Data Pemohon</div>
         </a>
+      </li>
+      <li class="menu-item @active('user_pengajuansktm')">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-layout"></i>
+          <div data-i18n="Layouts">Permintaan Layanan</div>
+        </a>
+
+        <ul class="menu-sub">
+          <li class="menu-item" @active('user_pengajuansktm') >
+            <a href="{{route('user_pengajuansktm')}}" class="menu-link">
+              <div data-i18n="Without menu">SKTM</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">
+              <div data-i18n="Without navbar">Surat Berlakuan Baik</div>
+            </a>
+          </li>
+        </ul>
       </li>
 
       <!-- Front Pages -->

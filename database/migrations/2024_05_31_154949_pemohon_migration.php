@@ -21,6 +21,10 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->String('agama');
             $table->String('pekerjaan');
+            $table->enum('rt', array_map(function($i) {
+                return 'rt' . str_pad($i, 2, '0', STR_PAD_LEFT);
+            }, range(1, 36)));
+            $table->integer('id_user')->nullable();           
             $table->timestamps();
         });
     }
