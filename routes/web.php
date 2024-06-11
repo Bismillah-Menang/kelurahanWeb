@@ -17,6 +17,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\SktmController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserPemohonController;
+use App\Http\Controllers\UserPengajuan;
 
 // Rute untuk halaman utama
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -31,6 +32,7 @@ Route::group(['middleware' => 'user'],function(){
     Route::put('/user/pemohon/edit/{id}', [UserPemohonController::class, 'update'])->name('user_editpemohon');
     Route::delete('/user/pemohon/hapus/{id}', [UserPemohonController::class, 'destroy'])->name('user_pemohon.hapus');
     Route::put('/user/claimpemohon/{id}', [UserPemohonController::class, 'claimpemohon']);
+    Route::post('/user/tambahsktm', [UserPengajuan::class, 'tambahsktm']);
 });
 
 

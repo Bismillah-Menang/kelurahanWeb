@@ -27,9 +27,11 @@ class UserController extends Controller
     }
 
     function pengajuansktm(){
+        $user = User::find(Auth::user()->id);
+        $userpemohon = PemohonModel::where('id_user', $user->id)->get();
         return view('user.layout.sktmuser', [
             'tittle' => 'Pengajuan SKTM',
-            
+            'Send' => $userpemohon,
         ]);
     }
 }

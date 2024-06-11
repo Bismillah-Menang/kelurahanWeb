@@ -78,13 +78,19 @@ class UserPemohonController extends Controller
         $user = User::find(Auth::user()->id);
         $pemohon = PemohonModel::findOrFail($id);
 
-        $pemohon->id_user = $user->id;
+        $caripemohon = PemohonModel::where('id_user', $user->id)->count();
+        if ($caripemohon < 7) {
+            if (is_null($pemohon->id_user) ) {
+                $pemohon->id_user = $user->id;
 
-        $pemohon->save();
-
-        return redirect()->route('user_pemohon')->with('success', 'Data pemohon berhasil diklaim.');
-
-
+            $pemohon->save();
+            return redirect()->route('user_pemohon')->with('success', 'Data pemohon berhasil diklaim.');
+            }else {
+            return redirect()->route('user_pemohon')->with('error', 'Data pemohon sudah diklaim user lain.');              
+            }
+        }else {
+            return redirect()->route('user_pemohon')->with('error', 'Data pemohon sudah ada 7, anda tidak bisa klaim lagi.');
+        }
     }
 }
 
