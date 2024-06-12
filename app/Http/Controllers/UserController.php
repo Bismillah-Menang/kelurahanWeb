@@ -11,9 +11,24 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function showdashboard (){
-
+        $id_user = User::find(Auth::user()->id);
+        $pengajuanditerima = PengajuanModel::where('status', 'menunggu Verifikasi Admin')->count();
+        $pengajuanditolak = PengajuanModel::where('status','Verifikasi Ditolak')->count();
+        $pengajuanmenunggu = PengajuanModel::where('status', '!=', 'selesai')
+        ->whereHas('pemohon', function ($query) use ($id_user) {
+            $query->where('id_user', $id_user->id); })
+        ->count();
+        $riwayatpengajuan = PengajuanModel::where('status', 'selesai')
+        ->whereHas('pemohon', function ($query) use ($id_user) {
+            $query->where('id_user', $id_user->id); })
+        ->count();
         return view ('user.layout.dashboard', [
-            'tittle' => 'Dashboard User'
+            'tittle' => 'Dashboard User',
+            'menunggu' => $pengajuanmenunggu,
+            'diterima' => $pengajuanditerima,
+            'ditolak'  => $pengajuanditolak,
+            'riwayat' => $riwayatpengajuan
+
         ]);
     }
 

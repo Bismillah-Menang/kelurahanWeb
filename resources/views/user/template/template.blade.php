@@ -16,10 +16,29 @@
     <title>Dashboard - User</title>
 
     <meta name="description" content="" />
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-
+    <style>
+      /* Custom CSS for Timeline */
+      .timeline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+      }
+      .timeline-point {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #007bff; /* Default point color */
+        margin-right: 20px;
+      }
+    </style>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

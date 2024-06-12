@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\PengajuanModel;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -17,9 +19,13 @@ class petugasRtController extends Controller
         ]);
     }
     function showSktmrt(){
+        $id_user = User::find(Auth::user()->id);
+        
         $data = PengajuanModel::where('jenis_layanan','sktm')
         ->where('status','menunggu Verifikasi RT')
-        ->with('pemohon')->get();
+        ->whereHas('pemohon', function ($query) use ($id_user) {
+            $query->where('id_user', $id_user->id);})
+        ->get();
         return view('petugas-rt.layout.permintaansktm',[
             'tittle' => 'Permintaan Pengajuan SKTM',
             'data' => $data

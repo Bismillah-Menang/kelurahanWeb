@@ -40,13 +40,11 @@
                                 <td>{{ $item->rt }}</td>
                                 <td><button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                         data-bs-target="#editpemohon{{ $item->id }}">Edit</button>
-                                    <form action="{{ route('user_pemohon.hapus', $item->id) }}" method="POST"
-                                        style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
-                                    </form>
+                                        <form action="{{ route('user_pemohon.hapus', $item->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" onclick="confirmDelete({{ $item->id }})">Delete</button>
+                                        </form>
                             </tr>
                             <div class="modal fade" id="editpemohon{{ $item->id }}" aria-labelledby="modalToggleLabel"
                                 tabindex="-1" style="display: none;" aria-hidden="true">
@@ -357,7 +355,21 @@
                 showConfirmButton: false,
                 timer: 1500
             });
-        @elseif(())
         @endif
+        function confirmDelete(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin ingin menghapus data ini?',
+            text: "Data yang dihapus tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect ke route hapus dengan ID
+                window.location.href = `/delete/${id}`;
+            }
+        });
+    }
     </script>
 @endsection
