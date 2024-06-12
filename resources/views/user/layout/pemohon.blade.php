@@ -355,6 +355,7 @@
                 showConfirmButton: false,
                 timer: 1500
             });
+        
         @endif
         function confirmDelete(id) {
         Swal.fire({
