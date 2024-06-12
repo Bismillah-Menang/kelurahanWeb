@@ -357,7 +357,7 @@
                 showConfirmButton: false,
                 timer: 1500
             });
-        @elseif(())
+        
         @endif
     </script>
 @endsection

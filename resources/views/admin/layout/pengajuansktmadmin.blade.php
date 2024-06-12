@@ -24,9 +24,9 @@
                         <td>{{$item -> pemohon -> nama_pemohon}}</td>
                         <td>{{$item -> pemohon -> nik}}</td>
                         <td>{{$item -> keperluan}}</td>
-                        <td>{{$item -> foto_kk}}</td>
-                        <td>{{$item -> foto_ktp}}</td>
-                        <td>{{$item -> bukti_pengantar}}</td>
+                        <td class="text-center align-middle"><a href="/storage/{{$item -> foto_kk}}"><i class='bx bx-image-alt'></i></a></td>
+                        <td class="text-center align-middle"><a href="/storage/{{$item -> foto_ktp}}"><i class='bx bx-image-alt'></i></a></td>
+                        <td class="text-center align-middle"><a href="/storage/{{$item -> bukti_pengantar}}"><i class='bx bx-image-alt'></i></a></td>
                         <td>{{$item -> tanggal_pengajuan}}</td>
                         <td>{{$item -> waktu_pengajuan}}</td>
                         <td><p data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="status dropdown-toggle">{{$item -> status}}</p>
