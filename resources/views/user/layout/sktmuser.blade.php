@@ -21,10 +21,34 @@
                             <th>Foto KTP</th>
                             <th>Status Pengajuan</th>
                             <th>PDF Surat</th>
-                            <th>Aksi</th>
                         </tr>
                     </thead>
-                    
+                    <tbody>
+                        @foreach($Kirim as $item)
+                            <tr>
+                                <td>{{ $item->tanggal_pengajuan }}</td>
+                                <td>{{ $item->waktu_pengajuan }}</td>
+                                <td class="text-center align-middle">
+                                    <a href="/storage/{{ $item->foto_kk }}" class="show-image" data-image="/storage/{{ $item->foto_kk }}">
+                                        <i class='bx bx-image-alt'></i>
+                                    </a>
+                                </td>
+                                <td class="text-center align-middle">
+                                    <a href="/storage/{{ $item->foto_ktp }}" class="show-image" data-image="/storage/{{ $item->foto_ktp }}">
+                                        <i class='bx bx-image-alt'></i>
+                                    </a>
+                                </td>
+                                <td>{{ $item->status }}</td>
+                                <td>
+                                    @if ($item->pdf_surat == null)
+                                        Belum Di Konfirmasi
+                                    @else
+                                        {{ $item->pdf_surat }}
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -44,34 +68,34 @@
                     
                         <label for="defaultFormControlInput" class="form-label">NIK</label>
                         <div class="input-group">
-                            <input type="text" class="form-control " id="nik"
+                            <input type="text" class="form-control " id="nik" disabled
                                 placeholder="NIK Pemohon" aria-describedby="defaultFormControlHelp" name="nik"/>
                             <button type="button" class="btn btn-warning" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Cari Pemohon</button>
                         </div>
                         <label for="defaultFormControlInput" class="form-label">Nama Pemohon</label>
-                        <input type="text" class="form-control mb-1" id="nama_pemohon"
+                        <input type="text" class="form-control mb-1" id="nama_pemohon" disabled
                             placeholder="Masukkan Nama Pemohon" aria-describedby="defaultFormControlHelp" name="nama_pemohon"/>
        
                         <input type="hidden" class="form-control mb-1" id="id_pemohons"
                             placeholder="Masukkan Nama Pemohon" aria-describedby="defaultFormControlHelp" name="id_pemohon"/>
                         <label for="defaultFormControlInput" class="form-label">Alamat</label>
-                        <input type="text" class="form-control mb-1" id="alamat"
+                        <input type="text" class="form-control mb-1" id="alamat" disabled
                             placeholder="Alamat Pemohon" aria-describedby="defaultFormControlHelp" name="alamat" />
                         <div class="mb-2">
                             <label for="defaultSele" class="form-label">Jenis Kelamin</label>
-                            <input type="text" class="form-control mb-2" name="tempat_lahir" id="jenis_kelamin"
+                            <input type="text" class="form-control mb-2" name="tempat_lahir" id="jenis_kelamin" disabled
                             placeholder="Masukkan Jenis Kelamin" aria-describedby="defaultFormControlHelp" />
                         </div>
                         <label for="defaultFormControlInput" class="form-label">Tempat Lahir</label>
-                        <input type="text" class="form-control mb-2" name="tempat_lahir" id="tempat_lahir"
+                        <input type="text" class="form-control mb-2" name="tempat_lahir" id="tempat_lahir" disabled
                             placeholder="Masukkan Tempat Lahir" aria-describedby="defaultFormControlHelp" />
 
                         <label for="defaultFormControlInput" class="form-label">Tanggal Lahir</label>
-                        <input type="date" class="form-control mb-2" name="tanggal_lahir" id="tanggal_lahir"
+                        <input type="date" class="form-control mb-2" name="tanggal_lahir" id="tanggal_lahir" disabled
                             placeholder="Masukkan Tanggal Lahir" aria-describedby="defaultFormControlHelp" />
 
                         <label for="agama" class="form-label">Agama</label>
-                        <select id="agama" class="form-select" name="agama">
+                        <select id="agama" class="form-select" name="agama" disabled>
                             <option value="Islam">Islam</option>
                             <option value="Kristen">Kristen</option>
                             <option value="Katolik">Katolik</option>
@@ -80,11 +104,11 @@
                             <option value="Kongshuchu">Konghuchu</option>
                         </select>
                         <label for="defaultFormControlInput" class="form-label mb-2">Pekerjaan</label>
-                        <input type="text" class="form-control mb-2" name="pekerjaan" id="pekerjaan"
+                        <input type="text" class="form-control mb-2" name="pekerjaan" id="pekerjaan" disabled
                             placeholder="Masukkan Pekerjaan" aria-describedby="defaultFormControlHelp" name="pekerjaan"/>
 
                         <label for="pilih_rt" class="form-label mb-2">RT</label>
-                        <select id="pilih_rt" class="form-select mb-2" name="id_rt">
+                        <select id="pilih_rt" class="form-select mb-2" name="id_rt" disabled>
                             <?php
                             $rt_options = array_map(function ($i) {
                                 return 'rt ' . str_pad($i, 2, '0', STR_PAD_LEFT);
@@ -107,10 +131,10 @@
                             </select>
                         </div>
                         <label for="defaultFormControlInput" class="form-label mb-2">Pekerjaan</label>
-                        <input type="text" class="form-control mb-2" name="pekerjaan" id="pekerjaan"
+                        <input type="text" class="form-control mb-2" name="pekerjaan" id="pekerjaan" 
                             placeholder="Masukkan Pekerjaan Orang Tua" aria-describedby="defaultFormControlHelp" />
                         <label for="defaultFormControlInput" class="form-label">Alamat</label>
-                        <input type="text" class="form-control mb-1" id="defaultFormControlInput"
+                        <input type="text" class="form-control mb-1" id="defaultFormControlInput" 
                             placeholder="Alamat Orang Tua Pemohon" aria-describedby="defaultFormControlHelp" name="alamatorangtua"/>
                         <div class="mb-2">
                             <label for="formFile" class="form-label">Upload Foto KTP</label>
@@ -126,7 +150,7 @@
                           </div>
                           <label for="defaultFormControlInput" class="form-label">Keperluan</label>
                           <input type="text" class="form-control mb-1" id="keperluan"
-                              placeholder="Masukkan Keperluan" aria-describedby="defaultFormControlHelp" name="keperluan"/>
+                              placeholder="Masukkan Keperluan" aria-describedby="defaultFormControlHelp" name="keperluan" disabled/>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -140,7 +164,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalToggleLabel2">Modal 2</h5>
+              <h5 class="modal-title" id="modalToggleLabel2">Daftar Pemohon</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -175,6 +199,19 @@
           </div>
         </div>
       </div>
+      <div class="modal fade" id="exLargeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel4">Gambar Berkas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="Gambar" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
       <script>
         function ambildata(nik, nama_pemohon, alamat, jenis_kelamin, tempat_lahir, tanggal_lahir, agama, pekerjaan, id_pemohon) {
             document.getElementById('nik').value=nik;
@@ -187,5 +224,20 @@
             document.getElementById('pekerjaan').value=pekerjaan;
             document.getElementById('id_pemohons').value=id_pemohon;
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const imageLinks = document.querySelectorAll('.show-image');
+        const modalImage = document.getElementById('modalImage');
+        
+        imageLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const imageUrl = this.getAttribute('data-image');
+                modalImage.setAttribute('src', imageUrl);
+                const modal = new bootstrap.Modal(document.getElementById('exLargeModal'));
+                modal.show();
+            });
+        });
+    });
       </script>
 @endsection

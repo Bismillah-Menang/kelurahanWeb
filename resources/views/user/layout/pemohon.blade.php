@@ -223,63 +223,65 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="tambahpemohon" aria-labelledby="modalToggleLabel" tabindex="-1" style="display: none;" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalToggleLabel">Tambah Pemohon</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <label for="nik" class="form-label">NIK</label>
-                <input type="text" class="form-control mb-2" name="nik" id="nika"
-                placeholder="Masukkan NIK" aria-describedby="defaultFormControlHelp" />
-            <button class="btn btn-primary btn-nik " id="cariButton" onclick="cariNIK()">Cari NIK</button>
-            <button class="btn btn-primary" data-bs-target="#aiman" data-bs-toggle="modal" data-bs-dismiss="modal">Tambah Pemohon Baru</button>
-            <div class="text-nowrap table-responsive pt-0">
-              <table style="display: none;" id="data-table" class="datatables-basic table border-top">
-                  <thead>
-                      <tr>
-                          <th>NIK</th>
-                          <th>Nama Pemohon</th>
-                          <th>Alamat</th>
-                          <th>RT</th>
-                          <th>Aksi</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($semuapemohon as $item)
-                               <tr>
-                                  <td>{{ $item->nik }}</td>
-                                  <td>{{ $item->nama_pemohon }}</td>
-                                  <td>{{ $item->alamat }}</td>
-                                  <td>{{ $item->rt }}</td>
-                                  <form action="/user/claimpemohon/{{$item->id}}" method="POST">
-                                    @csrf
-                                    @method('put')
-                                  <td><button type="submit" class="btn btn-warning">Klaim Pemohon</button></td>
-                                </form>
+    <div class="modal fade" id="tambahpemohon" aria-labelledby="modalToggleLabel" tabindex="-1" style="display: none;"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalToggleLabel">Tambah Pemohon</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="nik" class="form-label">NIK</label>
+                    <input type="text" class="form-control mb-2" name="nik" id="nika"
+                        placeholder="Masukkan NIK" aria-describedby="defaultFormControlHelp" />
+                    <button class="btn btn-primary btn-nik " id="cariButton" onclick="cariNIK()">Cari NIK</button>
+                    <button class="btn btn-primary" data-bs-target="#aiman" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Tambah Pemohon Baru</button>
+                    <div class="text-nowrap table-responsive pt-0">
+                        <table style="display: none;" id="data-table" class="datatables-basic table border-top">
+                            <thead>
+                                <tr>
+                                    <th>NIK</th>
+                                    <th>Nama Pemohon</th>
+                                    <th>Alamat</th>
+                                    <th>RT</th>
+                                    <th>Aksi</th>
                                 </tr>
-                      @endforeach
-                  </tbody>
-              </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($semuapemohon as $item)
+                                    <tr>
+                                        <td>{{ $item->nik }}</td>
+                                        <td>{{ $item->nama_pemohon }}</td>
+                                        <td>{{ $item->alamat }}</td>
+                                        <td>{{ $item->rt }}</td>
+                                        <form action="/user/claimpemohon/{{ $item->id }}" method="POST">
+                                            @csrf
+                                            @method('put')
+                                            <td><button type="submit" class="btn btn-warning">Klaim Pemohon</button></td>
+                                        </form>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
             </div>
-          </div>
-          <div class="modal-footer">
-          </div>
         </div>
-      </div>
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
             const nikInput = document.getElementById('nika');
             const cariButton = document.getElementById('cariButton');
 
             // Initial button state is disabled
-            
-            
-           function cekNIK() {
+
+
+            function cekNIK() {
                 const nikValue = nikInput.value;
                 // Only allow numeric input
                 const cleanedValue = nikValue.replace(/\D/g, '');
@@ -287,55 +289,75 @@
                 nikInput.value = cleanedValue;
                 // Check if the cleanedValue is exactly 16 digits long
                 const isValidNik = nikInput.value.trim().length === 16;
-                if(isValidNik){
-                  cariButton.disabled =  false;
-                  
-                }else{
-                  cariButton.disabled = true;
+                if (isValidNik) {
+                    cariButton.disabled = false;
+
+                } else {
+                    cariButton.disabled = true;
 
                 }
-                
+
             };
-            nikInput.addEventListener('input',cekNIK);
+            nikInput.addEventListener('input', cekNIK);
             cekNIK();
         });
         let table = new DataTable('#pemohon')
 
         function cariNIK() {
-    var input = document.getElementById('nika').value;
-    var table = document.getElementById('data-table');
-    var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-    var found = false;
+            var input = document.getElementById('nika').value;
+            var table = document.getElementById('data-table');
+            var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            var found = false;
 
-    // Menampilkan tabel
-    table.style.display = 'table';
+            // Menampilkan tabel
+            table.style.display = 'table';
 
-    // Menghapus highlight sebelumnya
-    for (var i = 0; i < rows.length; i++) {
-        rows[i].style.display = 'none';
-    }
+            // Menghapus highlight sebelumnya
+            for (var i = 0; i < rows.length; i++) {
+                rows[i].style.display = 'none';
+            }
 
-    // Mencari NIK di tabel
-    for (var i = 0; i < rows.length; i++) {
-        var nik = rows[i].getElementsByTagName('td')[0].innerText;
-        if (nik === input) {
-            rows[i].style.display = '';
-            rows[i].classList.add('highlight');
-            found = true;
-        } else {
-            rows[i].classList.remove('highlight');
+            // Mencari NIK di tabel
+            for (var i = 0; i < rows.length; i++) {
+                var nik = rows[i].getElementsByTagName('td')[0].innerText;
+                if (nik === input) {
+                    rows[i].style.display = '';
+                    rows[i].classList.add('highlight');
+                    found = true;
+                } else {
+                    rows[i].classList.remove('highlight');
+                }
+            }
+
+            if (!found) {
+                alert('NIK tidak ditemukan');
+            }
         }
-    }
+        @if (Session::has('error'))
 
-    if (!found) {
-        alert('NIK tidak ditemukan');
-    }
-}
-Swal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: "Something went wrong!",
-  footer: '<a href="#">Why do I have this issue?</a>'
-});
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Gagal",
+            });
+        @elseif (Session::has('tambah'))
+
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Pemohon Berhasil Ditambahkan",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        @elseif (Session::has('update'))
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Pemohon Berhasil Di Update",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        @elseif(())
+        @endif
     </script>
 @endsection

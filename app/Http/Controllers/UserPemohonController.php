@@ -6,6 +6,7 @@ use App\Models\PemohonModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserPemohonController extends Controller
 {
@@ -35,7 +36,7 @@ class UserPemohonController extends Controller
             'pekerjaan' => $request->input('pekerjaan'),
             'id_user' => (User::find(Auth::user()->id))->id,
         ]);
-        return redirect()->route('user_pemohon');
+        return redirect()->route('user_pemohon')->with(Session::flash('tambah', 'Pemohon berhasil ditambahkan'));
     }
     public function update(Request $request, $id)
     {
@@ -64,7 +65,7 @@ class UserPemohonController extends Controller
             'pekerjaan' => $request->input('pekerjaan'),
         ]);
 
-        return redirect()->route('user_pemohon')->with('success', 'Data pemohon berhasil diupdate.');
+        return redirect()->route('user_pemohon')->with(Session::flash('update'));
     }
     public function destroy($id)
 {
@@ -84,7 +85,7 @@ class UserPemohonController extends Controller
                 $pemohon->id_user = $user->id;
 
             $pemohon->save();
-            return redirect()->route('user_pemohon')->with('success', 'Data pemohon berhasil diklaim.');
+            return redirect()->route('user_pemohon')->with(Session::flash('success', 'Data pemohon berhasil diklaim.'));
             }else {
             return redirect()->route('user_pemohon')->with('error', 'Data pemohon sudah diklaim user lain.');              
             }

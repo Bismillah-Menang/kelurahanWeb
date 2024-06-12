@@ -72,7 +72,7 @@ class UserPengajuan extends Controller
         ]);
         if ($pemohon) {
             if($pemohon1){
-                return redirect()->route('user_pemohon');
+                return redirect()->route('user.pengajuansktm');
             }
         }
         

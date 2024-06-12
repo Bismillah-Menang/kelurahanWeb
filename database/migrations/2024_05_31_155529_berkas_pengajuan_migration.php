@@ -24,7 +24,7 @@ return new class extends Migration
             $table->String('keterangan')->nullable();
             $table->enum('jenis_layanan',['sktm','skck']);
             $table->integer('id_pemohon');
-            $table->integer('id_rt');
+            $table->String('id_rt');
             $table->String('bukti_pengantar');
             $table->integer('id_detailpelayanan')->nullable();
             $table->timestamps();
