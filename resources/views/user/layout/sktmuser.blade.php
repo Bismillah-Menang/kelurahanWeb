@@ -37,13 +37,11 @@
                     <h5 class="modal-title" id="modalToggleLabel">Pengajuan Surat Keterangan Tidak Mampu</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/user/tambahsktm" method="POST">
+                <form action="/user/tambahsktm" method="POST"  enctype="multipart/form-data">
                     @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        
-
-                        
+                    
                         <label for="defaultFormControlInput" class="form-label">NIK</label>
                         <div class="input-group">
                             <input type="text" class="form-control " id="nik"
@@ -54,7 +52,7 @@
                         <input type="text" class="form-control mb-1" id="nama_pemohon"
                             placeholder="Masukkan Nama Pemohon" aria-describedby="defaultFormControlHelp" name="nama_pemohon"/>
        
-                        <input type="hidden" class="form-control mb-1" id="id_pemohon"
+                        <input type="hidden" class="form-control mb-1" id="id_pemohons"
                             placeholder="Masukkan Nama Pemohon" aria-describedby="defaultFormControlHelp" name="id_pemohon"/>
                         <label for="defaultFormControlInput" class="form-label">Alamat</label>
                         <input type="text" class="form-control mb-1" id="alamat"
@@ -86,7 +84,7 @@
                             placeholder="Masukkan Pekerjaan" aria-describedby="defaultFormControlHelp" name="pekerjaan"/>
 
                         <label for="pilih_rt" class="form-label mb-2">RT</label>
-                        <select id="pilih_rt" class="form-select mb-2" name="pilih_rt">
+                        <select id="pilih_rt" class="form-select mb-2" name="id_rt">
                             <?php
                             $rt_options = array_map(function ($i) {
                                 return 'rt ' . str_pad($i, 2, '0', STR_PAD_LEFT);
@@ -162,7 +160,7 @@
                                 <td>{{ $item->nama_pemohon }}</td>
                                 <td>
                                     <button type="button" class="btn btn-primary" onclick="ambildata('{{ $item->nik }}', '{{ $item->nama_pemohon }}', '{{ $item->alamat }}','{{ $item->jenis_kelamin }}','{{ $item->tempat_lahir }}',
-                                    '{{ $item->tanggal_lahir }}','{{ $item->agama }}','{{ $item->pekerjaan }}', '{{ $item->id_pemohon }}')" 
+                                    '{{ $item->tanggal_lahir }}','{{ $item->agama }}','{{ $item->pekerjaan }}', '{{ $item->id }}')" 
                                         data-bs-target="#pengajuan" data-bs-toggle="modal" data-bs-dismiss="modal">Pilih Pemohon</button>
                                 </td>
                             </tr>
@@ -187,7 +185,7 @@
             document.getElementById('tanggal_lahir').value=tanggal_lahir;
             document.getElementById('agama').value=agama;
             document.getElementById('pekerjaan').value=pekerjaan;
-            document.getElementById('id_pemohon').value=id_pemohon;
+            document.getElementById('id_pemohons').value=id_pemohon;
         }
       </script>
 @endsection

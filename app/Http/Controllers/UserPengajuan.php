@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PengajuanModel;
 use App\Models\SktmModel;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,9 +60,9 @@ class UserPengajuan extends Controller
             'foto_kk' => $filename1,
             'foto_ktp' => $filename,
             'bukti_pengantar' => $filename2,
-            'tanggal_pengajuan' => $request->input('tanggal_pengajuan'),
-            'waktu_pengajuan' => $request->input('waktu_pengajuan'),
-            'status' => 'menunggu RT',
+            'tanggal_pengajuan' => Carbon::now()->format('Y-m-d'),
+            'waktu_pengajuan' => Carbon::now()->format('H:i:s'),
+            'status' => 'menunggu Verifikasi RT',
             'keterangan' => $request->input('keterangan'),
             'id_pemohon' => $request->input('id_pemohon'),
             'id_rt' => $request->input('id_rt'),

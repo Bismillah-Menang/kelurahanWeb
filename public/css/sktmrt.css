@@ -1,0 +1,4 @@
+.table td.text-center {
+    text-align: center; /* Untuk mengatur teks (ikon) di tengah secara horizontal */
+    vertical-align: middle; /* Untuk mengatur teks (ikon) di tengah secara vertikal */
+}
