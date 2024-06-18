@@ -3,58 +3,54 @@
 namespace App\Http\Controllers;
 
 use App\Models\PengajuanModel;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-class petugasRtController extends Controller
+class PetugasRtController extends Controller
 {
-    function showpetugasRtDashboard()
+    public function showpetugasRtDashboard()
     {
-        return view('petugas-rt.layout.dashboard',[
+        return view('petugas-rt.layout.dashboard', [
             'tittle' => 'Dashboard RT'
         ]);
     }
-    function showSktmrt(){
-        $id_user = User::find(Auth::user()->id);
-        
-        $data = PengajuanModel::where('jenis_layanan','sktm')
-        ->where('status','menunggu Verifikasi RT')
-        ->whereHas('pemohon', function ($query) use ($id_user) {
-            $query->where('id_user', $id_user->id);})
-        ->get();
-        return view('petugas-rt.layout.permintaansktm',[
+
+    public function showSktmrt(Request $request)
+    {
+        $rt = $request->input('pilih_rt'); // Ambil RT yang dipilih dari form
+        $userId = Auth::user()->id;
+    
+        // Ambil data berdasarkan RT yang dipilih dan pengguna yang sedang login
+        $data = PengajuanModel::where('jenis_layanan', 'sktm')
+                              ->where('status', 'menunggu Verifikasi RT')
+                              ->where('rt', $rt) // Sesuaikan dengan RT yang dipilih
+                              ->get();
+    
+        return view('petugas-rt.layout.permintaansktm', [
             'tittle' => 'Permintaan Pengajuan SKTM',
-            'data' => $data
+            'data' => $data,
+            'selectedRT' => $rt, // Kirim RT yang dipilih ke tampilan
         ]);
     }
-    function ubahstatus(Request $request,$id){
-        
+    
+
+    public function ubahstatus(Request $request, $id)
+    {
         $validator = Validator::make($request->all(), [
-            'pilihstatus'          => 'required',
-            'inputketerangan'         => 'nullable',
-           
+            'pilihstatus' => 'required',
+            'inputketerangan' => 'nullable',
         ]);
 
         if ($validator->fails()) {
-            return redirect()->route('sktmrt')->with(Session::flash('failed update',true));
-        } else{
-            if ($request -> pilihstatus == 'Verifikasi Diterima') {
-                $data['status']          = 'menunggu Verifikasi Admin';
-        $data['keterangan']           = $request -> inputketerastatus;
-            }else{
-                $data['status']          = $request -> pilihstatus;
-        $data['keterangan']           = $request -> inputketerastatus;
-            }
-        
-       
+            return redirect()->route('sktmrt')->with(Session::flash('failed update', true));
+        } else {
+            $data['status'] = $request->pilihstatus == 'Verifikasi Diterima' ? 'menunggu Verifikasi Admin' : $request->pilihstatus;
+            $data['keterangan'] = $request->inputketerangan;
 
-        PengajuanModel::whereId($id)->update($data);
-        return redirect()->route('sktmrt')->with(Session::flash('berhasil update',true));
+            PengajuanModel::whereId($id)->update($data);
+            return redirect()->route('sktmrt')->with(Session::flash('berhasil update', true));
         }
-
     }
 }
