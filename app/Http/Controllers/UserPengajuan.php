@@ -8,10 +8,13 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class UserPengajuan extends Controller
 {
-    public function tambahsktm(Request $request){
+    public function tambahsktm(Request $request)
+    {
+        // Validate the request
         // $request->validate([
         //     'nik' => 'required',
         //     'nama_pemohon' => 'required',
@@ -21,7 +24,7 @@ class UserPengajuan extends Controller
         //     'tanggal_lahir' => 'required',
         //     'agama' => 'required',
         //     'pekerjaan' => 'required',
-        //     'pilih_rt' => 'required',
+        //     'rt' => 'required',
         //     'namaorangtua' => 'required',
         //     'jenis_kelamin' => 'required',
         //     'pekerjaan' => 'required',
@@ -29,31 +32,34 @@ class UserPengajuan extends Controller
         //     'foto_ktp' => 'required',
         //     'foto_kk' => 'required',
         // ]);
+
+        // Log the request data
+        // Log::info($request->all());
+        Log::info('Request data:', $request->all());
+
         $pemohon = SktmModel::create([
             'nama_ortu' => $request->input('nama_ortu'),
             'jenis_kelamin' => $request->input('jenis_kelamin'),
             'pekerjaan' => $request->input('pekerjaan'),
             'alamat' => $request->input('alamat'),
-            'id_user' => (User::find(Auth::user()->id))->id,
+            'id_user' => Auth::id(),
         ]);
+
         $detailsktm = SktmModel::latest()->first();
         $file = $request->file('foto_ktp');
         $file1 = $request->file('foto_kk');
         $file2 = $request->file('bukti_pengantar');
 
-            
-            // Buat nama file unik
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $filename1 = time() . '_' . $file1->getClientOriginalName();
-            $filename2 = time() . '_' . $file2->getClientOriginalName();
+        // Create unique file names
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $filename1 = time() . '_' . $file1->getClientOriginalName();
+        $filename2 = time() . '_' . $file2->getClientOriginalName();
 
-            
-            // Simpan file di storage
-            $file->storeAs('public', $filename);
-            $file1->storeAs('public', $filename1);
-            $file2->storeAs('public', $filename2);
+        // Save files in storage
+        $file->storeAs('public', $filename);
+        $file1->storeAs('public', $filename1);
+        $file2->storeAs('public', $filename2);
 
-        
         // Insert data into the pemohons table
         $pemohon1 = PengajuanModel::create([
             'keperluan' => $request->input('keperluan'),
@@ -65,16 +71,16 @@ class UserPengajuan extends Controller
             'status' => 'menunggu Verifikasi RT',
             'keterangan' => $request->input('keterangan'),
             'id_pemohon' => $request->input('id_pemohon'),
-            'id_rt' => $request->input('id_rt'),
+            'rt' => $request->input('rt'),
             'id_detailpelayanan' => $detailsktm->id,
             'jenis_layanan' => 'sktm',
-            'id_user' => (User::find(Auth::user()->id))->id,
+            'id_user' => Auth::id(),
         ]);
-        if ($pemohon) {
-            if($pemohon1){
-                return redirect()->route('user.pengajuansktm');
-            }
+
+        if ($pemohon && $pemohon1) {
+            return redirect()->route('user_pengajuansktm')->with('success', 'Pengajuan berhasil ditambahkan');
+        } else {
+            return redirect()->back()->with('error', 'Pengajuan gagal ditambahkan');
         }
-        
     }
 }

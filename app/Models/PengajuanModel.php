@@ -21,7 +21,7 @@ class PengajuanModel extends Model
         'status',
         'keterangan',
         'id_pemohon',
-        'id_rt',
+        'rt',
         'bukti_pengantar',
     ];
 

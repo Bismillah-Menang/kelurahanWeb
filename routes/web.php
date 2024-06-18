@@ -7,6 +7,7 @@ use App\Http\Controllers\DatapegawaiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\AparaturController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\petugasRtController;
@@ -24,11 +25,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::get('/', function(){
 //     return view('welcome');
 // })->name('home');
-Route::group(['middleware' => 'user'],function(){
-    Route::get('/user/dashboard',[UserController::class, 'showdashboard'])->name('user_dashboard');
-    Route::get('/user/pengajuansktm',[UserController::class, 'pengajuansktm'])->name('user_pengajuansktm');
-    Route::get('/user/pemohon',[UserController::class, 'showpemohon'])->name('user_pemohon');
-    Route::post('/user/pemohon/tambah',[UserPemohonController::class, 'showtambah'])->name('user_tambahpemohon');
+Route::group(['middleware' => 'user'], function () {
+    Route::get('/user/dashboard', [UserController::class, 'showdashboard'])->name('user_dashboard');
+    Route::get('/user/pengajuansktm', [UserController::class, 'pengajuansktm'])->name('user_pengajuansktm');
+    Route::get('/user/pemohon', [UserController::class, 'showpemohon'])->name('user_pemohon');
+    Route::post('/user/pemohon/tambah', [UserPemohonController::class, 'showtambah'])->name('user_tambahpemohon');
     Route::put('/user/pemohon/edit/{id}', [UserPemohonController::class, 'update'])->name('user_editpemohon');
     Route::delete('/user/pemohon/hapus/{id}', [UserPemohonController::class, 'destroy'])->name('user_pemohon.hapus');
     Route::put('/user/claimpemohon/{id}', [UserPemohonController::class, 'claimpemohon']);
@@ -37,13 +38,13 @@ Route::group(['middleware' => 'user'],function(){
 
 
 
-Route::group(['middleware' => 'admin'],function(){
+Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/dashboard', [AdminController::class, 'showAdminDashboard'])->name('admin_dashboard');
-    Route::get('/admin/akunuser',[AdminController::class,'showakunuser'])->name('showUser');
-    Route::get('/admin/akunpetugas',[AdminController::class,'showakunpetugas'])->name('showPetugas');
-    Route::get('/admin/sktm',[AdminController::class,'showsktmadmin'])->name('showsktmadmin');
+    Route::get('/admin/akunuser', [AdminController::class, 'showakunuser'])->name('showUser');
+    Route::get('/admin/akunpetugas', [AdminController::class, 'showakunpetugas'])->name('showPetugas');
+    Route::get('/admin/sktm', [AdminController::class, 'showsktmadmin'])->name('showsktmadmin');
     Route::put('/admin/update/permintaansktm/{id}', [AdminController::class, 'ubahstatusadmin'])->name('updatestatusadmin');
-    Route::get('/admin/templatesktm/{id}',[AdminController::class,'showtemplatesktm'])->name('templatesktm');
+    Route::get('/admin/templatesktm/{id}', [AdminController::class, 'showtemplatesktm'])->name('templatesktm');
 
     //CRUD Account User
     Route::post('/admin/user/make', [AdminController::class, 'make'])->name('user.make');
@@ -55,19 +56,20 @@ Route::group(['middleware' => 'admin'],function(){
     Route::delete('/admin/akunpetugas/delete/{id}', [AdminController::class, 'deletePetugas'])->name('petugas.delete');
 });
 
-Route::group(['middleware' => 'petugas_rt'],function(){
+Route::group(['middleware' => 'petugas_rt'], function () {
     Route::get('/petugasRt/dashboard', [petugasRtController::class, 'showpetugasRtDashboard'])->name('petugasRt_dashboard');
     Route::get('/petugasRt/permintaansktm', [petugasRtController::class, 'showSktmrt'])->name('sktmrt');
     Route::put('/petugasRt/update/permintaansktm/{id}', [petugasRtController::class, 'ubahstatus'])->name('updatestatus');
+    Route::post('/verify-password', [petugasRtController::class, 'verifyPassword'])->name('verifyPassword');
 });
 
-Route::get('/logout',[AdminController::class,'logout'])->name('keluar');
+Route::get('/logout', [AdminController::class, 'logout'])->name('keluar');
 
 // Rute untuk halaman login
-Route::middleware(['guest'])->group(function(){
+Route::middleware(['guest'])->group(function () {
 });
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('form');
-Route::post('/login',[AuthController::class,'login'])->name('masuk');    
+Route::post('/login', [AuthController::class, 'login'])->name('masuk');
 
 // Register routes
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
@@ -108,6 +110,10 @@ Route::get('/layanan', [LayananController::class, 'showLayanan'])->name('layanan
 // routes/web.php
 
 //Bagaian Pages 
-    Route::get('/sktm', [SktmController::class, 'showsktm'])->name('sktm');
+Route::get('/sktm', [SktmController::class, 'showsktm'])->name('sktm');
 
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])
+    ->name('password.reset');
 
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
+    ->name('password.update');

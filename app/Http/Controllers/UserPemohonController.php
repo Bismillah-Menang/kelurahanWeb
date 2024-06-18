@@ -22,6 +22,7 @@ class UserPemohonController extends Controller
             'tanggal_lahir' => 'required',
             'agama' => 'required',
             'pekerjaan' => 'required',
+            'pilih_rt' => 'required',
         ]);
     
         // Insert data into the pemohons table
@@ -35,9 +36,11 @@ class UserPemohonController extends Controller
             'agama' => $request->input('agama'),
             'pekerjaan' => $request->input('pekerjaan'),
             'id_user' => (User::find(Auth::user()->id))->id,
+            'rt' => $request->input('pilih_rt'),
         ]);
         return redirect()->route('user_pemohon')->with(Session::flash('tambah', 'Pemohon berhasil ditambahkan'));
     }
+    
     public function update(Request $request, $id)
     {
         // Validasi input
