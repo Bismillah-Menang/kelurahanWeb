@@ -7,6 +7,7 @@ use App\Http\Controllers\DatapegawaiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\AparaturController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LayananController;
@@ -117,3 +118,7 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
     ->name('password.update');
+Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');

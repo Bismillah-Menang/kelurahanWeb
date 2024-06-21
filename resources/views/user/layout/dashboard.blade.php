@@ -107,7 +107,7 @@
             </div>
           </div>
           <span class="fw-medium d-block mb-1">Riwayat</span>
-          <h3 class="card-title mb-2"></h3>
+          <h3 class="card-title mb-2">{{ $riwayat }}</h3>
         </div>
       </div>
     </div>

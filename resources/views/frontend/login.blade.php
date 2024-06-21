@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    .register-forgot-container .register-link,
+    .register-forgot-container .forgot-password {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .register-forgot-container .forgot-password a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .register-forgot-container .forgot-password a:hover {
+        text-decoration: underline;
+    }
+
+    .password-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .password-container input {
+        width: 100%;
+        padding-right: 40px; /* Adjust to make room for the icon */
+    }
+
+    .password-container .toggle-password {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -49,16 +82,20 @@
                             <div class="mb-3">
                                 <input type="email" name="email" value="{{old('email')}}" placeholder="Username" required>
                             </div>
-                            <input type="password" name="password" placeholder="Password" required>
+                            <div class="password-container mb-3">
+                                <input type="password" name="password" id="password" placeholder="Password" required>
+                                <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                            </div>
                             <button type="submit" id="loginBtn" class="nav-link" href="">Login</button>
                         </form>
-                        <div class="register-link mt-3">
-                            <span>Belum Punya Akun? Silahkan </span><a href="{{ route('register') }}">Daftar</a>
+                        <div class="register-forgot-container d-flex flex-column mt-3">
+                            <div class="register-link mb-2">
+                                <span>Belum Punya Akun? Silahkan </span><a href="{{ route('register') }}">Daftar</a>
+                            </div>
+                            <div class="forgot-password">
+                                <a href="{{ route('password.request') }}">Forgot password?</a>
+                            </div>
                         </div>
-                        <div class="forgot-password">
-                            <a href="{{ route('password.request') }}">Forgot password?</a>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -81,9 +118,18 @@
             text: "GAGAL",
         });
         @endif
+
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
     </script>
-
-
 </body>
 
 </html>
