@@ -76,11 +76,12 @@ class AuthController extends Controller
             'name' => $request->nama_lengkap,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role'=> 'user',
         ]);
 
         Auth::login($user);
 
-        return redirect()->route('dashboard')->with('berhasil', 'Berhasil Mendaftar');
+        return redirect()->route('user_dashboard')->with('berhasil', 'Berhasil Mendaftar');
     }
 }
 
