@@ -9,7 +9,7 @@
             <div class="card-body">
               <h5 class="card-title text-primary">Welcome {{ Auth::user()->name }}! 🎉</h5>
               <p class="mb-4">
-                Di Kelurahan XYZ, pelayanan terbaik adalah fokus utama kami. Bergabunglah dan rasakan layanan istimewa.
+                Di Kelurahan Badean, pelayanan terbaik adalah fokus utama kami. Bergabunglah dan rasakan layanan istimewa.
               </p>
               {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a> --}}
             </div>

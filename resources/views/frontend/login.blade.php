@@ -84,7 +84,7 @@
                             </div>
                             <div class="password-container mb-3">
                                 <input type="password" name="password" id="password" placeholder="Password" required>
-                                <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                                {{-- <i class="fas fa-eye toggle-password" id="togglePassword"></i> --}}
                             </div>
                             <button type="submit" id="loginBtn" class="nav-link" href="">Login</button>
                         </form>

@@ -22,7 +22,7 @@ use App\Http\Controllers\UserPemohonController;
 use App\Http\Controllers\UserPengajuan;
 
 // Rute untuk halaman utama
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('halamanutama');
 // Route::get('/', function(){
 //     return view('welcome');
 // })->name('home');
@@ -46,6 +46,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/sktm', [AdminController::class, 'showsktmadmin'])->name('showsktmadmin');
     Route::put('/admin/update/permintaansktm/{id}', [AdminController::class, 'ubahstatusadmin'])->name('updatestatusadmin');
     Route::get('/admin/templatesktm/{id}', [AdminController::class, 'showtemplatesktm'])->name('templatesktm');
+    Route::get('/admin/riwayat/', [AdminController::class, 'showriwayat'])->name('riwayat');
 
     //CRUD Account User
     Route::post('/admin/user/make', [AdminController::class, 'make'])->name('user.make');

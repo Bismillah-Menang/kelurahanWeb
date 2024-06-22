@@ -39,7 +39,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto"> <!-- Tambahkan kelas ml-auto di sini -->
           <li class="nav-item">
-            <a id="home" class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+            <a id="home" class="nav-link active" aria-current="page" href="{{route ('halamanutama')}}">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">

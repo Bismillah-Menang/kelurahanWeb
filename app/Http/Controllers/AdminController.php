@@ -234,4 +234,10 @@ class AdminController extends Controller
         // Redirect atau response sesuai kebutuhan
         return redirect()->route('showsktmadmin')->with(Session::flash('berhasil update', true));
     }
+
+    function showriwayat(){
+        return view('admin.layout.riwayat', [
+            'tittle' => 'Riwayat Pengajuan Surat',
+        ]);
+    }
 }
