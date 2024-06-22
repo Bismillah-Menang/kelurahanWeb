@@ -81,7 +81,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('user_dashboard')->with('berhasil', 'Berhasil Mendaftar');
+        return redirect()->route('form')->with(Session::flash('berhasil daftar',true));
     }
 }
 

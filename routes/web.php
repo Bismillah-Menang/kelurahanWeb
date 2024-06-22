@@ -22,7 +22,7 @@ use App\Http\Controllers\UserPemohonController;
 use App\Http\Controllers\UserPengajuan;
 
 // Rute untuk halaman utama
-Route::get('/', [HomeController::class, 'index'])->name('halamanutama');
+Route::get('/', [HomeController::class, 'halamanutama'])->name('halamanutama');
 // Route::get('/', function(){
 //     return view('welcome');
 // })->name('home');

@@ -24,7 +24,8 @@
 
     .password-container input {
         width: 100%;
-        padding-right: 40px; /* Adjust to make room for the icon */
+        padding-right: 40px;
+        /* Adjust to make room for the icon */
     }
 
     .password-container .toggle-password {
@@ -69,18 +70,19 @@
                             <h2>Log In</h2>
                         </div>
                         @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors as $item)
-                                <li>{{ $item }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         @endif
-                        <form class="login-form" action="{{route ('masuk')}}" method="post">
+                        <form class="login-form" action="{{ route('masuk') }}" method="post">
                             @csrf
                             <div class="mb-3">
-                                <input type="email" name="email" value="{{old('email')}}" placeholder="Username" required>
+                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Username"
+                                    required>
                             </div>
                             <div class="password-container mb-3">
                                 <input type="password" name="password" id="password" placeholder="Password" required>
@@ -103,26 +105,34 @@
     </section>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        @if(Session::has('belum login'))
+        @if (Session::has('belum login'))
 
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Anda Belum Login BROOO",
-        });
-        @elseif(Session::has('gagal login'))
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Anda Belum Login BROOO",
+            });
+        @elseif (Session::has('gagal login'))
 
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "GAGAL",
-        });
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "GAGAL",
+            });
+        @elseif (Session::has('berhasil daftar'))
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Berhasil Regrestrasi",
+                showConfirmButton: false,
+                timer: 1500
+            });
         @endif
 
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');
 
-        togglePassword.addEventListener('click', function (e) {
+        togglePassword.addEventListener('click', function(e) {
             // toggle the type attribute
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
