@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 
+
 class AdminController extends Controller
 {
     //Dashboard Views
@@ -235,9 +236,54 @@ class AdminController extends Controller
         return redirect()->route('showsktmadmin')->with(Session::flash('berhasil update', true));
     }
 
-    function showriwayat(){
+    function showRiwayat()
+    {
+        $data = PengajuanModel::where('status', 'Verifikasi Diterima')->with('pemohon')->get();
         return view('admin.layout.riwayat', [
             'tittle' => 'Riwayat Pengajuan Surat',
+            'data' => $data
+        ]);
+    }
+
+    public function deleteOldRecords()
+    {
+        $threshold = now()->subDay(1); // 24 hours ago
+        PengajuanModel::where('status', 'Verifikasi Diterima')
+            ->where('updated_at', '<', $threshold)
+            ->delete();
+    }
+
+    public function deleteRiwayat($id)
+    {
+        $data = PengajuanModel::find($id);
+        if ($data) {
+            $data->delete();
+        }
+        return redirect()->route('showriwayat')->with(Session::flash('berhasil hapus', true));
+    }
+
+    public function showLaporanMingguan()
+    {
+        // Ambil semua pengajuan yang statusnya 'Verifikasi Diterima'
+        $pengajuan = PengajuanModel::where('status', 'Verifikasi Diterima')->get();
+
+        // Buat array untuk menampung data pengajuan per minggu
+        $laporanMingguan = [];
+
+        foreach ($pengajuan as $surat) {
+            $tanggalVerifikasi = Carbon::parse($surat->updated_at);
+            $mingguKe = $tanggalVerifikasi->weekOfMonth; // Mendapatkan minggu ke dalam bulan
+
+            if (!isset($laporanMingguan[$mingguKe])) {
+                $laporanMingguan[$mingguKe] = [];
+            }
+
+            $laporanMingguan[$mingguKe][] = $surat;
+        }
+
+        return view('admin.layout.laporanmingguan', [
+            'tittle' => 'Laporan Mingguan Pengajuan Surat',
+            'laporanMingguan' => $laporanMingguan
         ]);
     }
 }

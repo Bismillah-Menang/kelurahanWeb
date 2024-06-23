@@ -47,38 +47,38 @@
     <section id="aparatur" class="features">
         <div class="container">
             <h2>Aparatur Kelurahan Badean</h2>
-            <div class="features-item">
-                <img src="{{ asset('img/foto1.jpg') }}" alt="Feature 1" name="feature-1">
-                <h3>Mr.Cillian Murphy</h3>
-                <p class="jabatan-1">Kepala Lurah Badean</p>
+            <div class="more-item mb-2">
+                <img src="{{ asset('img/foto3.jpg') }}" alt="Profil">
+                <h5 style="color: #fff;">Yashinta Galuh Ditriyanti,S.STP.,M.Si </h5>
+                <h6 class="jabatan">Kepala Kantor Kelurahan Badean </h6>
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="features-item">
-                        <img src="{{ asset('img/foto2.jpg') }}" alt="Feature 2" name="feature-2">
-                        <h3>Mr.Chris Hemsworth</h3>
-                        <p class="jabatan-2">Seketaris</p>
+                    <div class="more-item">
+                        <img src="{{ asset('img/foto4.jpg') }}" alt="Profil">
+                        <h5 style="color: #fff;">Meitri Koerniawati,AM.d</h5>
+                        <h6 class="jabatan">Sekertaris Kelurahan Badean</h6>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="features-item">
-                        <img src="{{ asset('img/foto3.jpg') }}" alt="Feature 3" name="feature-3">
-                        <h3>Mrs.Siti Jubaedah</h3>
-                        <p class="jabatan-3">Bendahara</p>
+                    <div class="more-item">
+                        <img src="{{ asset('img/foto2.jpg') }}" alt="Profil">
+                        <h5 style="color: #fff;">Agus Prawito,S.Sos.</h5>
+                        <h6 class="jabatan">Kepala Seksi Sosial</h6>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="features-item">
-                        <img src="{{ asset('img/foto4.jpg') }}" alt="Feature 4" name="feature-4">
-                        <h3>Ms.Lalisa Manoban</h3>
-                        <p class="jabatan-4">Staff Pelayanan Umum</p>
+                    <div class="more-item">
+                        <img src="{{ asset('img/foto1.jpg') }}" alt="Profil">
+                        <h5 style="color: #fff;">Lely Martiningsih</h5>
+                        <h6 class="jabatan">Kepala Seksi Pemberdayaan Masyarakat</h6>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="features-item">
-                        <img src="{{ asset('img/foto5.jpg') }}" alt="Feature 5" name="feature-5">
-                        <h3>Mr. Timothee Chalemet</h3>
-                        <p class="jabatan-5">Kasi Pemerintahan</p>
+                    <div class="more-item">
+                        <img src="{{ asset('img/foto5.jpg') }}" alt="Profil">
+                        <h5 style="color: #fff;">Bobby Oktabiyanto,S.Sos.</h5>
+                        <h6 class="jabatan">Kepala Seksi Pemerintahan</h6>
                     </div>
                 </div>
             </div>
