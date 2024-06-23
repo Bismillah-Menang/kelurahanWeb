@@ -13,6 +13,7 @@ use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\petugasRtController;
 use App\Http\Controllers\petugasRwController;
+use App\Http\Controllers\RiwayatVerifikasiAdmin;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 //bagian pages
@@ -56,6 +57,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/admin/petugas/make', [AdminController::class, 'createPetugas'])->name('petugas.create');
     Route::put('/admin/akunpetugas/update/{id}', [AdminController::class, 'updatePetugas'])->name('petugas.update');
     Route::delete('/admin/akunpetugas/delete/{id}', [AdminController::class, 'deletePetugas'])->name('petugas.delete');
+    Route::get('/riwayat', [AdminController::class, 'showRiwayat'])->name('showRiwayat');
+    Route::delete('/riwayat/{id}', [AdminController::class, 'deleteRiwayat'])->name('delete.riwayat');
+    Route::get('/akunuser', [AdminController::class, 'showakunuser'])->name('showUser');
 });
 
 Route::group(['middleware' => 'petugas_rt'], function () {

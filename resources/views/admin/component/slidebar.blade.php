@@ -99,28 +99,12 @@
             </a>
         </li>
 
-        <li class="menu-item open ">
-            <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-report"></i>
-                <div data-i18n="laporan">Laporan</div>
-                {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
-            </a>
-        </li>
-
         <!-- Front Pages -->
 
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Data Master</span>
         </li>
         <!-- Apps -->
-        <li class="menu-item">
-            <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
-                target="_blank" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-news"></i>
-                <div data-i18n="Email">Berita</div>
-                {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
-            </a>
-        </li>
         <!-- Pages -->
         <li class="menu-item @active('showUser') @active('showPetugas')">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -157,6 +141,6 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        </li>
     </ul>
 </aside>
