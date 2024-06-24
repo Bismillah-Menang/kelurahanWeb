@@ -73,9 +73,9 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('keluar');
 
 // Rute untuk halaman login
 Route::middleware(['guest'])->group(function () {
-    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('form');
-    Route::post('/login', [AuthController::class, 'login'])->name('masuk');
 });
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('form');
+Route::post('/login', [AuthController::class, 'login'])->name('masuk');
 
 // Register routes
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');

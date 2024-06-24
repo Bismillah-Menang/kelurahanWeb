@@ -124,6 +124,11 @@
         .signature .jabatan {
             margin-top: 5px;
         }
+        .footer img {
+            width: 100px; /* Ukuran gambar QR Code */
+            height: auto;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
@@ -175,9 +180,9 @@
                 <td>: {{ $data->alamat }}</td>
             </tr>
         </table>
-        <p class="pernyataan">Adalah benar penduduk Kelurahan Badean Kecamatan Bondowoso Kabupaten Bondowoso. Menurut
-            pengamatan kami warga
-            tersebut keadaan ekonominya tergolong warga yang kurang mampu.</p>
+        <p class="pernyataan">Adalah penduduk {{ $data->alamat }} Kelurahan Badean, Kecamatan Bondowoso, Kabupaten Bondowoso
+            dan menurut pengamatan kami bahwa yang bersangkutan termasuk keluarga yang keberadaan ekonominya kurang/tidak mampu.
+        </p>
         <p>Surat keterangan ini dipergunakan untuk :</p>
         <p class="section-title">
             @if (isset($databerkas))
@@ -190,13 +195,12 @@
         </p>
         <p>Demikian Surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
         <div class="footer">
-            <div class="date">Bondowoso, 18 Desember 2023</div>
-            <p>a.n LURAH BADEAN</p>
-            <p>Sekretaris,</p>
+            <div class="date">Bondowoso, {{ $tanggalPDF }}</div>
+            <p class="jabatan">Kepala Kelurahan Badean</p>
             <div class="signature">
-                <p class="name">DEDY DAMARDY, S. Sos</p>
-                <p class="jabatan">Penata Muda</p>
-                <p class="nip">NIP 19810225 200901 1 001</p>
+                <p><img src="img/qr-code.png" alt="Logo" class="logo-image"</p>
+                <p class="name">Yashinta Galuh Ditriyanti,S.STP, M.Si</p>
+                <p class="nip">NIP 19920301 201406 2 001    </p>
             </div>
         </div>
     </div>

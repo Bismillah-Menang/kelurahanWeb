@@ -200,21 +200,24 @@ class AdminController extends Controller
         // Ambil data berdasarkan ID
         $data = PemohonModel::findOrFail($id);
         $databerkas = PengajuanModel::findOrFail($id);
+        $tanggalPDF = Carbon::now()->format('d F Y'); // Format tanggal sesuai keinginan
         // Kirim data ke view dan buat PDF
-        $pdf = PDF::loadView('templatesktm', compact('data', 'databerkas'))->setPaper('Legal', 'portrait');
+        $pdf = PDF::loadView('templatesktm', compact('data', 'databerkas','tanggalPDF'))->setPaper('Legal', 'portrait');
 
         return $pdf->stream('sktm.pdf');
     }
 
     function verifikasiSuratDiterima($id)
     {
-         // Ambil data pengajuan berdasarkan ID
+    // Ambil data pengajuan berdasarkan ID
     $pengajuan = PengajuanModel::findOrFail($id);
     // Ambil data pemohon yang berhubungan
     $data = PemohonModel::findOrFail($pengajuan->id_pemohon);
+    // Format tanggal untuk digunakan di PDF
+    $tanggalPDF = Carbon::now()->format('d F Y'); // Format tanggal sesuai keinginan
 
-    // Generate PDF menggunakan data pemohon dan data berkas
-    $pdf = PDF::loadView('templatesktm', compact('data', 'pengajuan'))
+    // Generate PDF menggunakan data pemohon dan data pengajuan
+    $pdf = PDF::loadView('templatesktm', compact('data', 'pengajuan', 'tanggalPDF'))
         ->setPaper('Legal', 'portrait');
 
     // Simpan PDF ke storage
