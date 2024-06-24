@@ -1,5 +1,4 @@
 <!-- resources/views/templatesktm.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +17,7 @@
             text-align: center;
         }
 
-        .header .logo-image{
+        .header .logo-image {
             width: 150px;
             height: auto;
         }
@@ -68,11 +67,11 @@
             width: 100%;
             margin-bottom: 20px;
         }
-        
+
         .content .name {
             font-weight: bold
         }
-        
+
         .content .nomor_surat {
             text-align: center;
             margin-top: 5px;
@@ -102,7 +101,7 @@
             margin-top: 40px;
             text-align: right;
         }
-        
+
         .pernyataan {
             text-align: justify;
         }
@@ -121,7 +120,7 @@
         .signature .nip {
             margin-top: 5px;
         }
-        
+
         .signature .jabatan {
             margin-top: 5px;
         }
@@ -146,7 +145,7 @@
         <hr>
     </div>
     <div class="content">
-        <div class="title">SURAT KETERANGAN</div>
+        <div class="title">SURAT KETERANGAN TIDAK MAMPU</div>
         <p class="nomor_surat">Nomor: 470/430.111.8/2023</p>
         <p>Yang bertanda tangan dibawah ini Lurah Badean Kecamatan Bondowoso Kabupaten Bondowoso, dengan ini menerangkan
             bahwa :</p>
@@ -154,6 +153,14 @@
             <tr>
                 <td>Nama</td>
                 <td class="name">: {{ $data->nama_pemohon }}</td>
+            </tr>
+            <tr>
+                <td>NIK</td>
+                <td class=nik">: {{ $data->nik }}</td>
+            </tr>
+            <tr>
+                <td>Tempat Tanggal Lahir</td>
+                <td class=nik">: {{ $data->tempat_lahir }}, {{ $data->tanggal_lahir }}</td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
@@ -168,10 +175,19 @@
                 <td>: {{ $data->alamat }}</td>
             </tr>
         </table>
-        <p class="pernyataan">Adalah benar penduduk Kelurahan Badean Kecamatan Bondowoso Kabupaten Bondowoso. Menurut pengamatan kami warga
+        <p class="pernyataan">Adalah benar penduduk Kelurahan Badean Kecamatan Bondowoso Kabupaten Bondowoso. Menurut
+            pengamatan kami warga
             tersebut keadaan ekonominya tergolong warga yang kurang mampu.</p>
         <p>Surat keterangan ini dipergunakan untuk :</p>
-        <p class="section-title">PERSYARATAN PENGAJUAN KIP</p>
+        <p class="section-title">
+            @if (isset($databerkas))
+                <p class="section-title">{{ $databerkas->keperluan }}</p>
+            @elseif(isset($pengajuan))
+                <p class="section-title">{{ $pengajuan->keperluan }}</p>
+            @else
+                <p class="section-title">Data not found</p>
+            @endif
+        </p>
         <p>Demikian Surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
         <div class="footer">
             <div class="date">Bondowoso, 18 Desember 2023</div>

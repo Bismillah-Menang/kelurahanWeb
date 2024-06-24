@@ -5,14 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\PemohonModel;
 use App\Models\PengajuanModel;
 use App\Models\User;
+use Carbon\Carbon;
 use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
-
-
 
 class AdminController extends Controller
 {
@@ -24,7 +23,7 @@ class AdminController extends Controller
     function showAdminDashboard()
     {
         return view('admin.layout.dashboard', [
-            'tittle' => 'Dashboard'
+            'tittle' => 'Dashboard',
         ]);
     }
     function showakunuser()
@@ -32,7 +31,7 @@ class AdminController extends Controller
         $data = User::where('role', 'user')->get();
         return view('admin.layout.akunuser', [
             'tittle' => ' Data Akun User',
-            'data' => $data
+            'data' => $data,
         ]);
     }
     function showakunpetugas()
@@ -40,7 +39,7 @@ class AdminController extends Controller
         $data = User::where('role', 'petugas_rt')->get();
         return view('admin.layout.akunpetugas', [
             'tittle' => ' Data Akun Petugas RT',
-            'data' => $data
+            'data' => $data,
         ]);
     }
 
@@ -53,19 +52,19 @@ class AdminController extends Controller
     function make(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name'          => 'required',
-            'email'         => 'required|email',
-            'password'      => 'required'
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
         // dd($request->all());
         if ($validator->fails()) {
             return redirect()->route('showUser')->with(Session::flash('failed', true));
         } else {
             $data = [
-                'name'          => $request->name,
-                'email'         => $request->email,
-                'password'      => Hash::make($request->password),
-                'role'          => 'user' // Assigning the role as 'user'
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => 'user', // Assigning the role as 'user'
             ];
 
             User::create($data);
@@ -82,17 +81,17 @@ class AdminController extends Controller
     function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'name'          => 'required',
-            'email'         => 'required|email',
-            'password'      => 'nullable'
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'nullable',
         ]);
 
         if ($validator->fails()) {
             return redirect()->route('showUser')->with(Session::flash('failed update', true));
         }
-        $data['email']          = $request->email;
-        $data['name']           = $request->name;
-        $data['password']       = Hash::make($request->password);
+        $data['email'] = $request->email;
+        $data['name'] = $request->name;
+        $data['password'] = Hash::make($request->password);
 
         User::whereId($id)->update($data);
         return redirect()->route('showUser')->with(Session::flash('berhasil Update', true));
@@ -107,23 +106,22 @@ class AdminController extends Controller
         return redirect()->route('showUser')->with(Session::flash('berhasil hapus', true));
     }
 
-
     function createPetugas(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name'          => 'required',
-            'email'         => 'required|email',
-            'password'      => 'required'
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
         // dd($request->all());
         if ($validator->fails()) {
             return redirect()->route('showPetugas')->with(Session::flash('failed', true));
         } else {
             $data = [
-                'name'          => $request->name,
-                'email'         => $request->email,
-                'password'      => Hash::make($request->password),
-                'role'          => 'petugas_rt' // Assigning the role as 'user'
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => 'petugas_rt', // Assigning the role as 'user'
             ];
 
             User::create($data);
@@ -148,17 +146,17 @@ class AdminController extends Controller
     function updatePetugas(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'name'          => 'required',
-            'email'         => 'required|email',
-            'password'      => 'nullable'
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'nullable',
         ]);
 
         if ($validator->fails()) {
             return redirect()->route('showPetugas')->with(Session::flash('failed update', true));
         }
-        $data['email']          = $request->email;
-        $data['name']           = $request->name;
-        $data['password']       = Hash::make($request->password);
+        $data['email'] = $request->email;
+        $data['name'] = $request->name;
+        $data['password'] = Hash::make($request->password);
 
         User::whereId($id)->update($data);
         return redirect()->route('showPetugas')->with(Session::flash('berhasil Update', true));
@@ -166,12 +164,10 @@ class AdminController extends Controller
 
     function showsktmadmin()
     {
-        $data = PengajuanModel::where('jenis_layanan', 'sktm')
-            ->where('status', 'menunggu Verifikasi Admin')
-            ->with('pemohon')->get();
+        $data = PengajuanModel::where('jenis_layanan', 'sktm')->where('status', 'menunggu Verifikasi Admin')->with('pemohon')->get();
         return view('admin.layout.pengajuansktmadmin', [
             'tittle' => 'Permintaan Pengajuan SKTM',
-            'data' => $data
+            'data' => $data,
         ]);
     }
 
@@ -201,39 +197,37 @@ class AdminController extends Controller
 
     function showtemplatesktm($id)
     {
-
         // Ambil data berdasarkan ID
         $data = PemohonModel::findOrFail($id);
-
+        $databerkas = PengajuanModel::findOrFail($id);
         // Kirim data ke view dan buat PDF
-        $pdf = PDF::loadView('templatesktm', compact('data'))
-            ->setPaper('Legal', 'portrait');
+        $pdf = PDF::loadView('templatesktm', compact('data', 'databerkas'))->setPaper('Legal', 'portrait');
 
         return $pdf->stream('sktm.pdf');
     }
 
     function verifikasiSuratDiterima($id)
     {
-        // Ambil data pengajuan berdasarkan ID
-        $pengajuan = PengajuanModel::findOrFail($id);
+         // Ambil data pengajuan berdasarkan ID
+    $pengajuan = PengajuanModel::findOrFail($id);
+    // Ambil data pemohon yang berhubungan
+    $data = PemohonModel::findOrFail($pengajuan->id_pemohon);
 
-        // Generate PDF menggunakan data pemohon
-        $pdf = PDF::loadView('templatesktm', ['data' => $pengajuan->pemohon])
-            ->setPaper('Legal', 'portrait');
+    // Generate PDF menggunakan data pemohon dan data berkas
+    $pdf = PDF::loadView('templatesktm', compact('data', 'pengajuan'))
+        ->setPaper('Legal', 'portrait');
 
-        // Simpan PDF ke storage
-        $pdfPath = 'surat_' . time() . '.pdf'; // Nama file dapat disesuaikan sesuai kebutuhan
-        $pdf->save(storage_path('app/public/' . $pdfPath));
+    // Simpan PDF ke storage
+    $pdfPath = 'surat_' . time() . '.pdf'; // Nama file dapat disesuaikan sesuai kebutuhan
+    $pdf->save(storage_path('app/public/' . $pdfPath));
 
-        // Update data pengajuan dengan nama file PDF
-        $pengajuan->pdf_surat = $pdfPath;
-        $pengajuan->status = 'Verifikasi Diterima';
-        $pengajuan->save(); // Update pengajuan yang sudah ada
+    // Update data pengajuan dengan nama file PDF
+    $pengajuan->pdf_surat = $pdfPath;
+    $pengajuan->status = 'Verifikasi Diterima';
+    $pengajuan->save(); // Update pengajuan yang sudah ada
 
-        // Tidak perlu membuat objek baru PengajuanModel jika hanya ingin menyimpan file PDF saja
-
-        // Redirect atau response sesuai kebutuhan
-        return redirect()->route('showsktmadmin')->with(Session::flash('berhasil update', true));
+    // Redirect atau response sesuai kebutuhan
+    return redirect()->route('showsktmadmin')->with('success', 'Berhasil update');
     }
 
     function showRiwayat()
@@ -241,16 +235,14 @@ class AdminController extends Controller
         $data = PengajuanModel::where('status', 'Verifikasi Diterima')->with('pemohon')->get();
         return view('admin.layout.riwayat', [
             'tittle' => 'Riwayat Pengajuan Surat',
-            'data' => $data
+            'data' => $data,
         ]);
     }
 
     public function deleteOldRecords()
     {
         $threshold = now()->subDay(1); // 24 hours ago
-        PengajuanModel::where('status', 'Verifikasi Diterima')
-            ->where('updated_at', '<', $threshold)
-            ->delete();
+        PengajuanModel::where('status', 'Verifikasi Diterima')->where('updated_at', '<', $threshold)->delete();
     }
 
     public function deleteRiwayat($id)
@@ -283,7 +275,7 @@ class AdminController extends Controller
 
         return view('admin.layout.laporanmingguan', [
             'tittle' => 'Laporan Mingguan Pengajuan Surat',
-            'laporanMingguan' => $laporanMingguan
+            'laporanMingguan' => $laporanMingguan,
         ]);
     }
 }
